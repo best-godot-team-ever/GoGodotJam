@@ -22,7 +22,7 @@ func drain_energy() -> void:
             var _b = _energy_grid.erase(key)
         else:
             _energy_grid[key] = _energy_grid.get(key) - 1
-    edited_cells.empty()
+    edited_cells.clear()
 
 # =======================================================
 #    The actual class, i guess.
