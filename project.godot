@@ -33,6 +33,7 @@ _global_script_class_icons={
 [application]
 
 config/name="GoGodotJam"
+run/main_scene="res://src/Levels/TestLevel.tscn"
 config/icon="res://icon.png"
 
 [editor_plugins]
