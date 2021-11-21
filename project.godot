@@ -8,6 +8,28 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Node2D",
+"class": "Enemy",
+"language": "GDScript",
+"path": "res://src/Entities/Enemies/Enemy.gd"
+}, {
+"base": "Node2D",
+"class": "Machine",
+"language": "GDScript",
+"path": "res://src/Entities/Machines/Machine.gd"
+}, {
+"base": "Resource",
+"class": "TurnManager",
+"language": "GDScript",
+"path": "res://src/Managers/TurnManager.gd"
+} ]
+_global_script_class_icons={
+"Enemy": "",
+"Machine": "",
+"TurnManager": ""
+}
+
 [application]
 
 config/name="GoGodotJam"
@@ -15,7 +37,7 @@ config/icon="res://icon.png"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/Recorder/plugin.cfg" )
+enabled=PoolStringArray(  )
 
 [physics]
 
