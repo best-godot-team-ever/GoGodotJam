@@ -10,6 +10,11 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "Node2D",
+"class": "BoardManager",
+"language": "GDScript",
+"path": "res://src/Managers/BoardManager.gd"
+}, {
+"base": "Node2D",
 "class": "Enemy",
 "language": "GDScript",
 "path": "res://src/Entities/Enemies/Enemy.gd"
@@ -25,6 +30,7 @@ _global_script_classes=[ {
 "path": "res://src/Managers/TurnManager.gd"
 } ]
 _global_script_class_icons={
+"BoardManager": "",
 "Enemy": "",
 "Machine": "",
 "TurnManager": ""
@@ -36,6 +42,15 @@ config/name="GoGodotJam"
 run/main_scene="res://src/Levels/TestLevel.tscn"
 config/icon="res://icon.png"
 
+[display]
+
+window/size/width=512
+window/size/height=300
+window/size/test_width=1024
+window/size/test_height=600
+window/stretch/mode="2d"
+window/stretch/aspect="keep"
+
 [editor_plugins]
 
 enabled=PoolStringArray(  )
@@ -46,4 +61,5 @@ common/enable_pause_aware_picking=true
 
 [rendering]
 
+2d/snapping/use_gpu_pixel_snap=true
 environment/default_environment="res://default_env.tres"
