@@ -1,5 +1,7 @@
 extends Node2D
 
+class_name BoardManager
+
 onready var level_grid = $LevelGrid
 onready var energy_grid = $EnergyGrid
 onready var entity_grid = $EntityGrid
@@ -18,6 +20,10 @@ func update_entity_position(entity_id: int, map_position: Vector2) -> void:
 		return
 	
 	entity_grid.update_entity_position(entity_id, map_position)
+
+func get_entity_position_by_id(entity_id: int) -> Vector2:
+	return entity_grid.get_entity_position_by_id(entity_id)
+
 # =======================================================
 #    Energy
 # =======================================================
@@ -71,5 +77,6 @@ func world_to_map(world_position: Vector2) -> Vector2:
 	return level_grid.world_to_map(level_grid.to_local(world_position))
 
 func map_to_world(map_position: Vector2) -> Vector2:
-	return level_grid.map_to_world(map_position) / 2
+
+	return level_grid.to_global(level_grid.map_to_world(map_position)) + Vector2(0, level_grid.cell_size.y / 2)
 

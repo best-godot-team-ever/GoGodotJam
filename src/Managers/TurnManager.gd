@@ -1,30 +1,43 @@
-extends Resource
+extends Node
+
 class_name TurnManager
 
-var enemies: Array
-var machines: Array
-var triggers: Array
-var player
+var _board_manager: Node
 
+var machines: Array = []
+var enemies: Array = []
 
+var is_player_turn = true
+
+var player_entity_id = -1
+
+func init(board_manager: BoardManager) -> void:
+	_board_manager = board_manager
+
+func set_player_entity_id(player_id: int) -> void:
+	player_entity_id = player_id
+
+func subscribe_machine(machine: Node) -> void:
+	machines.append(machine)
+
+func subscribe_enemy(enemy: Node) -> void:
+	enemies.append(enemy)
+
+# Only the player can end turn...
 func end_turn() -> void:
-	triggers.sort_custom(self,"_sort")
-	for trigger in triggers :
-		trigger.start_turn()
-	
+	is_player_turn = false
 	machines.sort_custom(self,"_sort")
-	for machine in machines :
+	for machine in machines:
 		machine.start_turn()
 	
 	enemies.sort_custom(self,"_sort")
-	for enemy in enemies :
+	for enemy in enemies:
 		enemy.start_turn()
-	
-	player.start_turn()
+
+	_board_manager.drain_energy()
+
+func ready_for_turn() -> void:
+	is_player_turn = true
 
 func _sort(entity1, entity2) -> bool:
 	return entity1.turn_speed > entity2.turn_speed
-
-# Objects that inherit from Enemy and Machine Classes, already append themselves when ready to the enemies and machines array.
-# they also have the tuen manager preloaded. But they need to have in their start_turn() method a yield() (you can always use yield(get_tree().create_timer(0.0), "timeout"))
-
