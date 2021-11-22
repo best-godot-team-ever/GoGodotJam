@@ -19,7 +19,8 @@ func start_turn() -> void:
 				current_state = LeecherStates.Following
 		LeecherStates.Following:
 			var _next_location = _get_next_target_coord()
-			move_on_map(_next_location - get_current_position())
+			var move_direction = _decide_movement(_next_location - get_current_position())
+			move_on_map(move_direction)
 			# if _board_manager.get_cell(get_current_position()).energy_level == 0:
 			# 	current_state = PoweredOff
 			# 	# Play Powered off Animation
@@ -37,6 +38,32 @@ func _get_next_target_coord() -> Vector2:
 			max_energy = tile_list.get(key).energy_level
 
 	return target
+
+# I got no idea so I am gonna use Felipe's code
+func _decide_movement(energy_coordinate: Vector2) -> Vector2:
+		# Decide movement:
+		var energy_direction = Vector2(0,0)
+		var coord_x_uni = Vector2(0,0)
+		var coord_y_uni = Vector2(0,0)
+		# Un-dimensionalization:
+		if energy_coordinate.x != 0:
+			coord_x_uni = Vector2(energy_coordinate.x/abs(energy_coordinate.x),0)
+		if energy_coordinate.y != 0:
+			coord_y_uni = Vector2(0, energy_coordinate.y/abs(energy_coordinate.y))
+	
+		if abs(energy_coordinate.x) == abs(energy_coordinate.y):
+			# moves randorly but in the correct direction
+			if randi() % 2:
+				energy_direction = coord_x_uni
+			else:
+				energy_direction = coord_y_uni
+		elif abs(energy_coordinate.x) > abs(energy_coordinate.y):
+			# moves horizontaly
+			energy_direction = coord_x_uni
+		else:
+			# moves vertically
+			energy_direction = coord_y_uni
+		return energy_direction
 
 # Too faking tired to try and figure out a pretty solution. Hard code it is
 func _get_near_cells_list(coord: Vector2, radius: int = 1) -> Array:

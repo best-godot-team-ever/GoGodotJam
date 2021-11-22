@@ -15,7 +15,6 @@ func init(board_manager: BoardManager) -> void:
 	_board_manager = board_manager
 
 func set_player_entity_id(player_id: int) -> void:
-	print(player_id)
 	player_entity_id = player_id
 
 func subscribe_machine(machine: Node) -> void:
