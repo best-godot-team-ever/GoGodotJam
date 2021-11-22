@@ -1,11 +1,11 @@
 extends Node
-
 class_name TurnManager
 
 var _board_manager: Node
 
 var machines: Array = []
 var enemies: Array = []
+var triggers : Array = []
 
 var is_player_turn = true
 
@@ -23,9 +23,17 @@ func subscribe_machine(machine: Node) -> void:
 func subscribe_enemy(enemy: Node) -> void:
 	enemies.append(enemy)
 
+func subscribe_trigger(trigger: Node) -> void:
+	triggers.append(trigger)
+
 # Only the player can end turn...
 func end_turn() -> void:
 	is_player_turn = false
+	
+	triggers.sort_custom(self,"_sort")
+	for trigger in triggers:
+		trigger.start_turn()
+	
 	machines.sort_custom(self,"_sort")
 	for machine in machines:
 		machine.start_turn()

@@ -1,5 +1,4 @@
 extends Node2D
-
 class_name BoardManager
 
 onready var level_grid = $LevelGrid
