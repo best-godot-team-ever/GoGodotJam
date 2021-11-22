@@ -4,13 +4,14 @@ class_name BoardManager
 onready var level_grid = $LevelGrid
 onready var energy_grid = $EnergyGrid
 onready var entity_grid = $EntityGrid
+onready var machine_grid = $MachineGrid
 
 # =======================================================
 #    Entity.
 # =======================================================
 func add_entity(entity_to_add: Node, map_position: Vector2) -> int:
 	if not is_in_level(map_position):
-		return -1
+		return entity_grid.NO_ENTITY
 	
 	return entity_grid.add_entity(entity_to_add, map_position)
 
@@ -22,6 +23,18 @@ func update_entity_position(entity_id: int, map_position: Vector2) -> void:
 
 func get_entity_position_by_id(entity_id: int) -> Vector2:
 	return entity_grid.get_entity_position_by_id(entity_id)
+
+# =======================================================
+#    Machines.
+# =======================================================
+func add_machine(machine_to_add: Node, map_position: Vector2):
+	if not is_in_level(map_position):
+		return machine_grid.NO_MACHINE
+
+	return machine_grid.add_machine(machine_to_add, map_position)
+
+func set_machine_blocking(machine_id, is_blocking) -> void:
+	machine_grid.set_machine_blocking(machine_id, is_blocking)
 
 # =======================================================
 #    Energy
@@ -43,9 +56,8 @@ func drain_energy() -> void:
 func get_cell(map_position: Vector2) -> Dictionary:
 	return {
 		"is_in_level": is_in_level(map_position),
-		"is_occupied": is_occupied(map_position),
-		"energy_level": energy_grid.get_cell(map_position),
-		"entity_info": entity_grid.get_entity_info_by_position(map_position)
+		"is_blocked": is_blocked(map_position),
+		"energy_level": energy_grid.get_cell(map_position)
 	}
 
 # A mass get function
@@ -64,8 +76,8 @@ func get_cells(map_positions: Array) -> Dictionary:
 func is_in_level(map_position: Vector2) -> bool:
 	return level_grid.get_cell(map_position.x, map_position.y) != level_grid.INVALID_CELL
 
-func is_occupied(map_position: Vector2) -> bool:
-	return entity_grid.get_entity_info_by_position(map_position).get("entity_id", -1) != entity_grid.NO_ENTITY
+func is_blocked(map_position: Vector2) -> bool:
+	return entity_grid.get_position_is_blocked(map_position) or machine_grid.get_position_is_blocked(map_position)
 
 # =======================================================
 #    World space < --- > Map space transfer

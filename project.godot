@@ -12,7 +12,7 @@ _global_script_classes=[ {
 "base": "Node2D",
 "class": "BoardManager",
 "language": "GDScript",
-"path": "res://src/Managers/BoardManager.gd"
+"path": "res://src/Managers/BoardManager/BoardManager.gd"
 }, {
 "base": "Node2D",
 "class": "Machines",
