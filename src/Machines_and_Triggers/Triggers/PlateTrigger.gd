@@ -1,14 +1,7 @@
-extends Node2D
+extends "res://src/Machines_and_Triggers/Triggers/Trigger.gd"
 
-export (Array, PackedScene) var _link_with_machines
-export var turn_speed : int = 0
 
-enum PlateTriggerStates {Activated, Deactivated}
-
-var current_state: int = PlateTriggerStates.Deactivated
 var _is_occupied : bool = false
-
-onready var _board_manager = get_parent().get_node("BoardManager")
 
 
 func start_turn() -> void:
@@ -16,19 +9,7 @@ func start_turn() -> void:
 	match _is_occupied:
 		true:
 			power_up_machines()
-			current_state = PlateTriggerStates.Activated
+			current_state = TriggerStates.Activated
 		false:
 			shut_down_machines()
-			current_state = PlateTriggerStates.Deactivated
-
-func power_up_machines() -> void:
-	for machine in _link_with_machines:
-		machine.set_power_on(true)
-
-func shut_down_machines() -> void:
-	for machine in _link_with_machines:
-		machine.set_power_on(false)
-
-
-
-
+			current_state = TriggerStates.Deactivated

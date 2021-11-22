@@ -1,5 +1,6 @@
 extends Node
 
+
 var edited_cells = []
 
 # These fuctions are used to edit each individual cells

@@ -14,14 +14,32 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/Managers/BoardManager.gd"
 }, {
+"base": "Node2D",
+"class": "Machines",
+"language": "GDScript",
+"path": "res://src/Machines_and_Triggers/Machines/Machine.gd"
+}, {
+"base": "Node2D",
+"class": "Trigger",
+"language": "GDScript",
+"path": "res://src/Machines_and_Triggers/Triggers/Trigger.gd"
+}, {
 "base": "Node",
 "class": "TurnManager",
 "language": "GDScript",
 "path": "res://src/Managers/TurnManager.gd"
+}, {
+"base": "Node2D",
+"class": "laser",
+"language": "GDScript",
+"path": "res://src/Machines_and_Triggers/Machines/Laser.gd"
 } ]
 _global_script_class_icons={
 "BoardManager": "",
-"TurnManager": ""
+"Machines": "",
+"Trigger": "",
+"TurnManager": "",
+"laser": ""
 }
 
 [application]
