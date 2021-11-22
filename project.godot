@@ -14,25 +14,13 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/Managers/BoardManager.gd"
 }, {
-"base": "Node2D",
-"class": "Enemy",
-"language": "GDScript",
-"path": "res://src/Entities/Enemies/Enemy.gd"
-}, {
-"base": "Node2D",
-"class": "Machine",
-"language": "GDScript",
-"path": "res://src/Entities/Machines/Machine.gd"
-}, {
-"base": "Resource",
+"base": "Node",
 "class": "TurnManager",
 "language": "GDScript",
 "path": "res://src/Managers/TurnManager.gd"
 } ]
 _global_script_class_icons={
 "BoardManager": "",
-"Enemy": "",
-"Machine": "",
 "TurnManager": ""
 }
 

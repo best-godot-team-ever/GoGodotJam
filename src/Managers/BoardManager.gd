@@ -6,9 +6,6 @@ onready var level_grid = $LevelGrid
 onready var energy_grid = $EnergyGrid
 onready var entity_grid = $EntityGrid
 
-func _ready() -> void:
-	print(map_to_world(Vector2(0,0)))
-
 # =======================================================
 #    Entity.
 # =======================================================

@@ -5,15 +5,21 @@ enum EntityType {Player, Grabber, Leecher}
 onready var tween = $Tween
 
 var _board_manager: BoardManager
+var _turn_manager: TurnManager
 
 var entity_id: int
 export(EntityType) var entity_type
+export var turn_speed: int = 0
 
 func _ready() -> void:
 	tween.connect("tween_all_completed", self, "_animation_finished")
 
-func init(board_manager: BoardManager) -> void:
+func init(board_manager: BoardManager, turn_manager: TurnManager) -> void:
+	_initialize(board_manager, turn_manager)
+
+func _initialize(board_manager: Node, turn_manager: Node) -> void:
 	_board_manager = board_manager
+	_turn_manager = turn_manager
 
 	entity_id = _board_manager.add_entity(self, board_manager.world_to_map(position))
 	assert(entity_id != _board_manager.entity_grid.NO_ENTITY)
