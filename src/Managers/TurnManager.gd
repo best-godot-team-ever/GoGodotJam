@@ -3,19 +3,22 @@ class_name TurnManager
 
 var enemies: Array
 var machines: Array
+var triggers: Array
 var player
 
 
 func end_turn() -> void:
+	triggers.sort_custom(self,"_sort")
+	for trigger in triggers :
+		trigger.start_turn()
+	
 	machines.sort_custom(self,"_sort")
 	for machine in machines :
 		machine.start_turn()
-		yield(machine.start_turn(), "completed")
 	
 	enemies.sort_custom(self,"_sort")
 	for enemy in enemies :
 		enemy.start_turn()
-		yield(enemy.start_turn(), "completed")
 	
 	player.start_turn()
 

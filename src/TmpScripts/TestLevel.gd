@@ -3,6 +3,7 @@ extends Node2D
 onready var board_manager = $BoardManager
 onready var player = $Player
 
+
 func _ready() -> void:
 
 	# Currently this script doesn't do anything. I am just using to test my code in Board Manager. U can delete this.
