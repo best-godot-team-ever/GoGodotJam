@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://resources/GroundTileset.tres" type="TileSet" id=1]
 [ext_resource path="res://src/Managers/TurnManager.gd" type="Script" id=2]
@@ -12,6 +12,9 @@
 [ext_resource path="res://src/Entity/Player/Player.tscn" type="PackedScene" id=10]
 [ext_resource path="res://src/Managers/BoardManager/Grid/BlockingGrid.gd" type="Script" id=11]
 [ext_resource path="res://src/Managers/BoardManager/Grid/ObjectGrid/MachineGrid.gd" type="Script" id=12]
+[ext_resource path="res://src/Machines_and_Triggers/Triggers/PlateTrigger.tscn" type="PackedScene" id=13]
+[ext_resource path="res://src/Machines_and_Triggers/Triggers/EnergyTrigger.tscn" type="PackedScene" id=14]
+[ext_resource path="res://src/Machines_and_Triggers/Machines/Door.tscn" type="PackedScene" id=15]
 
 [node name="TestLevel" type="Node2D"]
 script = ExtResource( 9 )
@@ -58,7 +61,7 @@ color = Color( 0.188235, 0.164706, 0.164706, 1 )
 [node name="Entities" type="YSort" parent="."]
 
 [node name="Leecher" parent="Entities" instance=ExtResource( 4 )]
-position = Vector2( 101, 60 )
+position = Vector2( 102, 58 )
 
 [node name="Grabber" parent="Entities" instance=ExtResource( 3 )]
 position = Vector2( -80, 28 )
@@ -67,3 +70,18 @@ position = Vector2( -80, 28 )
 position = Vector2( 1, 8 )
 
 [node name="Machines" type="YSort" parent="."]
+
+[node name="Door" parent="Machines" instance=ExtResource( 15 )]
+position = Vector2( 82, 90 )
+
+[node name="EnergyTrigger" parent="Machines" instance=ExtResource( 14 )]
+position = Vector2( -20, 80 )
+machine_type = 3
+_link_with_machines = [ NodePath("../Door") ]
+_energy_trigger = 3
+
+[node name="PlateTrigger" parent="Machines" instance=ExtResource( 13 )]
+position = Vector2( 42, 49 )
+turn_speed = 2
+machine_type = 4
+_link_with_machines = [ NodePath("../Door") ]

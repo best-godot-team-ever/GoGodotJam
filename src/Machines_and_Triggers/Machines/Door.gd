@@ -4,11 +4,16 @@ var opened : bool = false
 
 func start_turn() -> void:
 	match current_state:
-		MachineStates.PoweredOff:
+		MachineStates.Activated:
+			print("i am activated")
 			if opened:
-				_board_manager.set_machine_blocking(_board_manager.add_machine(self, _map_position), true)
+				_board_manager.set_machine_blocking(machine_id, true)
 				opened = false
-		MachineStates.PoweredOn:
+				print ("i closed")
+				
+		MachineStates.Deactivated:
+			print ("i am deactivated")
 			if !opened:
-				_board_manager.set_machine_blocking(_board_manager.add_machine(self, _map_position), false)
+				_board_manager.set_machine_blocking(machine_id, false)
 				opened = true
+				print ("i opened")
