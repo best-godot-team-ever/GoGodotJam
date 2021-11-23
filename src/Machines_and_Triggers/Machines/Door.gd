@@ -1,9 +1,14 @@
-extends "res://src/Machines_and_Triggers/Machines/Machine.gd"
+extends Machines
 
+var opened : bool = false
 
 func start_turn() -> void:
 	match current_state:
 		MachineStates.PoweredOff:
-			pass
+			if opened:
+				_board_manager.set_machine_blocking(_board_manager.add_machine(self, _map_position), true)
+				opened = false
 		MachineStates.PoweredOn:
-			pass
+			if !opened:
+				_board_manager.set_machine_blocking(_board_manager.add_machine(self, _map_position), false)
+				opened = true

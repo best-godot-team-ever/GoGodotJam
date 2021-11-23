@@ -1,4 +1,4 @@
-extends "res://src/Machines_and_Triggers/Machines/Laser.gd"
+extends laser
 
 export (String, "set_energy", "add_energy") var type = "add_energy"
 export var _energy_ammount : int = 3
