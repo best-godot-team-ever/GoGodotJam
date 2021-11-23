@@ -27,7 +27,7 @@ func _move() -> bool:
 
 	next_action_queue = NO_ACTION
 	var cell_data = _board_manager.get_cell(planned_position)
-	if not cell_data.is_in_level or cell_data.is_blocked:
+	if not move_direction == Vector2.ZERO and (not cell_data.is_in_level or cell_data.is_blocked):
 		return false
 
 	# Execute the Turn
