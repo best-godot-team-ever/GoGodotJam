@@ -9,7 +9,7 @@ func start_turn() -> void:
 	match _is_occupied:
 		true:
 			power_up_machines()
-			current_state = TriggerStates.Activated
+			current_state = MachineStates.Activated
 		false:
 			shut_down_machines()
-			current_state = TriggerStates.Deactivated
+			current_state = MachineStates.Deactivated

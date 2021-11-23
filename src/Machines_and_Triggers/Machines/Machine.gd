@@ -10,7 +10,8 @@ export (String, "Door", "LaserUp", "LaserDown", "EnergyTrigger", "PlateTrigger")
 export var turn_speed: int = 0
 export (MachineType) var machine_type 
 
-onready var tween = $Tween
+#onready var tween = $Tween
+onready var _animated_sprite = $AnimatedSprite
 
 var _board_manager: BoardManager
 var _turn_manager: TurnManager
@@ -21,8 +22,8 @@ var _map_position : Vector2
 var _blockers : Array = ["Door", "LaserUp", "LaserDown"]
 
 
-func _ready() -> void:
-	tween.connect("tween_all_completed", self, "_animation_finished")
+#func _ready() -> void:
+#	tween.connect("tween_all_completed", self, "_animation_finished")
 
 func init(board_manager: BoardManager, turn_manager: TurnManager) -> void:
 	_initialize(board_manager, turn_manager)
@@ -45,5 +46,7 @@ func set_power_on(value: bool) -> void:
 	power_on = value
 	if power_on == true:
 		current_state = MachineStates.Activated
+		_animated_sprite.play("activated")
 	if power_on == false:
 		current_state = MachineStates.Deactivated
+		_animated_sprite.play("deactivated")
