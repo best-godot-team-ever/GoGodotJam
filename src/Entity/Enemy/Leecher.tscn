@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=47 format=2]
 
 [ext_resource path="res://src/Entity/Entity.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/entities/leech-Sheet.png" type="Texture" id=2]
@@ -247,6 +247,118 @@ tracks/1/keys = {
 "values": [ true ]
 }
 
+[sub_resource type="Animation" id=30]
+resource_name = "powering_off_back_left"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 22, 21, 20, 19, 18 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=31]
+resource_name = "powering_off_back_right"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 22, 21, 20, 19, 18 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=32]
+resource_name = "powering_off_front_left"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 17, 16, 15, 14, 13, 12 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=33]
+resource_name = "powering_off_front_right"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 17, 16, 15, 14, 13, 12 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
 [sub_resource type="Animation" id=2]
 resource_name = "powering_on_back_left"
 length = 0.6
@@ -359,7 +471,28 @@ tracks/1/keys = {
 "values": [ true ]
 }
 
+[sub_resource type="AnimationNodeAnimation" id=34]
+animation = "idle_front_left"
+
+[sub_resource type="AnimationNodeAnimation" id=35]
+animation = "idle_front_right"
+
+[sub_resource type="AnimationNodeAnimation" id=36]
+animation = "idle_back_right"
+
+[sub_resource type="AnimationNodeAnimation" id=37]
+animation = "idle_back_left"
+
 [sub_resource type="AnimationNodeBlendSpace2D" id=28]
+blend_point_0/node = SubResource( 34 )
+blend_point_0/pos = Vector2( 0, 0.9 )
+blend_point_1/node = SubResource( 35 )
+blend_point_1/pos = Vector2( 1, 0 )
+blend_point_2/node = SubResource( 36 )
+blend_point_2/pos = Vector2( 0, -1 )
+blend_point_3/node = SubResource( 37 )
+blend_point_3/pos = Vector2( -1, 0 )
+blend_mode = 1
 
 [sub_resource type="AnimationNodeAnimation" id=18]
 animation = "powered_off_front_left"
@@ -377,10 +510,33 @@ animation = "powered_off_back_left"
 blend_point_0/node = SubResource( 18 )
 blend_point_0/pos = Vector2( 0, 0.9 )
 blend_point_1/node = SubResource( 19 )
-blend_point_1/pos = Vector2( 0.9, 0 )
+blend_point_1/pos = Vector2( 1, 0 )
 blend_point_2/node = SubResource( 20 )
-blend_point_2/pos = Vector2( 0, -0.8 )
+blend_point_2/pos = Vector2( 0, -1 )
 blend_point_3/node = SubResource( 21 )
+blend_point_3/pos = Vector2( -1, 0 )
+blend_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id=38]
+animation = "powering_off_front_left"
+
+[sub_resource type="AnimationNodeAnimation" id=39]
+animation = "powering_off_front_right"
+
+[sub_resource type="AnimationNodeAnimation" id=40]
+animation = "powering_off_back_right"
+
+[sub_resource type="AnimationNodeAnimation" id=41]
+animation = "powering_off_back_left"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id=42]
+blend_point_0/node = SubResource( 38 )
+blend_point_0/pos = Vector2( 0, 0.9 )
+blend_point_1/node = SubResource( 39 )
+blend_point_1/pos = Vector2( 1, 0 )
+blend_point_2/node = SubResource( 40 )
+blend_point_2/pos = Vector2( 0, -1 )
+blend_point_3/node = SubResource( 41 )
 blend_point_3/pos = Vector2( -1, 0 )
 blend_mode = 1
 
@@ -398,7 +554,7 @@ animation = "powering_on_back_left"
 
 [sub_resource type="AnimationNodeBlendSpace2D" id=6]
 blend_point_0/node = SubResource( 10 )
-blend_point_0/pos = Vector2( 0, 1 )
+blend_point_0/pos = Vector2( 0, 0.9 )
 blend_point_1/node = SubResource( 11 )
 blend_point_1/pos = Vector2( 0, -1 )
 blend_point_2/node = SubResource( 12 )
@@ -412,15 +568,23 @@ blend_mode = 1
 [sub_resource type="AnimationNodeStateMachineTransition" id=29]
 switch_mode = 2
 
+[sub_resource type="AnimationNodeStateMachineTransition" id=43]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=44]
+switch_mode = 2
+
 [sub_resource type="AnimationNodeStateMachine" id=7]
 states/idle/node = SubResource( 28 )
 states/idle/position = Vector2( 860, 138 )
 states/powered_off/node = SubResource( 22 )
 states/powered_off/position = Vector2( 291, 153 )
+states/powering_off/node = SubResource( 42 )
+states/powering_off/position = Vector2( 608, 237 )
 states/powering_up/node = SubResource( 6 )
-states/powering_up/position = Vector2( 588, 84 )
-transitions = [ "powered_off", "powering_up", SubResource( 23 ), "powering_up", "idle", SubResource( 29 ) ]
+states/powering_up/position = Vector2( 587, 84 )
+transitions = [ "powered_off", "powering_up", SubResource( 23 ), "powering_up", "idle", SubResource( 29 ), "idle", "powering_off", SubResource( 43 ), "powering_off", "powered_off", SubResource( 44 ) ]
 start_node = "powered_off"
+graph_offset = Vector2( 9, -10 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=8]
 
@@ -429,7 +593,7 @@ script = ExtResource( 3 )
 
 [node name="Sprite" parent="." index="0"]
 texture = ExtResource( 2 )
-offset = Vector2( 0, -15 )
+offset = Vector2( 0, -5 )
 hframes = 6
 vframes = 4
 frame = 13
@@ -455,6 +619,10 @@ anims/powered_off_back_left = SubResource( 9 )
 anims/powered_off_back_right = SubResource( 15 )
 anims/powered_off_front_left = SubResource( 16 )
 anims/powered_off_front_right = SubResource( 17 )
+anims/powering_off_back_left = SubResource( 30 )
+anims/powering_off_back_right = SubResource( 31 )
+anims/powering_off_front_left = SubResource( 32 )
+anims/powering_off_front_right = SubResource( 33 )
 anims/powering_on_back_left = SubResource( 2 )
 anims/powering_on_back_right = SubResource( 3 )
 anims/powering_on_front_left = SubResource( 4 )
@@ -466,5 +634,6 @@ anim_player = NodePath("../AnimationPlayer")
 active = true
 parameters/playback = SubResource( 8 )
 parameters/idle/blend_position = Vector2( 0, 0 )
-parameters/powered_off/blend_position = Vector2( -0.252595, 0.327586 )
-parameters/powering_up/blend_position = Vector2( -0.0190312, 0.534483 )
+parameters/powered_off/blend_position = Vector2( 0, 0 )
+parameters/powering_off/blend_position = Vector2( 0, 0 )
+parameters/powering_up/blend_position = Vector2( 0, 0 )

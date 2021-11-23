@@ -14,15 +14,18 @@ func start_turn() -> void:
 			if _board_manager.get_cell(get_current_position()).energy_level > 0:
 				current_state = LeecherStates.Idle
 				# Play Power on Animation?
+				anim_state_machine.travel("idle")
 		LeecherStates.Idle:
 			if _board_manager.get_cell(get_current_position()).energy_level > 0:
 				current_state = LeecherStates.Following
 		LeecherStates.Following:
 			var _next_location = _get_next_target_coord()
 			var move_direction = _decide_movement(_next_location - get_current_position())
+			_set_anim_direction(move_direction)
 			move_on_map(move_direction)
-			# if _board_manager.get_cell(get_current_position()).energy_level == 0:
-			# 	current_state = PoweredOff
+			if _board_manager.get_cell(get_current_position()).energy_level == 0:
+				current_state = LeecherStates.PoweredOff
+				anim_state_machine.travel("powered_off")
 			# 	# Play Powered off Animation
 	$Label.set_text(LeecherStates.keys()[current_state])
 
@@ -72,3 +75,9 @@ func _get_near_cells_list(coord: Vector2, radius: int = 1) -> Array:
 		for y in range(-radius, radius + 1):
 			list.append(Vector2(coord.x + x, coord.y + y))
 	return list
+
+func _set_anim_direction(direction: Vector2) -> void:
+	animation_tree["parameters/idle/blend_position"] = direction
+	animation_tree["parameters/powered_off/blend_position"] = direction
+	animation_tree["parameters/powering_off/blend_position"] = direction
+	animation_tree["parameters/powering_up/blend_position"] = direction

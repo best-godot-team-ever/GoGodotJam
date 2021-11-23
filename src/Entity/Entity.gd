@@ -3,6 +3,8 @@ extends Node2D
 enum EntityType {Player, Grabber, Leecher}
 
 onready var tween = $Tween
+onready var animation_tree = $AnimationTree
+onready var anim_state_machine = $AnimationTree["parameters/playback"]
 
 var _board_manager: BoardManager
 var _turn_manager: TurnManager

@@ -4,9 +4,6 @@ enum {Move, Pulse}
 
 const NO_ACTION = -1
 
-onready var animation_tree = $AnimationTree
-onready var anim_state_machine = $AnimationTree["parameters/playback"]
-
 onready var viewport_midpoint: Vector2 = get_viewport_rect().size / 2
 
 var move_direction = Vector2()
