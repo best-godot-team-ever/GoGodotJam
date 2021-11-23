@@ -3,6 +3,7 @@ extends "res://src/Entity/Entity.gd"
 onready var animated_sprite = $AnimatedSprite
 
 var move_direction = Vector2()
+var movable_cells : Array = []
 
 var is_next_turn_queued = false
 

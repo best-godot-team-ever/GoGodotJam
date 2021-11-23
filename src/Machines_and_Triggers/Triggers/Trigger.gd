@@ -1,15 +1,7 @@
-extends Node2D
+extends Machines
 class_name Trigger
 
 export (Array, PackedScene) var _link_with_machines
-export var turn_speed : int = 0
-
-enum TriggerStates {Activated, Deactivated}
-
-var current_state: int = TriggerStates.Deactivated
-
-onready var _board_manager = get_parent().get_node("BoardManager")
-
 
 func start_turn() -> void:
 	pass

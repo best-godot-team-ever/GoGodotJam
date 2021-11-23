@@ -1,4 +1,4 @@
-extends "res://src/Machines_and_Triggers/Machines/Laser.gd"
+extends laser
 
 
 func start_turn() -> void:

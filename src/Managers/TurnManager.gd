@@ -43,6 +43,9 @@ func end_turn() -> void:
 		enemy.start_turn()
 
 	_board_manager.drain_energy()
+	
+	player
+
 
 func ready_for_turn() -> void:
 	is_player_turn = true

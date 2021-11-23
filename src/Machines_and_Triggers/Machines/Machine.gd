@@ -1,20 +1,25 @@
 extends Node2D
 class_name Machines
 
-enum MachineType {Door, LaserUp, LaserDown}
+enum MachineType {Door, LaserUp, LaserDown, EnergyTrigger, PlateTrigger}
+enum Blockers {Door, LaserUp, LaserDown}
 enum MachineStates {Activated, Deactivated}
+
+
+export (String, "Door", "LaserUp", "LaserDown", "EnergyTrigger", "PlateTrigger") var entity_type
+export var turn_speed: int = 0
+export (MachineType) var machine_type 
 
 onready var tween = $Tween
 
 var _board_manager: BoardManager
 var _turn_manager: TurnManager
+
 var power_on : bool = false setget set_power_on
 var current_state: int = MachineStates.Deactivated
+var _map_position : Vector2
+var _blockers : Array = ["Door", "LaserUp", "LaserDown"]
 
-#
-#var entity_id: int
-#export(EntityType) var entity_type
-#export var turn_speed: int = 0
 
 func _ready() -> void:
 	tween.connect("tween_all_completed", self, "_animation_finished")
@@ -25,19 +30,11 @@ func init(board_manager: BoardManager, turn_manager: TurnManager) -> void:
 func _initialize(board_manager: Node, turn_manager: Node) -> void:
 	_board_manager = board_manager
 	_turn_manager = turn_manager
+	_map_position = _board_manager.world_to_map(position)
+	position = _board_manager.map_to_world(_map_position)
+	if entity_type in Blockers:
+		_board_manager.set_machine_blocking(_board_manager.add_machine(self, _map_position), true)
 
-#	entity_id = _board_manager.add_entity(self, board_manager.world_to_map(position))
-#	assert(entity_id != _board_manager.entity_grid.NO_ENTITY)
-#
-#	position = _board_manager.map_to_world(get_current_position())
-
-
-func get_current_position() -> Vector2:
-	return Vector2.ZERO
-#	return _board_manager.get_entity_position_by_id(entity_id)
-
-# This function should be overwritten in specific classes?
-# or we can break this down further.
 func start_turn() -> void:
 	pass
 

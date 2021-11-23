@@ -15,11 +15,16 @@ _global_script_classes=[ {
 "path": "res://src/Managers/BoardManager/BoardManager.gd"
 }, {
 "base": "Node2D",
+"class": "Coursor",
+"language": "GDScript",
+"path": "res://src/UI/Coursor.gd"
+}, {
+"base": "Node2D",
 "class": "Machines",
 "language": "GDScript",
 "path": "res://src/Machines_and_Triggers/Machines/Machine.gd"
 }, {
-"base": "Node2D",
+"base": "Machines",
 "class": "Trigger",
 "language": "GDScript",
 "path": "res://src/Machines_and_Triggers/Triggers/Trigger.gd"
@@ -29,13 +34,14 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/Managers/TurnManager.gd"
 }, {
-"base": "Node2D",
+"base": "Machines",
 "class": "laser",
 "language": "GDScript",
 "path": "res://src/Machines_and_Triggers/Machines/Laser.gd"
 } ]
 _global_script_class_icons={
 "BoardManager": "",
+"Coursor": "",
 "Machines": "",
 "Trigger": "",
 "TurnManager": "",
@@ -54,12 +60,26 @@ window/size/width=512
 window/size/height=300
 window/size/test_width=1024
 window/size/test_height=600
+mouse_cursor/custom_image="res://assets/UI/Coursor00.png"
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
 
 [editor_plugins]
 
 enabled=PoolStringArray(  )
+
+[input]
+
+left_click={
+"deadzone": 0.5,
+"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
+ ]
+}
+right_click={
+"deadzone": 0.5,
+"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":2,"pressed":false,"doubleclick":false,"script":null)
+ ]
+}
 
 [physics]
 
