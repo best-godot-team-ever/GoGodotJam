@@ -150,7 +150,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id=39]
 resource_name = "move_back_left"
-length = 0.6
+length = 0.4
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -178,7 +178,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id=17]
 resource_name = "move_back_right"
-length = 0.6
+length = 0.4
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -206,7 +206,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id=18]
 resource_name = "move_front_left"
-length = 0.6
+length = 0.4
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -234,7 +234,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id=37]
 resource_name = "move_front_right"
-length = 0.6
+length = 0.4
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1

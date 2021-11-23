@@ -79,47 +79,24 @@ func _pulse() -> void:
 		_end_turn()
 
 func _unhandled_input(event: InputEvent) -> void:
-	if event.is_pressed() and not event.is_echo():
-		if event.is_action("ui_up"):
-			move_direction = Vector2.UP
-		elif event.is_action("ui_down"):
-			move_direction = Vector2.DOWN
-		elif event.is_action("ui_left"):
-			move_direction = Vector2.LEFT
-		elif event.is_action("ui_right"):
-			move_direction = Vector2.RIGHT
-		elif event.is_action("ui_cancel"):
-			move_direction = Vector2.ZERO
-		elif event.is_action("ui_accept"):
-
 	if _is_turn:
 		if event.is_pressed() and not event.is_echo():
 			if event.is_action("up") and _new_cell_up in _movable_cells:
 				_move_to(_new_cell_up)
+				anim_player.play("move_back_right")
 			elif event.is_action("down") and _new_cell_down in _movable_cells:
 				_move_to(_new_cell_down)
+				anim_player.play("move_front_left")
 			elif event.is_action("left") and _new_cell_left in _movable_cells:
 				_move_to(_new_cell_left)
+				anim_player.play("move_back_left")
 			elif event.is_action("right") and _new_cell_right in _movable_cells: 
 				_move_to(_new_cell_right)
+				anim_player.play("move_front_right")
 			elif event.is_action("pulse"):
 				_pulse()
 			elif event.is_action("wait"):
 				_wait()
-			start_turn()
-			_animate()
-
-
-#### ANIMATIONS
-func _animate() -> void:
-	if move_direction.y < 0:
-		anim_player.play("move_back_right")
-	if move_direction.y > 0:
-		anim_player.play("move_front_left")
-	if move_direction.x < 0:
-		anim_player.play("move_back_left")
-	if move_direction.x > 0:
-		anim_player.play("move_front_right")
 
 
 func _on_AnimationPlayer_animation_finished(anim_name: String) -> void:
@@ -132,8 +109,6 @@ func _on_AnimationPlayer_animation_finished(anim_name: String) -> void:
 			anim_player.play("idle_front_right")
 		"move_front_left":
 			anim_player.play("idle_front_left")
-
-##### END OF ANIMATIONS
 
 
 func _end_turn() -> void:
