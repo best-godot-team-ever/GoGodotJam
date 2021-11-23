@@ -27,7 +27,7 @@ func get_entity_position_by_id(entity_id: int) -> Vector2:
 # =======================================================
 #    Machines.
 # =======================================================
-func add_machine(machine_to_add: Node, map_position: Vector2):
+func add_machine(machine_to_add: Node, map_position: Vector2) -> int:
 	if not is_in_level(map_position):
 		return machine_grid.NO_MACHINE
 
