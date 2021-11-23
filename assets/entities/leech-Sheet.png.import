@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Player-Sheet.png-e3b1590b56ed284ead72bb63e6b90de3.stex"
+path="res://.import/leech-Sheet.png-baa0f18a09fb2e554a2f6f4efeba6a63.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Player-Sheet.png"
-dest_files=[ "res://.import/Player-Sheet.png-e3b1590b56ed284ead72bb63e6b90de3.stex" ]
+source_file="res://assets/entities/leech-Sheet.png"
+dest_files=[ "res://.import/leech-Sheet.png-baa0f18a09fb2e554a2f6f4efeba6a63.stex" ]
 
 [params]
 
