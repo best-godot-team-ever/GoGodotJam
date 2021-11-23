@@ -2,7 +2,6 @@ extends "res://src/Managers/BoardManager/Grid/Grid.gd"
 
 onready var level_grid = get_parent().get_node("LevelGrid")
 var edited_cells = []
-onready var level_grid = get_parent().get_node("LevelGrid")
 
 # These fuctions are used to edit each individual cells
 func add_energy(map_position: Vector2, amount: int) -> void:
