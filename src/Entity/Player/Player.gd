@@ -6,6 +6,8 @@ const NO_ACTION = -1
 
 onready var animated_sprite = $AnimatedSprite
 
+onready var viewport_midpoint: Vector2 = get_viewport_rect().size / 2
+
 var move_direction = Vector2()
 var next_action_queue = NO_ACTION
 
@@ -75,18 +77,46 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event.is_pressed() and not event.is_echo():
 		if event.is_action("aim_up"):
 			_update_facing_direction(Vector2.UP)
+			_commit_action(Move)
 		elif event.is_action("aim_down"):
 			_update_facing_direction(Vector2.DOWN)
+			_commit_action(Move)
 		elif event.is_action("aim_left"):
 			_update_facing_direction(Vector2.LEFT)
+			_commit_action(Move)
 		elif event.is_action("aim_right"):
 			_update_facing_direction(Vector2.RIGHT)
+			_commit_action(Move)
 		elif event.is_action("aim_cancel"):
 			_update_facing_direction(Vector2.ZERO)
+			_commit_action(Move)
 		elif event.is_action("commit_move"):
 			_commit_action(Move)
 		elif event.is_action("commit_pulse"):
 			_commit_action(Pulse)
+
+		# Mouse Input
+		elif event.is_action("commit_mouse_move"):
+			_update_facing_direction(_get_mouse_facing_direction(event.get_position()))
+			_commit_action(Move)
+		elif event.is_action("commit_mouse_skip"):
+			_update_facing_direction(Vector2.ZERO)
+			_commit_action(Move)
+
+func _get_mouse_facing_direction(screen_space_coord: Vector2) -> Vector2:
+	var offset = viewport_midpoint - screen_space_coord
+	offset = Vector2(sign(offset.x), sign(offset.y))
+
+	if offset == Vector2(1,1):
+		return Vector2.LEFT
+	elif offset == Vector2(-1,-1):
+		return Vector2.RIGHT
+	elif offset == Vector2(1, -1):
+		return Vector2.DOWN
+	elif offset == Vector2(-1, 1):
+		return Vector2.UP
+	
+	return Vector2()
 
 func move_on_map(direction: Vector2):
 	.move_on_map(direction)
