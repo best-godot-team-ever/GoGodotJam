@@ -4,7 +4,8 @@ enum {Move, Pulse}
 
 const NO_ACTION = -1
 
-onready var animated_sprite = $AnimatedSprite
+onready var animation_tree = $AnimationTree
+onready var anim_state_machine = $AnimationTree["parameters/playback"]
 
 onready var viewport_midpoint: Vector2 = get_viewport_rect().size / 2
 
@@ -120,42 +121,22 @@ func _get_mouse_facing_direction(screen_space_coord: Vector2) -> Vector2:
 
 func move_on_map(direction: Vector2):
 	.move_on_map(direction)
-	_play_moving_animation()
+	anim_state_machine.travel("Move")
 	_board_manager.set_energy(get_current_position(), 3 if direction.length() != 0 else _board_manager.get_cell(get_current_position()).get("energy_level") + 1)
-
-func _play_moving_animation():
-	if animated_sprite.animation == "idle_back":
-		animated_sprite.play("moving_back")
-	else:
-		animated_sprite.play("moving_front")
-
+	
 func _update_facing_direction(direction: Vector2):
 	move_direction = direction
 
 	if not _turn_manager.is_player_turn:
 		return
 
-	match direction:
-		Vector2.UP:
-			animated_sprite.play("idle_back")
-			animated_sprite.flip_h = false
-		Vector2.DOWN:
-			animated_sprite.play("idle_front")
-			animated_sprite.flip_h = false
-
-
-		Vector2.LEFT:
-			animated_sprite.play("idle_back")
-			animated_sprite.flip_h = true
-
-		Vector2.RIGHT:
-			animated_sprite.play("idle_front")
-			animated_sprite.flip_h = true
-
+	animation_tree["parameters/Idle/blend_position"] = direction
+	animation_tree["parameters/Move/blend_position"] = direction
 
 func _animation_finished() -> void:
 	_turn_manager.ready_for_turn()
 	_update_facing_direction(move_direction)
+	anim_state_machine.travel("Idle")
 	# Lol.... Here?
 	health += 0 if health == 100 else 10
 
