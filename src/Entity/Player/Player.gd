@@ -1,91 +1,149 @@
 extends "res://src/Entity/Entity.gd"
 
+enum {Move, Pulse}
 
-const Directions : Array = [Vector2.UP, Vector2.DOWN, Vector2.LEFT, Vector2.RIGHT]
+const NO_ACTION = -1
 
-var _is_turn : bool = true
-var _movable_cells : Array = []
-var _new_cell_up
-var _new_cell_down
-var _new_cell_left
-var _new_cell_right 
-var health := 100.0 setget set_health
-var _max_health := 100
-var _pulse_radius = 2
+onready var animation_tree = $AnimationTree
+onready var anim_state_machine = $AnimationTree["parameters/playback"]
 
+onready var viewport_midpoint: Vector2 = get_viewport_rect().size / 2
+
+var move_direction = Vector2()
+var next_action_queue = NO_ACTION
+
+var health = 100
 
 func _initialize(board_manager: Node, turn_manager: Node) -> void:
 	._initialize(board_manager, turn_manager)
-	_turn_manager.player = self
-	start_turn()
+	_turn_manager.set_player_entity_id(entity_id)
+	_board_manager.set_energy(get_current_position(), 3)
+	_board_manager.drain_energy()
 
-func start_turn() -> void:
-	_set_new_cells(get_current_position())
-	_movable_cells = _get_movable_cells(get_current_position())
-	_is_turn = true
+func _process(_delta: float) -> void:
+	if next_action_queue != NO_ACTION and _turn_manager.is_player_turn:
+		_commit_action(next_action_queue)
 
-func _set_new_cells(current_position: Vector2) -> void:
-	_new_cell_up = get_current_position() + Vector2.UP
-	_new_cell_down = get_current_position() + Vector2.DOWN
-	_new_cell_left = get_current_position() + Vector2.LEFT
-	_new_cell_right = get_current_position() + Vector2.RIGHT
+func _move() -> bool:
+	# Plan the Turn
+	var planned_position = get_current_position() + move_direction
 
-func _get_movable_cells(current_position : Vector2) -> Array:
-	var out : Array
-	for direction in Directions:
-		var test_cell = current_position + direction
-		var test_cell_data = _board_manager.get_cell(test_cell)
-		if  !test_cell_data.is_in_level or test_cell_data.is_blocked:
-			continue
-		out.append(test_cell)
-	return out
+	next_action_queue = NO_ACTION
+	var cell_data = _board_manager.get_cell(planned_position)
+	if not move_direction == Vector2.ZERO and (not cell_data.is_in_level or cell_data.is_blocked):
+		return false
 
-func move_to(new_cell: Vector2) -> void:
-	.move_on_map(new_cell - get_current_position())
-	_board_manager.set_energy(new_cell, 3)
-	_end_turn()
+	# Execute the Turn
+	move_on_map(move_direction)
+	return true
 
-func _wait() -> void:
-	_board_manager.get_cell(get_current_position()).get("energy_level") + 1
-	_end_turn()
+func _pulse() -> bool:
+	next_action_queue = NO_ACTION
 
-func _pulse() -> void:
 	if health <= 60:
 		$Label.set_text("No pulse, Energy low %s" % health)
-		pass
+		return false
+	
 	health -= 60
 	$Label.set_text("pulse! %s" % health)
-	
+	var radius = 2
 	var coord = get_current_position()
-	for x in range(-_pulse_radius, _pulse_radius + 1):
-		for y in range(-_pulse_radius, _pulse_radius + 1):
+	for x in range(-radius, radius + 1):
+		for y in range(-radius, radius + 1):
 			var target = Vector2(coord.x + x, coord.y + y)
 			var cell_data = _board_manager.get_cell(target)
 			_board_manager.set_energy(target, 3 if cell_data.energy_level < 3 else cell_data.energy_level + 1)
-		
-		_end_turn()
 
-func _unhandled_input(event: InputEvent) -> void:
-	if _is_turn:
-		if event.is_pressed() and not event.is_echo():
-			if event.is_action("up") and _new_cell_up in _movable_cells:
-				move_to(_new_cell_up)
-			elif event.is_action("down") and _new_cell_down in _movable_cells:
-				move_to(_new_cell_down)
-			elif event.is_action("left") and _new_cell_left in _movable_cells:
-				move_to(_new_cell_left)
-			elif event.is_action("right") and _new_cell_right in _movable_cells: 
-				move_to(_new_cell_right)
-			elif event.is_action("pulse"):
-				_pulse()
-			elif event.is_action("wait"):
-				_wait()
 
-func _end_turn() -> void:
-	_is_turn = false
+	# This is here for now... but it rly should have an animation attached to it
+	_fake_animation()
+	return true
+
+func _commit_action(action: int) -> void:
+	if not _turn_manager.is_player_turn:
+		next_action_queue = action if next_action_queue == NO_ACTION or next_action_queue != action else NO_ACTION
+		return
+
+	$Label.set_text("")
+
+	match action:
+		Move:
+			if not _move():
+				return
+		Pulse:
+			if not _pulse():
+				return
+	
 	_turn_manager.end_turn()
 
-func set_health(value):
-	health = value
-	health = clamp(health, 0, _max_health)
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_pressed() and not event.is_echo():
+		if event.is_action("aim_up"):
+			_update_facing_direction(Vector2.UP)
+			_commit_action(Move)
+		elif event.is_action("aim_down"):
+			_update_facing_direction(Vector2.DOWN)
+			_commit_action(Move)
+		elif event.is_action("aim_left"):
+			_update_facing_direction(Vector2.LEFT)
+			_commit_action(Move)
+		elif event.is_action("aim_right"):
+			_update_facing_direction(Vector2.RIGHT)
+			_commit_action(Move)
+		elif event.is_action("aim_cancel"):
+			_update_facing_direction(Vector2.ZERO)
+			_commit_action(Move)
+		elif event.is_action("commit_move"):
+			_commit_action(Move)
+		elif event.is_action("commit_pulse"):
+			_commit_action(Pulse)
 
+		# Mouse Input
+		elif event.is_action("commit_mouse_move"):
+			_update_facing_direction(_get_mouse_facing_direction(event.get_position()))
+			_commit_action(Move)
+		elif event.is_action("commit_mouse_skip"):
+			_update_facing_direction(Vector2.ZERO)
+			_commit_action(Move)
+
+func _get_mouse_facing_direction(screen_space_coord: Vector2) -> Vector2:
+	var offset = viewport_midpoint - screen_space_coord
+	offset = Vector2(sign(offset.x), sign(offset.y))
+
+	if offset == Vector2(1,1):
+		return Vector2.LEFT
+	elif offset == Vector2(-1,-1):
+		return Vector2.RIGHT
+	elif offset == Vector2(1, -1):
+		return Vector2.DOWN
+	elif offset == Vector2(-1, 1):
+		return Vector2.UP
+	
+	return Vector2()
+
+func move_on_map(direction: Vector2):
+	.move_on_map(direction)
+	if not direction == Vector2.ZERO:
+		anim_state_machine.travel("Move")
+	_board_manager.set_energy(get_current_position(), 3 if direction.length() != 0 else _board_manager.get_cell(get_current_position()).get("energy_level") + 1)
+	
+func _update_facing_direction(direction: Vector2) -> void:
+	move_direction = direction
+
+	if not _turn_manager.is_player_turn or direction == Vector2.ZERO:
+		return
+
+	animation_tree["parameters/Idle/blend_position"] = direction
+	animation_tree["parameters/Move/blend_position"] = direction
+
+func _animation_finished() -> void:
+	_turn_manager.ready_for_turn()
+	_update_facing_direction(move_direction)
+	anim_state_machine.travel("Idle")
+	# Lol.... Here?
+	health += 0 if health == 100 else 10
+
+# This is just to emulate a fake animation
+func _fake_animation() -> void:
+	yield(get_tree().create_timer(0.3), "timeout")
+	_animation_finished()

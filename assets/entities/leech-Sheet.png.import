@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/unknown.png-50ca4cd4f5c6f27f6fe9e979ce9cd620.stex"
+path="res://.import/leech-Sheet.png-baa0f18a09fb2e554a2f6f4efeba6a63.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/unknown.png"
-dest_files=[ "res://.import/unknown.png-50ca4cd4f5c6f27f6fe9e979ce9cd620.stex" ]
+source_file="res://assets/entities/leech-Sheet.png"
+dest_files=[ "res://.import/leech-Sheet.png-baa0f18a09fb2e554a2f6f4efeba6a63.stex" ]
 
 [params]
 
