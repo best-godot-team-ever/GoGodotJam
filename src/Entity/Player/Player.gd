@@ -24,13 +24,11 @@ func start_turn() -> void:
 	_movable_cells = _get_movable_cells(get_current_position())
 	_is_turn = true
 
-
 func _set_new_cells(current_position: Vector2) -> void:
 	_new_cell_up = get_current_position() + Vector2.UP
 	_new_cell_down = get_current_position() + Vector2.DOWN
 	_new_cell_left = get_current_position() + Vector2.LEFT
 	_new_cell_right = get_current_position() + Vector2.RIGHT
-	
 
 func _get_movable_cells(current_position : Vector2) -> Array:
 	var out : Array
@@ -42,7 +40,7 @@ func _get_movable_cells(current_position : Vector2) -> Array:
 		out.append(test_cell)
 	return out
 
-func _move_to(new_cell: Vector2) -> void:
+func move_to(new_cell: Vector2) -> void:
 	.move_on_map(new_cell - get_current_position())
 	_board_manager.set_energy(new_cell, 3)
 	_end_turn()
@@ -50,7 +48,6 @@ func _move_to(new_cell: Vector2) -> void:
 func _wait() -> void:
 	_board_manager.get_cell(get_current_position()).get("energy_level") + 1
 	_end_turn()
-
 
 func _pulse() -> void:
 	if health <= 60:
@@ -72,13 +69,13 @@ func _unhandled_input(event: InputEvent) -> void:
 	if _is_turn:
 		if event.is_pressed() and not event.is_echo():
 			if event.is_action("up") and _new_cell_up in _movable_cells:
-				_move_to(_new_cell_up)
+				move_to(_new_cell_up)
 			elif event.is_action("down") and _new_cell_down in _movable_cells:
-				_move_to(_new_cell_down)
+				move_to(_new_cell_down)
 			elif event.is_action("left") and _new_cell_left in _movable_cells:
-				_move_to(_new_cell_left)
+				move_to(_new_cell_left)
 			elif event.is_action("right") and _new_cell_right in _movable_cells: 
-				_move_to(_new_cell_right)
+				move_to(_new_cell_right)
 			elif event.is_action("pulse"):
 				_pulse()
 			elif event.is_action("wait"):

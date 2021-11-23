@@ -15,10 +15,9 @@ func _unhandled_input(event: InputEvent) -> void:
 
 	if event.is_action_pressed("left_click"):
 		cell = _board_manager.world_to_map(position)
+		if cell in _player._movable_cells:
+			_player.move_to(cell)
 		get_tree().set_input_as_handled()
-		
 
-	if event.is_action_pressed("right_click"):
-		cell = _board_manager.world_to_map(position)
-		get_tree().set_input_as_handled()
+
 
