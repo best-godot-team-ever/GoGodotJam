@@ -17,6 +17,8 @@ var health = 100
 func _initialize(board_manager: Node, turn_manager: Node) -> void:
 	._initialize(board_manager, turn_manager)
 	_turn_manager.set_player_entity_id(entity_id)
+	_board_manager.set_energy(get_current_position(), 3)
+	_board_manager.drain_energy()
 
 func _process(_delta: float) -> void:
 	if next_action_queue != NO_ACTION and _turn_manager.is_player_turn:
@@ -121,13 +123,14 @@ func _get_mouse_facing_direction(screen_space_coord: Vector2) -> Vector2:
 
 func move_on_map(direction: Vector2):
 	.move_on_map(direction)
-	anim_state_machine.travel("Move")
+	if not direction == Vector2.ZERO:
+		anim_state_machine.travel("Move")
 	_board_manager.set_energy(get_current_position(), 3 if direction.length() != 0 else _board_manager.get_cell(get_current_position()).get("energy_level") + 1)
 	
-func _update_facing_direction(direction: Vector2):
+func _update_facing_direction(direction: Vector2) -> void:
 	move_direction = direction
 
-	if not _turn_manager.is_player_turn:
+	if not _turn_manager.is_player_turn or direction == Vector2.ZERO:
 		return
 
 	animation_tree["parameters/Idle/blend_position"] = direction
