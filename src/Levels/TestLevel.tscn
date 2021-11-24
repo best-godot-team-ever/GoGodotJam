@@ -59,27 +59,23 @@ script = ExtResource( 11 )
 [node name="CanvasModulate" type="CanvasModulate" parent="BoardManager"]
 color = Color( 0.188235, 0.164706, 0.164706, 1 )
 
-[node name="Triggers" type="YSort" parent="."]
+[node name="YSort" type="YSort" parent="."]
 
-[node name="EnergyTrigger" parent="Triggers" instance=ExtResource( 14 )]
+[node name="EnergyTrigger" parent="YSort" instance=ExtResource( 14 )]
 position = Vector2( -20, 80 )
 
-[node name="PlateTrigger" parent="Triggers" instance=ExtResource( 13 )]
+[node name="PlateTrigger" parent="YSort" instance=ExtResource( 13 )]
 position = Vector2( 38, 49 )
 
-[node name="Machines" type="YSort" parent="."]
+[node name="Player" parent="YSort" instance=ExtResource( 10 )]
+position = Vector2( 1, 8 )
 
-[node name="Door" parent="Machines" instance=ExtResource( 15 )]
-position = Vector2( 61, 99 )
-_link_with_triggers = [ NodePath("../../Triggers/EnergyTrigger"), NodePath("../../Triggers/PlateTrigger") ]
-
-[node name="Entities" type="YSort" parent="."]
-
-[node name="Leecher" parent="Entities" instance=ExtResource( 4 )]
-position = Vector2( 102, 58 )
-
-[node name="Grabber" parent="Entities" instance=ExtResource( 3 )]
+[node name="Grabber" parent="YSort" instance=ExtResource( 3 )]
 position = Vector2( -80, 28 )
 
-[node name="Player" parent="Entities" instance=ExtResource( 10 )]
-position = Vector2( 1, 8 )
+[node name="Leecher" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( 102, 58 )
+
+[node name="Door" parent="YSort" instance=ExtResource( 15 )]
+position = Vector2( 61, 99 )
+_link_with_triggers = [ NodePath("../EnergyTrigger"), NodePath("../PlateTrigger") ]
