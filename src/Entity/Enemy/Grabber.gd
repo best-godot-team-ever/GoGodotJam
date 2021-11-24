@@ -8,11 +8,11 @@ func start_turn() -> void:
 	match current_state:
 		GrabberState.PoweredOff:
 			if _board_manager.get_cell(get_current_position()).energy_level > 0:
-				current_state = GrabberState.Idle
-				# Play Power on Animation?
-		GrabberState.Idle:
-			if _board_manager.get_cell(get_current_position()).energy_level > 0:
 				current_state = GrabberState.Chasing
+				# Play Power on Animation?
+#		GrabberState.Idle:
+#			if _board_manager.get_cell(get_current_position()).energy_level > 0:
+#				current_state = GrabberState.Chasing
 		GrabberState.Chasing:
 			if _board_manager.get_cell(get_current_position()).energy_level == 0:
 				current_state = GrabberState.PoweredOff

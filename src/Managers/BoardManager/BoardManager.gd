@@ -1,6 +1,8 @@
 extends Node2D
 class_name BoardManager
 
+var visibility : int = 0 setget set_visibility
+
 onready var level_grid = $LevelGrid
 onready var energy_grid = $EnergyGrid
 onready var entity_grid = $EntityGrid
@@ -91,3 +93,17 @@ func map_to_world(map_position: Vector2) -> Vector2:
 
 	return level_grid.to_global(level_grid.map_to_world(map_position)) + Vector2(0, level_grid.cell_size.y / 2)
 
+func set_visibility(value) -> void:
+	visibility = value
+	if visibility == 3:
+		visibility = 0
+	match visibility:
+		0:
+			$NumberGrid.visible = false
+			$NumberGridBig.visible = false
+		1:
+			$NumberGrid.visible = true
+			$NumberGridBig.visible = false
+		2:
+			$NumberGrid.visible = false
+			$NumberGridBig.visible = true

@@ -43,7 +43,7 @@ func _pulse() -> bool:
 	
 	health -= 60
 	$Label.set_text("pulse! %s" % health)
-	var radius = 2
+	var radius = 3
 	var coord = get_current_position()
 	for x in range(-radius, radius + 1):
 		for y in range(-radius, radius + 1):
@@ -102,6 +102,9 @@ func _unhandled_input(event: InputEvent) -> void:
 		elif event.is_action("commit_mouse_skip"):
 			_update_facing_direction(Vector2.ZERO)
 			_commit_action(Move)
+		
+		if event.is_action("toggle_cell_numbers"):
+			_board_manager.visibility += 1
 
 func _get_mouse_facing_direction(screen_space_coord: Vector2) -> Vector2:
 	var offset = viewport_midpoint - screen_space_coord
