@@ -11,9 +11,7 @@ func add_energy(map_position: Vector2, amount: int) -> void:
 func set_energy_up_to_amount(map_position: Vector2, amount: int) -> void:
 	if get_cell(map_position) < amount:
 		set_energy(map_position, amount)
-	edited_cells.append(map_position)
-	level_grid.set_cell(map_position.x, map_position.y, amount)
-		
+	edited_cells.append(map_position)		
 
 # Function is called at the end of turn. Should automatically update energy stuff
 func drain_energy() -> void:
