@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://resources/GroundTileset.tres" type="TileSet" id=1]
 [ext_resource path="res://src/Managers/TurnManager.gd" type="Script" id=2]
@@ -19,6 +19,7 @@
 [ext_resource path="res://Resources/GroundNumbersBigTileset.tres" type="TileSet" id=17]
 [ext_resource path="res://src/Machines_and_Triggers/Machines/LaserPowerDown.tscn" type="PackedScene" id=18]
 [ext_resource path="res://src/Machines_and_Triggers/Machines/LaserPowerUp.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Resources/LaserScorch.tres" type="TileSet" id=20]
 
 [node name="TestLevel" type="Node2D"]
 script = ExtResource( 9 )
@@ -63,6 +64,12 @@ tile_set = ExtResource( 5 )
 cell_size = Vector2( 40, 20 )
 format = 1
 tile_data = PoolIntArray( 65539, 0, 65536, 65540, 0, 65537, 65541, 0, 65537, 65542, 0, 131074, 131078, 0, 1, 196614, 0, 1, 262147, 0, 65536, 262148, 0, 65537, 262149, 0, 65537, 262150, 0, 196609 )
+
+[node name="LaserScorch" type="TileMap" parent="BoardManager"]
+mode = 1
+tile_set = ExtResource( 20 )
+cell_size = Vector2( 40, 20 )
+format = 1
 
 [node name="EnergyGrid" type="Node" parent="BoardManager"]
 script = ExtResource( 7 )
