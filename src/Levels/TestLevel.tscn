@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://resources/GroundTileset.tres" type="TileSet" id=1]
 [ext_resource path="res://src/Managers/TurnManager.gd" type="Script" id=2]
@@ -20,6 +20,7 @@
 [ext_resource path="res://src/Machines_and_Triggers/Machines/LaserPowerDown.tscn" type="PackedScene" id=18]
 [ext_resource path="res://src/Machines_and_Triggers/Machines/LaserPowerUp.tscn" type="PackedScene" id=19]
 [ext_resource path="res://Resources/LaserScorch.tres" type="TileSet" id=20]
+[ext_resource path="res://Resources/world_environment.tres" type="Environment" id=21]
 
 [node name="TestLevel" type="Node2D"]
 script = ExtResource( 9 )
@@ -111,7 +112,7 @@ position = Vector2( 61, 99 )
 _link_with_triggers = [ NodePath("../EnergyTrigger"), NodePath("../PlateTrigger") ]
 
 [node name="LaserPowerUp" parent="YSort" instance=ExtResource( 19 )]
-position = Vector2( 21, 139 )
+position = Vector2( 20, 138 )
 _link_with_triggers = [ NodePath("../EnergyTrigger"), NodePath("../PlateTrigger") ]
 direction = "Down"
 
@@ -119,3 +120,6 @@ direction = "Down"
 position = Vector2( -60, 58 )
 _link_with_triggers = [ NodePath("../EnergyTrigger"), NodePath("../PlateTrigger") ]
 direction = "Up"
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource( 21 )

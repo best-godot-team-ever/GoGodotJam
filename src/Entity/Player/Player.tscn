@@ -327,7 +327,7 @@ texture_scale = 1.4
 texture = ExtResource( 1 )
 offset = Vector2( 0, -20 )
 hframes = 6
-vframes = 4
+vframes = 6
 frame = 1
 
 [node name="Camera2D" type="Camera2D" parent="." index="2"]
