@@ -4,7 +4,7 @@ export (String, "set_energy", "add_energy") var type = "add_energy"
 export var _energy_ammount : int = 3
 
 onready var _anim_player : AnimationPlayer = $AnimationPlayer
-
+onready var _laser_bream : RayCast2D = $LaserBeam
 
 func _initialize(board_manager: Node, turn_manager: Node) -> void:
 	machine_type = MachineType.LaserUp
