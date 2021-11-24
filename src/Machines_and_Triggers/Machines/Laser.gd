@@ -2,8 +2,8 @@ extends Machine
 class_name laser
 
 export (String, "Right", "Left", "Up", "Down") var direction
+export var _laser_distance : int = 4
 
-var _laser_distance : int = 4
 var _target_cells : Array = []
 
 func _get_target_cells() -> void:

@@ -86,7 +86,7 @@ color = Color( 0.188235, 0.164706, 0.164706, 1 )
 [node name="YSort" type="YSort" parent="."]
 
 [node name="Player" parent="YSort" instance=ExtResource( 10 )]
-position = Vector2( 1, 8 )
+position = Vector2( 0, 13 )
 
 [node name="Door" parent="YSort" instance=ExtResource( 4 )]
 position = Vector2( 160, -70 )
