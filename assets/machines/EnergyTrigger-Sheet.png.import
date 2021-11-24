@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/PlateTrigger-Sheet.png-cf61847f868bffc335cfbb7718210602.stex"
+path="res://.import/EnergyTrigger-Sheet.png-d99cb54e243d6cfc4187b2c519599b39.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Entities,Machines/PlateTrigger-Sheet.png"
-dest_files=[ "res://.import/PlateTrigger-Sheet.png-cf61847f868bffc335cfbb7718210602.stex" ]
+source_file="res://assets/machines/EnergyTrigger-Sheet.png"
+dest_files=[ "res://.import/EnergyTrigger-Sheet.png-d99cb54e243d6cfc4187b2c519599b39.stex" ]
 
 [params]
 

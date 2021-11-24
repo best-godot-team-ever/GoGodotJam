@@ -1,19 +1,15 @@
-extends Machines
+extends Machine
 
-var opened : bool = false
+
+func _initialize(board_manager: Node, turn_manager: Node) -> void:
+	machine_type = MachineType.Door
+	._initialize(board_manager, turn_manager)
 
 func start_turn() -> void:
-	match current_state:
-		MachineStates.Activated:
-			print("i am activated")
-			if opened:
-				_board_manager.set_machine_blocking(machine_id, true)
-				opened = false
-				print ("i closed")
-				
-		MachineStates.Deactivated:
-			print ("i am deactivated")
-			if !opened:
-				_board_manager.set_machine_blocking(machine_id, false)
-				opened = true
-				print ("i opened")
+	if ! trigger_feeding_list.empty():
+			_board_manager.set_machine_blocking(machine_id, false)
+			_animated_sprite.play("activated")
+	if trigger_feeding_list.empty():
+			_board_manager.set_machine_blocking(machine_id, true)
+			_animated_sprite.play("deactivated")
+

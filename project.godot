@@ -19,12 +19,17 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/UI/Coursor.gd"
 }, {
-"base": "Node2D",
-"class": "Machines",
+"base": "MachineAndTrigger",
+"class": "Machine",
 "language": "GDScript",
 "path": "res://src/Machines_and_Triggers/Machines/Machine.gd"
 }, {
-"base": "Machines",
+"base": "Node2D",
+"class": "MachineAndTrigger",
+"language": "GDScript",
+"path": "res://src/Machines_and_Triggers/MachineAndTrigger.gd"
+}, {
+"base": "MachineAndTrigger",
 "class": "Trigger",
 "language": "GDScript",
 "path": "res://src/Machines_and_Triggers/Triggers/Trigger.gd"
@@ -42,7 +47,8 @@ _global_script_classes=[ {
 _global_script_class_icons={
 "BoardManager": "",
 "Coursor": "",
-"Machines": "",
+"Machine": "",
+"MachineAndTrigger": "",
 "Trigger": "",
 "TurnManager": "",
 "laser": ""

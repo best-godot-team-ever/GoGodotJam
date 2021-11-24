@@ -10,3 +10,5 @@ func _ready() -> void:
 		entity.init(board_manager, turn_manager)
 	for machine in $Machines.get_children():
 		machine.init(board_manager,turn_manager)
+	for machine in $Triggers.get_children():
+		machine.init(board_manager,turn_manager)

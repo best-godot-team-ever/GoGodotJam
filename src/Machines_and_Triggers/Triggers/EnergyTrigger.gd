@@ -1,13 +1,18 @@
-extends "res://src/Machines_and_Triggers/Triggers/Trigger.gd"
+extends Trigger
 
-export var _energy_trigger : int
+var _energy_trigger : int = 1
+
+func _initialize(board_manager: Node, turn_manager: Node) -> void:
+	machine_type = MachineType.EnergyTrigger
+	._initialize(board_manager, turn_manager)
 
 
 func start_turn() -> void:
 	var _energy : int = _board_manager.energy_grid.get_cell(_board_manager.world_to_map(position))
 	if _energy >= _energy_trigger:
-		power_up_machines()
-		current_state = MachineStates.Activated
+		feed_machines()
+		_animated_sprite.play("activated")
 	elif _energy < _energy_trigger:
-		shut_down_machines()
-		current_state = MachineStates.Deactivated
+		dont_feed_machines()
+		_animated_sprite.play("deactivated")
+

@@ -4,7 +4,7 @@
 [ext_resource path="res://src/Managers/TurnManager.gd" type="Script" id=2]
 [ext_resource path="res://src/Entity/Enemy/Grabber.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/Entity/Enemy/Leecher.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Resources/WireTileset.tres" type="TileSet" id=5]
+[ext_resource path="res://resources/WireTileset.tres" type="TileSet" id=5]
 [ext_resource path="res://src/Managers/BoardManager/BoardManager.gd" type="Script" id=6]
 [ext_resource path="res://src/Managers/BoardManager/Grid/EnergyGrid.gd" type="Script" id=7]
 [ext_resource path="res://src/Managers/BoardManager/Grid/ObjectGrid/EntityGrid.gd" type="Script" id=8]
@@ -39,6 +39,7 @@ mode = 1
 tile_set = ExtResource( 5 )
 cell_size = Vector2( 40, 20 )
 format = 1
+tile_data = PoolIntArray( 65539, 0, 65536, 65540, 0, 65537, 65541, 0, 65537, 65542, 0, 131074, 131078, 0, 1, 196614, 0, 1, 262147, 0, 65536, 262148, 0, 65537, 262149, 0, 65537, 262150, 0, 196609 )
 
 [node name="EnergyGrid" type="Node" parent="BoardManager"]
 script = ExtResource( 7 )
@@ -58,6 +59,20 @@ script = ExtResource( 11 )
 [node name="CanvasModulate" type="CanvasModulate" parent="BoardManager"]
 color = Color( 0.188235, 0.164706, 0.164706, 1 )
 
+[node name="Triggers" type="YSort" parent="."]
+
+[node name="EnergyTrigger" parent="Triggers" instance=ExtResource( 14 )]
+position = Vector2( -20, 80 )
+
+[node name="PlateTrigger" parent="Triggers" instance=ExtResource( 13 )]
+position = Vector2( 38, 49 )
+
+[node name="Machines" type="YSort" parent="."]
+
+[node name="Door" parent="Machines" instance=ExtResource( 15 )]
+position = Vector2( 61, 99 )
+_link_with_triggers = [ NodePath("../../Triggers/EnergyTrigger"), NodePath("../../Triggers/PlateTrigger") ]
+
 [node name="Entities" type="YSort" parent="."]
 
 [node name="Leecher" parent="Entities" instance=ExtResource( 4 )]
@@ -68,20 +83,3 @@ position = Vector2( -80, 28 )
 
 [node name="Player" parent="Entities" instance=ExtResource( 10 )]
 position = Vector2( 1, 8 )
-
-[node name="Machines" type="YSort" parent="."]
-
-[node name="Door" parent="Machines" instance=ExtResource( 15 )]
-position = Vector2( 82, 90 )
-
-[node name="EnergyTrigger" parent="Machines" instance=ExtResource( 14 )]
-position = Vector2( -20, 80 )
-machine_type = 3
-_link_with_machines = [ NodePath("../Door") ]
-_energy_trigger = 3
-
-[node name="PlateTrigger" parent="Machines" instance=ExtResource( 13 )]
-position = Vector2( 42, 49 )
-turn_speed = 2
-machine_type = 4
-_link_with_machines = [ NodePath("../Door") ]
