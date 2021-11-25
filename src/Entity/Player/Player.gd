@@ -5,6 +5,8 @@ enum {Move, Pulse}
 const NO_ACTION = -1
 
 onready var viewport_midpoint: Vector2 = get_viewport_rect().size / 2
+onready var dialogue = Dialogic.start("first")
+
 
 var move_direction = Vector2()
 var next_action_queue = NO_ACTION
@@ -105,6 +107,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		
 		if event.is_action("toggle_cell_numbers"):
 			_board_manager.visibility += 1
+
 
 func _get_mouse_facing_direction(screen_space_coord: Vector2) -> Vector2:
 	var offset = viewport_midpoint - screen_space_coord
