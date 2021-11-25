@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://resources/GroundTileset.tres" type="TileSet" id=1]
 [ext_resource path="res://src/Managers/TurnManager.gd" type="Script" id=2]
@@ -21,16 +21,16 @@
 [ext_resource path="res://src/Machines_and_Triggers/Machines/LaserPowerUp.tscn" type="PackedScene" id=19]
 [ext_resource path="res://Resources/LaserScorch.tres" type="TileSet" id=20]
 [ext_resource path="res://Resources/world_environment.tres" type="Environment" id=21]
-[ext_resource path="res://src/Dialogue/DialogueManager.tscn" type="PackedScene" id=22]
-[ext_resource path="res://src/Dialogue/DialogueDetection.tscn" type="PackedScene" id=23]
+[ext_resource path="res://src/Dialogue/DialogueTrigger.tscn" type="PackedScene" id=22]
 
 [node name="TestLevel" type="Node2D"]
 script = ExtResource( 9 )
 
-[node name="DialogueManager" parent="." instance=ExtResource( 22 )]
+[node name="Dialogues" type="Node2D" parent="."]
 
-[node name="DialogueDetection" parent="DialogueManager" instance=ExtResource( 23 )]
-position = Vector2( 20, 59 )
+[node name="DialogueDetection" parent="Dialogues" instance=ExtResource( 22 )]
+position = Vector2( 20, 80 )
+_dialogue_string = "give_wait"
 
 [node name="TurnManager" type="Node" parent="."]
 script = ExtResource( 2 )

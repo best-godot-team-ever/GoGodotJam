@@ -13,6 +13,10 @@ var next_action_queue = NO_ACTION
 
 var health = 100
 
+var has_wait = true
+var has_pulse = true
+
+
 func _initialize(board_manager: Node, turn_manager: Node) -> void:
 	._initialize(board_manager, turn_manager)
 	_turn_manager.set_player_entity_id(entity_id)
@@ -89,19 +93,19 @@ func _unhandled_input(event: InputEvent) -> void:
 		elif event.is_action("aim_right"):
 			_update_facing_direction(Vector2.RIGHT)
 			_commit_action(Move)
-		elif event.is_action("aim_cancel"):
+		elif event.is_action("aim_cancel") and has_wait:
 			_update_facing_direction(Vector2.ZERO)
 			_commit_action(Move)
 		elif event.is_action("commit_move"):
 			_commit_action(Move)
-		elif event.is_action("commit_pulse"):
+		elif event.is_action("commit_pulse") and has_pulse:
 			_commit_action(Pulse)
 
 		# Mouse Input
 		elif event.is_action("commit_mouse_move"):
 			_update_facing_direction(_get_mouse_facing_direction(event.get_position()))
 			_commit_action(Move)
-		elif event.is_action("commit_mouse_skip"):
+		elif event.is_action("commit_mouse_skip") and has_wait:
 			_update_facing_direction(Vector2.ZERO)
 			_commit_action(Move)
 		

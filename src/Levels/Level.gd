@@ -9,6 +9,7 @@ func _ready() -> void:
 	turn_manager.init(board_manager)
 	for child in $YSort.get_children():
 		child.init(board_manager, turn_manager)
-	dialogue_manager.get_node("DialogueDetection").init(board_manager)
+	for child in $Dialogues.get_children():
+		child.init(board_manager, turn_manager)
 	
 

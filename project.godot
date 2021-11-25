@@ -59,11 +59,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/dialogic/Other/DialogicUtil.gd"
 }, {
-"base": "Node2D",
-"class": "DialogueDetector",
-"language": "GDScript",
-"path": "res://src/Dialogue/DialogueDetection.gd"
-}, {
 "base": "MachineAndTrigger",
 "class": "Machine",
 "language": "GDScript",
@@ -100,7 +95,6 @@ _global_script_class_icons={
 "DialogicParser": "",
 "DialogicResources": "",
 "DialogicUtil": "",
-"DialogueDetector": "",
 "Machine": "",
 "MachineAndTrigger": "",
 "Trigger": "",

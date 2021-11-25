@@ -6,6 +6,7 @@ var _board_manager: Node
 var machines: Array = []
 var enemies: Array = []
 var triggers : Array = []
+var dialogue_triggers : Array = []
 
 var is_player_turn = true
 
@@ -26,9 +27,15 @@ func subscribe_enemy(enemy: Node) -> void:
 func subscribe_trigger(trigger: Node) -> void:
 	triggers.append(trigger)
 
+func subscribe_dialogue(dialogue_trigger: Node) -> void:
+	dialogue_triggers.append(dialogue_trigger)
+
 # Only the player can end turn...
 func end_turn() -> void:
 	is_player_turn = false
+	
+	for dialogue_trigger in dialogue_triggers:
+		dialogue_trigger.start_turn()
 	
 	triggers.sort_custom(self,"_sort")
 	for trigger in triggers:
