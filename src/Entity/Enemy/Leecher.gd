@@ -22,7 +22,6 @@ func start_turn() -> void:
 			if _board_manager.get_cell(get_current_position()).energy_level > 0:
 				current_state = LeecherStates.Following
 			
-			# Suck Energy.
 			_suck_energy()
 		LeecherStates.Following:
 
@@ -31,15 +30,13 @@ func start_turn() -> void:
 			_set_anim_direction(move_direction)
 			move_on_map(move_direction)
 
-			# Suck Energy.
 			_suck_energy()
-
 
 			if _board_manager.get_cell(get_current_position()).energy_level == 0 and stored_energy == 0:
 				current_state = LeecherStates.PoweredOff
 				anim_state_machine.travel("powered_off")
 			# 	# Play Powered off Animation
-	$Label.set_text(LeecherStates.keys()[current_state])
+	$Label.set_text("%s" % stored_energy)#LeecherStates.keys()[current_state])
 
 func _suck_energy() -> void:
 	# the tile that it's on...
@@ -62,23 +59,6 @@ func _get_next_target_coord() -> Vector2:
 			max_energy = tile_list.get(key).energy_level
 
 	return target
-
-func _decide_movement(target_coord: Vector2) -> Vector2:
-	var current_position = get_current_position()
-	var next_move = current_position
-	
-	# Check Each of the 4 directions around me. If It's a valid tile and the tile will bring me closer to the target coord, take it.
-	var next_move_dist = current_position.distance_to(target_coord)
-	var possible_moves = _board_manager.get_cells(_get_near_cells_list(current_position, 1, 0))
-	for move in possible_moves.keys():
-		if not possible_moves.get(move).is_in_level or possible_moves.get(move).is_blocked:
-			continue
-		var dist = move.distance_to(target_coord)
-		if dist < next_move_dist:
-			next_move_dist = dist
-			next_move = move
-
-	return next_move - current_position
 
 func _set_anim_direction(direction: Vector2) -> void:
 	if direction == Vector2.ZERO:

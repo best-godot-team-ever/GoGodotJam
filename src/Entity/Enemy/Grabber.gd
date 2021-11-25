@@ -4,6 +4,8 @@ enum GrabberState {PoweredOff, Idle, Chasing}
 
 var current_state: int = GrabberState.PoweredOff
 
+var energy_buffered: bool = false
+
 func start_turn() -> void:
 	match current_state:
 		GrabberState.PoweredOff:
@@ -14,46 +16,47 @@ func start_turn() -> void:
 #			if _board_manager.get_cell(get_current_position()).energy_level > 0:
 #				current_state = GrabberState.Chasing
 		GrabberState.Chasing:
-			if _board_manager.get_cell(get_current_position()).energy_level == 0:
+
+			var player_coord = _board_manager.get_entity_position_by_id(_turn_manager.player_entity_id)
+
+			# prioritize survival if ethere is no buffered energy so it doesn't get shut down?
+			if not energy_buffered and _board_manager.get_cell(get_current_position()).energy_level == 0:
+				player_coord = _get_nearby_energy_tile()
+
+			var move_direction = _decide_movement(player_coord)
+			_set_anim_direction(move_direction)
+			move_on_map(move_direction)
+
+			if _board_manager.get_cell(get_current_position()).energy_level != 0:
+				energy_buffered = true
+			elif energy_buffered:
+				energy_buffered = false
+			else:
 				current_state = GrabberState.PoweredOff
 				# Play Powered off Animation
-
-			else:
-				# I have power so I should move one tile towards the player's current position
-				_move_towards_player()
+	
 	$Label.set_text(GrabberState.keys()[current_state])
 
-func _move_towards_player() -> void:
+func _get_nearby_energy_tile() -> Vector2:
+	var target = get_current_position()
 	var player_coord = _board_manager.get_entity_position_by_id(_turn_manager.player_entity_id)
-	var offset = player_coord - get_current_position()
+	var dist_to_player = 100.0
+	# Get all the possible tiles.
+	var tile_list = _board_manager.get_cells(_get_near_cells_list(target, 1, 0))
 
-	var direction = _decide_movement(offset)
+	for key in tile_list.keys():
+		var _dist = key.distance_to(player_coord)
+		if tile_list.get(key).is_in_level and not tile_list.get(key).is_blocked and tile_list.get(key).energy_level > 0 and _dist < dist_to_player:
+			target = key
+			dist_to_player = _dist
 
-	move_on_map(direction)
+	return target
 	
-	# I got no idea so I am gonna use Felipe's code
-func _decide_movement(energy_coordinate: Vector2) -> Vector2:
-		# Decide movement:
-		var energy_direction = Vector2(0,0)
-		var coord_x_uni = Vector2(0,0)
-		var coord_y_uni = Vector2(0,0)
-		# Un-dimensionalization:
-		if energy_coordinate.x != 0:
-			coord_x_uni = Vector2(energy_coordinate.x/abs(energy_coordinate.x),0)
-		if energy_coordinate.y != 0:
-			coord_y_uni = Vector2(0, energy_coordinate.y/abs(energy_coordinate.y))
-	
-		if abs(energy_coordinate.x) == abs(energy_coordinate.y):
-			# moves randorly but in the correct direction
-			if randi() % 2:
-				energy_direction = coord_x_uni
-			else:
-				energy_direction = coord_y_uni
-		elif abs(energy_coordinate.x) > abs(energy_coordinate.y):
-			# moves horizontaly
-			energy_direction = coord_x_uni
-		else:
-			# moves vertically
-			energy_direction = coord_y_uni
-		return energy_direction
-
+func _set_anim_direction(direction: Vector2) -> void:
+	# if direction == Vector2.ZERO:
+	# 	return
+	# animation_tree["parameters/idle/blend_position"] = direction
+	# animation_tree["parameters/powered_off/blend_position"] = direction
+	# animation_tree["parameters/powering_off/blend_position"] = direction
+	# animation_tree["parameters/powering_up/blend_position"] = direction
+	pass
