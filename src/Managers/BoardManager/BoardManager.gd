@@ -48,6 +48,12 @@ func set_energy(map_position: Vector2, amount: int) -> void:
 	
 	energy_grid.set_energy_up_to_amount(map_position, amount)
 
+func reduce_energy(map_position: Vector2, amount: int) -> void:
+	if not is_in_level(map_position):
+		return
+	
+	energy_grid.reduce_energy(map_position, amount)
+
 func drain_energy() -> void:
 	energy_grid.drain_energy()
 

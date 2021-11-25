@@ -48,9 +48,17 @@ func _pulse() -> bool:
 	for x in range(-radius, radius + 1):
 		for y in range(-radius, radius + 1):
 			var target = Vector2(coord.x + x, coord.y + y)
-			var cell_data = _board_manager.get_cell(target)
-			_board_manager.set_energy(target, 3 if cell_data.energy_level < 3 else cell_data.energy_level + 1)
-
+			if coord.distance_to(target) > radius + .5:
+				continue
+			elif coord.distance_to(target) <= 1:
+				var cell_data = _board_manager.get_cell(target)
+				_board_manager.set_energy(target, 5 if cell_data.energy_level < 5 else cell_data.energy_level + 1)
+			elif coord.distance_to(target) <= 2:
+				var cell_data = _board_manager.get_cell(target)
+				_board_manager.set_energy(target, 4 if cell_data.energy_level < 4 else cell_data.energy_level + 1)
+			else:
+				var cell_data = _board_manager.get_cell(target)
+				_board_manager.set_energy(target, 3 if cell_data.energy_level < 3 else cell_data.energy_level + 1)
 
 	# This is here for now... but it rly should have an animation attached to it
 	_fake_animation()

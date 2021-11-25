@@ -328,7 +328,7 @@ texture = ExtResource( 1 )
 offset = Vector2( 0, -20 )
 hframes = 6
 vframes = 6
-frame = 1
+frame = 8
 
 [node name="Camera2D" type="Camera2D" parent="." index="2"]
 current = true
