@@ -17,6 +17,11 @@ func set_energy_up_to_amount(map_position: Vector2, amount: int) -> void:
 		set_energy(map_position, amount)
 	edited_cells.append(map_position)		
 
+func reduce_energy(map_position: Vector2, amount: int) -> void:
+	var value: int = get_cell(map_position) - amount
+	set_energy(map_position, 0 if value < 0 else value)
+	edited_cells.append(map_position)
+
 # Function is called at the end of turn. Should automatically update energy stuff
 func drain_energy() -> void:
 	for key in _grid.keys():

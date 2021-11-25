@@ -12,7 +12,7 @@
 [ext_resource path="res://src/Entity/Player/Player.tscn" type="PackedScene" id=10]
 [ext_resource path="res://src/Managers/BoardManager/Grid/BlockingGrid.gd" type="Script" id=11]
 [ext_resource path="res://src/Managers/BoardManager/Grid/ObjectGrid/MachineGrid.gd" type="Script" id=12]
-[ext_resource path="res://src/Machines_and_Triggers/Machines/DoorPermanent.tscn" type="PackedScene" id=13]
+[ext_resource path="res://src/Machines_and_Triggers/Machines/DoorChanging.tscn" type="PackedScene" id=13]
 [ext_resource path="res://src/Machines_and_Triggers/Triggers/EnergyTrigger.tscn" type="PackedScene" id=14]
 [ext_resource path="res://src/Entity/Enemy/Grabber.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Resources/GroundNumbersBigTileset.tres" type="TileSet" id=16]
@@ -63,7 +63,7 @@ mode = 1
 tile_set = ExtResource( 5 )
 cell_size = Vector2( 40, 20 )
 format = 1
-tile_data = PoolIntArray( -2162701, 0, 2, -2097170, 0, 2, -2097165, 0, 1, -2031634, 0, 131072, -2031633, 0, 65537, -2031632, 0, 65537, -2031631, 0, 65537, -2031630, 0, 65537, -2031629, 0, 196609, -2031616, 0, 2, -1900563, 0, 65536, -1900562, 0, 65537, -1900561, 0, 65537, -1900560, 0, 65538, -1966080, 0, 0, -1638400, 0, 2, -1572864, 0, 0, -1310720, 0, 131073, -1310719, 0, 65537, -1310718, 0, 65537, -1310717, 0, 131074, -1245184, 0, 1, -1245181, 0, 1, -1179648, 0, 0, -1179645, 0, 1, -1114109, 0, 1, -1048573, 0, 0, -851968, 0, 2, -786432, 0, 1, -655362, 0, 65536, -655361, 0, 65537, -720896, 0, 131075, -720895, 0, 65537, -720894, 0, 65538, -524288, 0, 2, -458752, 0, 1, -393216, 0, 1, -327680, 0, 1, -262144, 0, 0 )
+tile_data = PoolIntArray( -2162701, 0, 2, -2097170, 0, 2, -2097165, 0, 1, -2031634, 0, 131072, -2031633, 0, 65537, -2031632, 0, 65537, -2031631, 0, 65537, -2031630, 0, 65537, -2031629, 0, 196609, -2031616, 0, 2, -1900563, 0, 65536, -1900562, 0, 65537, -1900561, 0, 65537, -1900560, 0, 65538, -1966080, 0, 0, -1638400, 0, 2, -1572864, 0, 0, -1310720, 0, 131073, -1310719, 0, 65537, -1310718, 0, 65537, -1310717, 0, 131074, -1245184, 0, 1, -1245181, 0, 1, -1179648, 0, 0, -1179645, 0, 1, -1114109, 0, 1, -1048573, 0, 0, -983040, 0, 131073, -983039, 0, 65538, -917504, 0, 1, -851968, 0, 1, -786432, 0, 1, -655362, 0, 65536, -655361, 0, 65537, -720896, 0, 131075, -720895, 0, 65537, -720894, 0, 65538, -524288, 0, 2, -458752, 0, 1, -393216, 0, 1, -327680, 0, 1, -262144, 0, 0 )
 
 [node name="EnergyGrid" type="Node" parent="BoardManager"]
 script = ExtResource( 7 )
@@ -129,6 +129,9 @@ position = Vector2( 140, -59 )
 [node name="PlateTrigger3" parent="YSort" instance=ExtResource( 3 )]
 position = Vector2( 261, -81 )
 
+[node name="PlateTrigger4" parent="YSort" instance=ExtResource( 3 )]
+position = Vector2( 319, -131 )
+
 [node name="PlateTrigger5" parent="YSort" instance=ExtResource( 3 )]
 position = Vector2( 479, -230 )
 
@@ -143,7 +146,7 @@ position = Vector2( 281, -449 )
 
 [node name="DoorPermanent" parent="YSort" instance=ExtResource( 13 )]
 position = Vector2( 261, -121 )
-_link_with_triggers = [ NodePath("../PlateTrigger3") ]
+_link_with_triggers = [ NodePath("../PlateTrigger3"), NodePath("../PlateTrigger4") ]
 
 [node name="EnergyTrigger" parent="YSort" instance=ExtResource( 14 )]
 position = Vector2( 379, -121 )

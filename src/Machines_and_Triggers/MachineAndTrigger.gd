@@ -1,7 +1,7 @@
 extends Node2D
 class_name MachineAndTrigger
 
-enum MachineType {Door, LaserUp, LaserDown, EnergyTrigger, PlateTrigger}
+enum MachineType {Door, DoorChanging, DoorReverse, LaserUp, LaserDown, EnergyTrigger, PlateTrigger}
 var _triggers : Array = [MachineType.EnergyTrigger, MachineType.PlateTrigger]
 
 export var turn_speed: int = 0
