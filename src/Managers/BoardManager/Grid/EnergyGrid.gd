@@ -1,7 +1,11 @@
 extends "res://src/Managers/BoardManager/Grid/Grid.gd"
 
-onready var level_grid = get_parent().get_node("LevelGrid")
 var edited_cells = []
+
+onready var level_grid = get_parent().get_node("LevelGrid")
+onready var number_grid = get_parent().get_node("NumberGrid")
+onready var number_grid_big = get_parent().get_node("NumberGridBig")
+
 
 # These fuctions are used to edit each individual cells
 func add_energy(map_position: Vector2, amount: int) -> void:
@@ -30,7 +34,10 @@ func set_energy(map_position: Vector2, amount: int) -> void:
 	else:
 		_grid[map_position] = amount
 
-	# Update the tile
+	# Update the tile. 
 	level_grid.set_cell(map_position.x, map_position.y, amount if amount <= 5 else 5)
+	number_grid.set_cell(map_position.x, map_position.y, amount if amount <= 5 else 5)
+	number_grid_big.set_cell(map_position.x, map_position.y, amount if amount <= 5 else 5)
+
 
 	pass

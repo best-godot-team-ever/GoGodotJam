@@ -45,6 +45,5 @@ script = ExtResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 7 )
-animation = "activated"
-frame = 6
+animation = "deactivated"
 playing = true
