@@ -275,6 +275,7 @@ hframes = 7
 vframes = 2
 
 [node name="LaserBeam" parent="." instance=ExtResource( 5 )]
+visible = false
 position = Vector2( 6, -13 )
 rotation = 0.68499
 
