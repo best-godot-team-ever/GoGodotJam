@@ -6,12 +6,14 @@ const NO_ACTION = -1
 
 onready var viewport_midpoint: Vector2 = get_viewport_rect().size / 2
 onready var dialogue = Dialogic.start("first")
+onready var health_bar = get_parent().get_parent().find_node("HealthBar")
 
 
 var move_direction = Vector2()
 var next_action_queue = NO_ACTION
 
-var health = 100
+var health := 100.0 setget set_health
+var max_health := 100
 
 var has_wait = true
 var has_pulse = true
@@ -162,3 +164,7 @@ func _animation_finished() -> void:
 func _fake_animation() -> void:
 	yield(get_tree().create_timer(0.3), "timeout")
 	_animation_finished()
+
+func set_health(value) -> void:
+	health = value
+	health = clamp(health, 0, max_health)

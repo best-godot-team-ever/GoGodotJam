@@ -13,7 +13,7 @@
 	"portraits": [
 		{
 			"name": "Default",
-			"path": "res://assets/entities/Enemy2.png"
+			"path": "res://addons/dialogic/Example Assets/portraits/df-3.png"
 		}
 	],
 	"scale": 100

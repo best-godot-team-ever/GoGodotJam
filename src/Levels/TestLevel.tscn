@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://resources/GroundTileset.tres" type="TileSet" id=1]
 [ext_resource path="res://src/Managers/TurnManager.gd" type="Script" id=2]
@@ -14,10 +14,9 @@
 [ext_resource path="res://src/Managers/BoardManager/Grid/ObjectGrid/MachineGrid.gd" type="Script" id=12]
 [ext_resource path="res://src/Machines_and_Triggers/Triggers/PlateTrigger.tscn" type="PackedScene" id=13]
 [ext_resource path="res://src/Machines_and_Triggers/Triggers/EnergyTrigger.tscn" type="PackedScene" id=14]
-[ext_resource path="res://src/Machines_and_Triggers/Machines/Door.tscn" type="PackedScene" id=15]
+[ext_resource path="res://src/UI/HealthBar.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Resources/GroundNumberTileset.tres" type="TileSet" id=16]
 [ext_resource path="res://Resources/GroundNumbersBigTileset.tres" type="TileSet" id=17]
-[ext_resource path="res://src/Machines_and_Triggers/Machines/LaserPowerDown.tscn" type="PackedScene" id=18]
 [ext_resource path="res://src/Machines_and_Triggers/Machines/LaserPowerUp.tscn" type="PackedScene" id=19]
 [ext_resource path="res://Resources/LaserScorch.tres" type="TileSet" id=20]
 [ext_resource path="res://Resources/world_environment.tres" type="Environment" id=21]
@@ -114,19 +113,18 @@ position = Vector2( -80, 28 )
 [node name="Leecher" parent="YSort" instance=ExtResource( 4 )]
 position = Vector2( 102, 58 )
 
-[node name="Door" parent="YSort" instance=ExtResource( 15 )]
-position = Vector2( 61, 99 )
-_link_with_triggers = [ NodePath("../EnergyTrigger"), NodePath("../PlateTrigger") ]
-
 [node name="LaserPowerUp" parent="YSort" instance=ExtResource( 19 )]
 position = Vector2( 20, 138 )
 _link_with_triggers = [ NodePath("../EnergyTrigger"), NodePath("../PlateTrigger") ]
-direction = "Down"
-
-[node name="LaserPowerDown" parent="YSort" instance=ExtResource( 18 )]
-position = Vector2( -60, 58 )
-_link_with_triggers = [ NodePath("../EnergyTrigger"), NodePath("../PlateTrigger") ]
-direction = "Up"
+direction = "Right"
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource( 21 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HealthBar" parent="CanvasLayer" instance=ExtResource( 15 )]
+margin_left = 174.0
+margin_top = 9.0
+margin_right = 174.0
+margin_bottom = 9.0

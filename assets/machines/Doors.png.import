@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/door-Sheet.png-b04073415385c4ee18505d982ce7b075.stex"
+path="res://.import/Doors.png-5f6529d9a9460774018f8e4d41f96297.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/door-Sheet.png"
-dest_files=[ "res://.import/door-Sheet.png-b04073415385c4ee18505d982ce7b075.stex" ]
+source_file="res://assets/machines/Doors.png"
+dest_files=[ "res://.import/Doors.png-5f6529d9a9460774018f8e4d41f96297.stex" ]
 
 [params]
 
