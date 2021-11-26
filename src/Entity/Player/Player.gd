@@ -5,7 +5,6 @@ enum {Move, Pulse}
 const NO_ACTION = -1
 
 onready var viewport_midpoint: Vector2 = get_viewport_rect().size / 2
-onready var dialogue = Dialogic.start("first")
 onready var health_bar = get_parent().get_parent().find_node("HealthBar")
 
 
@@ -40,6 +39,10 @@ func _move() -> bool:
 
 	# Execute the Turn
 	move_on_map(move_direction)
+	if move_direction == Vector2(0, 0):
+		self.health += 10
+	else:
+		self.health += 5
 	return true
 
 func _pulse() -> bool:
@@ -49,7 +52,7 @@ func _pulse() -> bool:
 		$Label.set_text("No pulse, Energy low %s" % health)
 		return false
 	
-	health -= 60
+	self.health -= 60
 	$Label.set_text("pulse! %s" % health)
 	var radius = 3
 	var coord = get_current_position()
@@ -157,8 +160,7 @@ func _animation_finished() -> void:
 	_turn_manager.ready_for_turn()
 	_update_facing_direction(move_direction)
 	anim_state_machine.travel("Idle")
-	# Lol.... Here?
-	health += 0 if health == 100 else 10
+
 
 # This is just to emulate a fake animation
 func _fake_animation() -> void:
@@ -168,3 +170,5 @@ func _fake_animation() -> void:
 func set_health(value) -> void:
 	health = value
 	health = clamp(health, 0, max_health)
+	health_bar.bar.value = value
+

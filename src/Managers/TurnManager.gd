@@ -37,6 +37,10 @@ func end_turn() -> void:
 	for dialogue_trigger in dialogue_triggers:
 		dialogue_trigger.start_turn()
 	
+	enemies.sort_custom(self,"_sort")
+	for enemy in enemies:
+		enemy.start_turn()
+	
 	triggers.sort_custom(self,"_sort")
 	for trigger in triggers:
 		trigger.start_turn()
@@ -44,10 +48,6 @@ func end_turn() -> void:
 	machines.sort_custom(self,"_sort")
 	for machine in machines:
 		machine.start_turn()
-	
-	enemies.sort_custom(self,"_sort")
-	for enemy in enemies:
-		enemy.start_turn()
 
 	_board_manager.drain_energy()
 

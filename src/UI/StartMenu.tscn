@@ -1,0 +1,31 @@
+[gd_scene format=2]
+
+[node name="StartMenu" type="Node2D"]
+
+[node name="BackGround" type="ColorRect" parent="."]
+margin_right = 512.0
+margin_bottom = 300.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NewGame" type="ColorRect" parent="."]
+margin_left = 166.0
+margin_top = 161.0
+margin_right = 346.0
+margin_bottom = 191.0
+color = Color( 0.25098, 0.266667, 0.333333, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="QuitGame" type="ColorRect" parent="."]
+margin_left = 166.0
+margin_top = 226.0
+margin_right = 346.0
+margin_bottom = 256.0
+color = Color( 0.25098, 0.266667, 0.333333, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
