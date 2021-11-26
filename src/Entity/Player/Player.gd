@@ -172,3 +172,5 @@ func set_health(value) -> void:
 	health = clamp(health, 0, max_health)
 	health_bar.bar.value = value
 
+func take_damage(amount: int) -> void:
+	self.health -= amount

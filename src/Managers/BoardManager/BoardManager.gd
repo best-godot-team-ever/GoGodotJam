@@ -26,6 +26,9 @@ func update_entity_position(entity_id: int, map_position: Vector2) -> void:
 func get_entity_position_by_id(entity_id: int) -> Vector2:
 	return entity_grid.get_entity_position_by_id(entity_id)
 
+func get_entity_node_by_id(entity_id: int) -> Node:
+	return entity_grid.get_entity_node_by_id(entity_id)
+
 # =======================================================
 #    Machines.
 # =======================================================
