@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://resources/GroundTileset.tres" type="TileSet" id=1]
 [ext_resource path="res://src/Managers/TurnManager.gd" type="Script" id=2]
@@ -22,11 +22,15 @@
 [ext_resource path="res://resources/GroundNumberTileset.tres" type="TileSet" id=20]
 [ext_resource path="res://resources/GroundNumbersBigTileset.tres" type="TileSet" id=21]
 [ext_resource path="res://src/UI/UI.tscn" type="PackedScene" id=22]
+[ext_resource path="res://src/Dialogue/EndingLevelTrigger.tscn" type="PackedScene" id=23]
 
 [node name="LevelTemplate" type="Node2D"]
 script = ExtResource( 9 )
 
 [node name="Dialogues" type="Node2D" parent="."]
+
+[node name="EndingLevelTrigger" parent="Dialogues" instance=ExtResource( 23 )]
+position = Vector2( -900, 461 )
 
 [node name="TurnManager" type="Node" parent="."]
 script = ExtResource( 2 )

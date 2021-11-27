@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://resources/GroundTileset.tres" type="TileSet" id=1]
 [ext_resource path="res://src/Managers/TurnManager.gd" type="Script" id=2]
@@ -16,6 +16,8 @@
 [ext_resource path="res://resources/GroundNumberTileset.tres" type="TileSet" id=14]
 [ext_resource path="res://src/Dialogue/DialogueTrigger.tscn" type="PackedScene" id=15]
 [ext_resource path="res://src/UI/UI.tscn" type="PackedScene" id=16]
+[ext_resource path="res://src/Dialogue/EndingLevelTrigger.tscn" type="PackedScene" id=17]
+[ext_resource path="res://src/Levels/Level_01.tscn" type="PackedScene" id=18]
 
 [node name="LevelTemplate" type="Node2D"]
 script = ExtResource( 9 )
@@ -25,6 +27,10 @@ script = ExtResource( 9 )
 [node name="DialogueDetection" parent="Dialogues" instance=ExtResource( 15 )]
 position = Vector2( 360, -171 )
 _dialogue_string = "give_wait"
+
+[node name="EndingLevelTrigger" parent="Dialogues" instance=ExtResource( 17 )]
+position = Vector2( 339, -241 )
+_next_level = ExtResource( 18 )
 
 [node name="TurnManager" type="Node" parent="."]
 script = ExtResource( 2 )
@@ -89,7 +95,7 @@ color = Color( 0.188235, 0.164706, 0.164706, 1 )
 [node name="YSort" type="YSort" parent="."]
 
 [node name="Player" parent="YSort" instance=ExtResource( 10 )]
-position = Vector2( -39, 27 )
+position = Vector2( -39, 25 )
 
 [node name="Door4" parent="YSort" instance=ExtResource( 4 )]
 position = Vector2( 122, -48 )

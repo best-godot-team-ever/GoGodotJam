@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://resources/GroundTileset.tres" type="TileSet" id=1]
 [ext_resource path="res://src/Machines_and_Triggers/Machines/Door.tscn" type="PackedScene" id=2]
@@ -15,11 +15,17 @@
 [ext_resource path="res://resources/GroundNumbersBigTileset.tres" type="TileSet" id=13]
 [ext_resource path="res://resources/GroundNumberTileset.tres" type="TileSet" id=14]
 [ext_resource path="res://src/UI/UI.tscn" type="PackedScene" id=15]
+[ext_resource path="res://src/Dialogue/EndingLevelTrigger.tscn" type="PackedScene" id=16]
+[ext_resource path="res://src/Levels/Level_02.tscn" type="PackedScene" id=17]
 
 [node name="LevelTemplate" type="Node2D"]
 script = ExtResource( 9 )
 
 [node name="Dialogues" type="Node2D" parent="."]
+
+[node name="EndingLevelTrigger" parent="Dialogues" instance=ExtResource( 16 )]
+position = Vector2( 198, -211 )
+_next_level = ExtResource( 17 )
 
 [node name="TurnManager" type="Node" parent="."]
 script = ExtResource( 4 )

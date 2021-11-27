@@ -1,9 +1,9 @@
 [gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://src/Machines_and_Triggers/Machines/LaserPowerUp.gd" type="Script" id=1]
-[ext_resource path="res://assets/machines/laser-light-Sheet.png" type="Texture" id=2]
+[ext_resource path="res://assets/sprites/machines/laser-light-Sheet.png" type="Texture" id=2]
 [ext_resource path="res://resources/Laser.shader" type="Shader" id=3]
-[ext_resource path="res://assets/machines/laser-Sheet.png" type="Texture" id=4]
+[ext_resource path="res://assets/sprites/machines/laser-Sheet.png" type="Texture" id=4]
 
 
 [sub_resource type="ShaderMaterial" id=1]

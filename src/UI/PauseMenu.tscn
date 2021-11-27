@@ -2,9 +2,9 @@
 
 [ext_resource path="res://addons/dialogic/Example Assets/Fonts/DefaultBoldFont.tres" type="DynamicFont" id=1]
 [ext_resource path="res://src/UI/PauseMenu.gd" type="Script" id=2]
-[ext_resource path="res://assets/UI/PauseButton0.png" type="Texture" id=3]
-[ext_resource path="res://assets/UI/PauseButton1.png" type="Texture" id=4]
-[ext_resource path="res://assets/UI/PauseButton2.png" type="Texture" id=5]
+[ext_resource path="res://assets/sprites/UI/PauseButton0.png" type="Texture" id=3]
+[ext_resource path="res://assets/sprites/UI/PauseButton1.png" type="Texture" id=4]
+[ext_resource path="res://assets/sprites/UI/PauseButton2.png" type="Texture" id=5]
 
 [node name="PauseMenu" type="Control"]
 pause_mode = 2
