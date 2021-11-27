@@ -1,6 +1,13 @@
-[gd_scene format=2]
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://addons/dialogic/Example Assets/Fonts/DefaultBoldFont.tres" type="DynamicFont" id=1]
+[ext_resource path="res://src/UI/StartMenu.gd" type="Script" id=2]
+[ext_resource path="res://resources/AnimatedButton.tres" type="Texture" id=3]
+[ext_resource path="res://assets/UI/buttons/ButtonHover1.png" type="Texture" id=6]
+[ext_resource path="res://assets/UI/buttons/Button0.png" type="Texture" id=7]
 
 [node name="StartMenu" type="Node2D"]
+script = ExtResource( 2 )
 
 [node name="BackGround" type="ColorRect" parent="."]
 margin_right = 512.0
@@ -10,22 +17,51 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="NewGame" type="ColorRect" parent="."]
+[node name="NewGame" type="TextureButton" parent="."]
 margin_left = 166.0
-margin_top = 161.0
+margin_top = 152.0
 margin_right = 346.0
 margin_bottom = 191.0
-color = Color( 0.25098, 0.266667, 0.333333, 1 )
+texture_normal = ExtResource( 7 )
+texture_pressed = ExtResource( 6 )
+texture_hover = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="QuitGame" type="ColorRect" parent="."]
-margin_left = 166.0
-margin_top = 226.0
-margin_right = 346.0
-margin_bottom = 256.0
-color = Color( 0.25098, 0.266667, 0.333333, 1 )
+[node name="Label" type="Label" parent="NewGame"]
+modulate = Color( 0, 0, 0, 1 )
+margin_left = 23.0
+margin_right = 160.0
+margin_bottom = 37.0
+custom_fonts/font = ExtResource( 1 )
+text = "New Game"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="QuitGame" type="TextureButton" parent="."]
+margin_left = 166.0
+margin_top = 219.0
+margin_right = 346.0
+margin_bottom = 259.0
+texture_normal = ExtResource( 7 )
+texture_pressed = ExtResource( 6 )
+texture_hover = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="QuitGame"]
+modulate = Color( 0, 0, 0, 1 )
+margin_left = 21.0
+margin_right = 160.0
+margin_bottom = 37.0
+custom_fonts/font = ExtResource( 1 )
+text = "Quit Game"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="NewGame" to="." method="_on_NewGame_pressed"]
+[connection signal="pressed" from="QuitGame" to="." method="_on_QuitGame_pressed"]

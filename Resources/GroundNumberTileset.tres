@@ -1,11 +1,12 @@
 [gd_resource type="TileSet" load_steps=7 format=2]
 
-[ext_resource path="res://assets/Tiles/GroundTileNumbers3.png" type="Texture" id=2]
-[ext_resource path="res://assets/Tiles/GroundTileNumbers5.png" type="Texture" id=4]
-[ext_resource path="res://assets/Tiles/GroundTileNumbers2.png" type="Texture" id=6]
-[ext_resource path="res://assets/Tiles/GroundTileNumbers4.png" type="Texture" id=7]
-[ext_resource path="res://assets/Tiles/GroundTileNumbers1.png" type="Texture" id=9]
-[ext_resource path="res://assets/Tiles/GroundTileNumbers0.png" type="Texture" id=11]
+[ext_resource path="res://assets/tiles/GroundTileNumbers3.png" type="Texture" id=2]
+[ext_resource path="res://assets/tiles/GroundTileNumbers5.png" type="Texture" id=4]
+[ext_resource path="res://assets/tiles/GroundTileNumbers2.png" type="Texture" id=6]
+[ext_resource path="res://assets/tiles/GroundTileNumbers4.png" type="Texture" id=7]
+[ext_resource path="res://assets/tiles/GroundTileNumbers1.png" type="Texture" id=9]
+[ext_resource path="res://assets/tiles/GroundTileNumbers0.png" type="Texture" id=11]
+
 
 [resource]
 0/name = "GroundTileNumbers0.png 0"

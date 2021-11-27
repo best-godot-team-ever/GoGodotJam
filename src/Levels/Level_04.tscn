@@ -1,8 +1,8 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://resources/GroundTileset.tres" type="TileSet" id=1]
 [ext_resource path="res://src/Managers/TurnManager.gd" type="Script" id=2]
-[ext_resource path="res://Resources/LaserScorch.tres" type="TileSet" id=3]
+[ext_resource path="res://resources/LaserScorch.tres" type="TileSet" id=3]
 [ext_resource path="res://src/Machines_and_Triggers/Triggers/EnergyTrigger.tscn" type="PackedScene" id=4]
 [ext_resource path="res://resources/WireTileset.tres" type="TileSet" id=5]
 [ext_resource path="res://src/Managers/BoardManager/BoardManager.gd" type="Script" id=6]
@@ -19,8 +19,9 @@
 [ext_resource path="res://src/Entity/Enemy/Leecher.tscn" type="PackedScene" id=17]
 [ext_resource path="res://src/Machines_and_Triggers/Machines/DoorReverse.tscn" type="PackedScene" id=18]
 [ext_resource path="res://src/Machines_and_Triggers/Machines/LaserPowerUp.tscn" type="PackedScene" id=19]
-[ext_resource path="res://Resources/GroundNumberTileset.tres" type="TileSet" id=20]
-[ext_resource path="res://Resources/GroundNumbersBigTileset.tres" type="TileSet" id=21]
+[ext_resource path="res://resources/GroundNumberTileset.tres" type="TileSet" id=20]
+[ext_resource path="res://resources/GroundNumbersBigTileset.tres" type="TileSet" id=21]
+[ext_resource path="res://src/UI/UI.tscn" type="PackedScene" id=22]
 
 [node name="LevelTemplate" type="Node2D"]
 script = ExtResource( 9 )
@@ -423,3 +424,5 @@ _link_with_triggers = [ NodePath("../EnergyTrigger12") ]
 direction = "Up"
 _laser_distance = 1
 _energy_ammount = 1
+
+[node name="UI" parent="." instance=ExtResource( 22 )]

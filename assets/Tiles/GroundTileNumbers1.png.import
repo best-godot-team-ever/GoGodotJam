@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/GroundTileNumbers1.png-2173b85689464af3a9bdde7f47f9cac9.stex"
+path="res://.import/GroundTileNumbers1.png-56b8591ec3c688213063eec035f1f6b5.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Tiles/GroundTileNumbers1.png"
-dest_files=[ "res://.import/GroundTileNumbers1.png-2173b85689464af3a9bdde7f47f9cac9.stex" ]
+source_file="res://assets/tiles/GroundTileNumbers1.png"
+dest_files=[ "res://.import/GroundTileNumbers1.png-56b8591ec3c688213063eec035f1f6b5.stex" ]
 
 [params]
 

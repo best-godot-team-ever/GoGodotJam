@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://resources/GroundTileset.tres" type="TileSet" id=1]
 [ext_resource path="res://src/Managers/TurnManager.gd" type="Script" id=2]
@@ -12,9 +12,10 @@
 [ext_resource path="res://src/Entity/Player/Player.tscn" type="PackedScene" id=10]
 [ext_resource path="res://src/Managers/BoardManager/Grid/BlockingGrid.gd" type="Script" id=11]
 [ext_resource path="res://src/Managers/BoardManager/Grid/ObjectGrid/MachineGrid.gd" type="Script" id=12]
-[ext_resource path="res://Resources/GroundNumbersBigTileset.tres" type="TileSet" id=13]
-[ext_resource path="res://Resources/GroundNumberTileset.tres" type="TileSet" id=14]
+[ext_resource path="res://resources/GroundNumbersBigTileset.tres" type="TileSet" id=13]
+[ext_resource path="res://resources/GroundNumberTileset.tres" type="TileSet" id=14]
 [ext_resource path="res://src/Dialogue/DialogueTrigger.tscn" type="PackedScene" id=15]
+[ext_resource path="res://src/UI/UI.tscn" type="PackedScene" id=16]
 
 [node name="LevelTemplate" type="Node2D"]
 script = ExtResource( 9 )
@@ -124,3 +125,5 @@ position = Vector2( 359, -131 )
 
 [node name="EnergyTrigger3" parent="YSort" instance=ExtResource( 3 )]
 position = Vector2( 521, -170 )
+
+[node name="UI" parent="." instance=ExtResource( 16 )]

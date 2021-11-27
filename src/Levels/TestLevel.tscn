@@ -14,12 +14,12 @@
 [ext_resource path="res://src/Managers/BoardManager/Grid/ObjectGrid/MachineGrid.gd" type="Script" id=12]
 [ext_resource path="res://src/Machines_and_Triggers/Triggers/PlateTrigger.tscn" type="PackedScene" id=13]
 [ext_resource path="res://src/Machines_and_Triggers/Triggers/EnergyTrigger.tscn" type="PackedScene" id=14]
-[ext_resource path="res://src/UI/HealthBar.tscn" type="PackedScene" id=15]
-[ext_resource path="res://Resources/GroundNumberTileset.tres" type="TileSet" id=16]
-[ext_resource path="res://Resources/GroundNumbersBigTileset.tres" type="TileSet" id=17]
+[ext_resource path="res://src/UI/UI.tscn" type="PackedScene" id=15]
+[ext_resource path="res://resources/GroundNumberTileset.tres" type="TileSet" id=16]
+[ext_resource path="res://resources/GroundNumbersBigTileset.tres" type="TileSet" id=17]
 [ext_resource path="res://src/Machines_and_Triggers/Machines/LaserPowerUp.tscn" type="PackedScene" id=19]
-[ext_resource path="res://Resources/LaserScorch.tres" type="TileSet" id=20]
-[ext_resource path="res://Resources/world_environment.tres" type="Environment" id=21]
+[ext_resource path="res://resources/LaserScorch.tres" type="TileSet" id=20]
+[ext_resource path="res://resources/world_environment.tres" type="Environment" id=21]
 [ext_resource path="res://src/Dialogue/DialogueTrigger.tscn" type="PackedScene" id=22]
 
 [node name="TestLevel" type="Node2D"]
@@ -121,9 +121,4 @@ direction = "Right"
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource( 21 )
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="HealthBar" parent="CanvasLayer" instance=ExtResource( 15 )]
-margin_left = 12.0
-margin_right = 12.0
-margin_bottom = 0.0
+[node name="UI" parent="." instance=ExtResource( 15 )]

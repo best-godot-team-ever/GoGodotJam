@@ -14,11 +14,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/Managers/BoardManager/BoardManager.gd"
 }, {
-"base": "Node2D",
-"class": "Coursor",
-"language": "GDScript",
-"path": "res://src/UI/Coursor.gd"
-}, {
 "base": "Reference",
 "class": "DTS",
 "language": "GDScript",
@@ -86,7 +81,6 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "BoardManager": "",
-"Coursor": "",
 "DTS": "",
 "Dialogic": "",
 "DialogicBackgroundMusic": "",
@@ -105,7 +99,7 @@ _global_script_class_icons={
 [application]
 
 config/name="GoGodotJam"
-run/main_scene="res://src/Levels/TestLevel.tscn"
+run/main_scene="res://src/UI/StartMenu.tscn"
 config/icon="res://icon.png"
 
 [display]

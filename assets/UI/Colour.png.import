@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Health-Sheet.png-a807df1e7c65ec89bf1c769befb0d2a3.stex"
+path="res://.import/Colour.png-2b3072444268ddb94050affe88e16d57.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/UI/Health-Sheet.png"
-dest_files=[ "res://.import/Health-Sheet.png-a807df1e7c65ec89bf1c769befb0d2a3.stex" ]
+source_file="res://assets/UI/Colour.png"
+dest_files=[ "res://.import/Colour.png-2b3072444268ddb94050affe88e16d57.stex" ]
 
 [params]
 

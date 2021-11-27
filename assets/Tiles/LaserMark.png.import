@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/LaserMark.png-036fa45d159fdce1c9dca4cc9b58bc00.stex"
+path="res://.import/LaserMark.png-18093617e0d23e3c46632784098508eb.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Tiles/LaserMark.png"
-dest_files=[ "res://.import/LaserMark.png-036fa45d159fdce1c9dca4cc9b58bc00.stex" ]
+source_file="res://assets/tiles/LaserMark.png"
+dest_files=[ "res://.import/LaserMark.png-18093617e0d23e3c46632784098508eb.stex" ]
 
 [params]
 

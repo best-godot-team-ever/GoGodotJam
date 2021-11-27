@@ -1,8 +1,8 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://resources/GroundTileset.tres" type="TileSet" id=1]
 [ext_resource path="res://src/Managers/TurnManager.gd" type="Script" id=2]
-[ext_resource path="res://Resources/LaserScorch.tres" type="TileSet" id=3]
+[ext_resource path="res://resources/LaserScorch.tres" type="TileSet" id=3]
 [ext_resource path="res://src/Machines_and_Triggers/Machines/LaserPowerUp.tscn" type="PackedScene" id=4]
 [ext_resource path="res://resources/WireTileset.tres" type="TileSet" id=5]
 [ext_resource path="res://src/Managers/BoardManager/BoardManager.gd" type="Script" id=6]
@@ -17,8 +17,9 @@
 [ext_resource path="res://src/Machines_and_Triggers/Machines/Door.tscn" type="PackedScene" id=15]
 [ext_resource path="res://src/Machines_and_Triggers/Machines/DoorChanging.tscn" type="PackedScene" id=16]
 [ext_resource path="res://src/Entity/Enemy/Leecher.tscn" type="PackedScene" id=17]
-[ext_resource path="res://Resources/GroundNumberTileset.tres" type="TileSet" id=18]
-[ext_resource path="res://Resources/GroundNumbersBigTileset.tres" type="TileSet" id=19]
+[ext_resource path="res://resources/GroundNumberTileset.tres" type="TileSet" id=18]
+[ext_resource path="res://resources/GroundNumbersBigTileset.tres" type="TileSet" id=19]
+[ext_resource path="res://src/UI/UI.tscn" type="PackedScene" id=20]
 
 [node name="LevelTemplate" type="Node2D"]
 script = ExtResource( 9 )
@@ -180,3 +181,5 @@ position = Vector2( 359, 47 )
 
 [node name="Leecher" parent="YSort" instance=ExtResource( 17 )]
 position = Vector2( 60, 382 )
+
+[node name="UI" parent="." instance=ExtResource( 20 )]
