@@ -1,0 +1,91 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://addons/dialogic/Example Assets/Fonts/DefaultBoldFont.tres" type="DynamicFont" id=1]
+[ext_resource path="res://src/UI/PauseMenu.gd" type="Script" id=2]
+[ext_resource path="res://assets/UI/PauseButton0.png" type="Texture" id=3]
+[ext_resource path="res://assets/UI/PauseButton1.png" type="Texture" id=4]
+[ext_resource path="res://assets/UI/PauseButton2.png" type="Texture" id=5]
+
+[node name="PauseMenu" type="Control"]
+pause_mode = 2
+visible = false
+script = ExtResource( 2 )
+
+[node name="Continue" type="TextureButton" parent="."]
+margin_left = 15.0
+margin_top = 13.0
+margin_right = 152.0
+margin_bottom = 40.0
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 5 )
+texture_hover = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Continue"]
+modulate = Color( 0, 0, 0, 1 )
+margin_left = 19.0
+margin_top = -3.0
+margin_right = 156.0
+margin_bottom = 34.0
+rect_scale = Vector2( 0.8, 0.8 )
+custom_fonts/font = ExtResource( 1 )
+text = "Continue"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Restart" type="TextureButton" parent="."]
+margin_left = 15.0
+margin_top = 52.0
+margin_right = 152.0
+margin_bottom = 79.0
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 5 )
+texture_hover = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Restart"]
+modulate = Color( 0, 0, 0, 1 )
+margin_left = 30.0
+margin_top = -3.0
+margin_right = 169.0
+margin_bottom = 34.0
+rect_scale = Vector2( 0.8, 0.8 )
+custom_fonts/font = ExtResource( 1 )
+text = "Restart"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="QuitGame" type="TextureButton" parent="."]
+margin_left = 15.0
+margin_top = 89.0
+margin_right = 152.0
+margin_bottom = 116.0
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 5 )
+texture_hover = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="QuitGame"]
+modulate = Color( 0, 0, 0, 1 )
+margin_left = 13.0
+margin_top = -4.0
+margin_right = 158.0
+margin_bottom = 33.0
+rect_scale = Vector2( 0.8, 0.8 )
+custom_fonts/font = ExtResource( 1 )
+text = "Quit Game"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="Continue" to="." method="_on_Continue_pressed"]
+[connection signal="pressed" from="Restart" to="." method="_on_Restart_pressed"]
+[connection signal="pressed" from="QuitGame" to="." method="_on_QuitGame_pressed"]
