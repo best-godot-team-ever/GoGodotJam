@@ -72,6 +72,7 @@ func _pulse() -> bool:
 				_board_manager.set_energy(target, 3 if cell_data.energy_level < 3 else cell_data.energy_level + 1)
 
 	# This is here for now... but it rly should have an animation attached to it
+	anim_state_machine.travel("pulse")
 	_fake_animation()
 	return true
 
@@ -144,7 +145,7 @@ func _get_mouse_facing_direction(screen_space_coord: Vector2) -> Vector2:
 func move_on_map(direction: Vector2):
 	.move_on_map(direction)
 	if not direction == Vector2.ZERO:
-		anim_state_machine.travel("Move")
+		anim_state_machine.travel("move")
 	_board_manager.set_energy(get_current_position(), 3 if direction.length() != 0 else _board_manager.get_cell(get_current_position()).get("energy_level") + 1)
 	
 func _update_facing_direction(direction: Vector2) -> void:
@@ -153,18 +154,19 @@ func _update_facing_direction(direction: Vector2) -> void:
 	if not _turn_manager.is_player_turn or direction == Vector2.ZERO:
 		return
 
-	animation_tree["parameters/Idle/blend_position"] = direction
-	animation_tree["parameters/Move/blend_position"] = direction
+	animation_tree["parameters/idle/blend_position"] = direction
+	animation_tree["parameters/move/blend_position"] = direction
+	animation_tree["parameters/pulse/blend_position"] = direction
 
 func _animation_finished() -> void:
 	_turn_manager.ready_for_turn()
 	_update_facing_direction(move_direction)
-	anim_state_machine.travel("Idle")
+	anim_state_machine.travel("idle")
 
 
 # This is just to emulate a fake animation
 func _fake_animation() -> void:
-	yield(get_tree().create_timer(0.3), "timeout")
+	yield(get_tree().create_timer(0.4), "timeout")
 	_animation_finished()
 
 func set_health(value) -> void:
