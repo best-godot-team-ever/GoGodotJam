@@ -10,3 +10,5 @@ data_*/
 
 # Recorder Specific Ignores
 out/
+
+*.DS_Store

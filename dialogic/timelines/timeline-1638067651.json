@@ -18,19 +18,13 @@
 			"character": "character-1637847529.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Good thing that wall separeted us"
+			"text": "Good thing that wall separated us."
 		},
 		{
 			"character": "character-1637847529.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "..."
-		},
-		{
-			"character": "character-1637847529.json",
-			"event_id": "dialogic_001",
-			"portrait": "",
-			"text": "Need to push forward!!"
+			"text": "I need to keep pushing forward!!"
 		}
 	],
 	"metadata": {

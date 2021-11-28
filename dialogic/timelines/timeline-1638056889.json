@@ -18,19 +18,19 @@
 			"character": "character-1637847529.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "It seems that by just passing by, i wont be able to feed enough energy to this machines."
+			"text": "I will need to fully charge that trigger in order to feed enough energy to these doors."
 		},
 		{
 			"character": "",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "[color=#A5EFAC] Wait in place pressing the SPACE key or the middle mouse button.[/color]"
+			"text": "[color=#A5EFAC] You can charge up the floor cells by up to a value of 5.[/color]"
 		},
 		{
 			"character": "",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "[color=#A5EFAC] By doing this you can charge up the cells by up to a value of 5.[/color]"
+			"text": "[color=#A5EFAC] Press the SPACE key or the middle mouse button whilst standing on a floor cell to pass the time and charge it.[/color]"
 		}
 	],
 	"metadata": {

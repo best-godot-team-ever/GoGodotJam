@@ -18,13 +18,19 @@
 			"character": "character-1637847529.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Is it finaly over??"
+			"text": "My cell door just opened... "
 		},
 		{
 			"character": "character-1637847529.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Am I finally free?"
+			"text": "There doesn't seem to be anyone out there."
+		},
+		{
+			"character": "character-1637847529.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Am I free?"
 		},
 		{
 			"character": "character-1637847529.json",
@@ -36,13 +42,7 @@
 			"character": "character-1637847529.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "I... I am..."
-		},
-		{
-			"character": "character-1637847529.json",
-			"event_id": "dialogic_001",
-			"portrait": "",
-			"text": "... I just wana go home..."
+			"text": "... I really wanna go home..."
 		},
 		{
 			"character": "",

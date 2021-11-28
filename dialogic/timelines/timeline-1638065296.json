@@ -18,19 +18,13 @@
 			"character": "character-1637847529.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "I really dont want to... "
+			"text": "I really don't want to... "
 		},
 		{
 			"character": "character-1637847529.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "But seems to me, that in order to escape,"
-		},
-		{
-			"character": "character-1637847529.json",
-			"event_id": "dialogic_001",
-			"portrait": "",
-			"text": " I should keep emiting this pulses."
+			"text": "But it seems to me that in order to escape I will have to continue emit pulses."
 		},
 		{
 			"character": "",
@@ -42,7 +36,7 @@
 			"character": "",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "[color=#A5EFAC] Pulses really take a toll on your health, so be carefull!![/color]"
+			"text": "[color=#A5EFAC] Pulses drain your energy, so choose the right time to use it.[/color]"
 		}
 	],
 	"metadata": {

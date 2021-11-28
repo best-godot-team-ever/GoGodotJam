@@ -24,7 +24,7 @@
 			"character": "",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "[color=#A5EFAC] You regain your energy/life as you wait or move arround.[/color]"
+			"text": "[color=#A5EFAC] You regain your energy when you wait or move around.[/color]"
 		}
 	],
 	"metadata": {

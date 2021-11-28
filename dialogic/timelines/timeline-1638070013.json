@@ -15,16 +15,10 @@
 			}
 		},
 		{
-			"character": "character-1637847529.json",
-			"event_id": "dialogic_001",
-			"portrait": "",
-			"text": "whats this?"
-		},
-		{
 			"character": "",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Another mechanical being?"
+			"text": "Another mechanical being..."
 		},
 		{
 			"character": "",
