@@ -1,0 +1,55 @@
+{
+	"events": [
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "First 5 years, then 10, then 20..."
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "as a century passed, the factory started going downhill"
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "less and less humans were being seen by the day"
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "and the poor slaves were left more and more time alone in their cells."
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "The whole factory went silent..."
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "In this silence, one spirit spent his days alone in a cell, until..."
+		},
+		{
+			"call_node": {
+				"arguments": [
+					"5"
+				],
+				"method_name": "play_next_story",
+				"target_node_path": "../.."
+			},
+			"event_id": "dialogic_042"
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.4 - DEV",
+		"file": "timeline-1638099162.json",
+		"name": "story_4"
+	}
+}

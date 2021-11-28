@@ -26,23 +26,23 @@ script = ExtResource( 9 )
 
 [node name="DialogueDetection" parent="Dialogues" instance=ExtResource( 15 )]
 position = Vector2( -501, 258 )
-_dialogue_string = "intro2"
+_dialogue_string = "level00_1"
 
 [node name="DialogueDetection2" parent="Dialogues" instance=ExtResource( 15 )]
 position = Vector2( -298, 160 )
-_dialogue_string = "intro3"
+_dialogue_string = "level00_2"
 
 [node name="DialogueDetection3" parent="Dialogues" instance=ExtResource( 15 )]
 position = Vector2( 220, -100 )
-_dialogue_string = "intro4"
+_dialogue_string = "level00_3"
 
 [node name="DialogueDetection4" parent="Dialogues" instance=ExtResource( 15 )]
 position = Vector2( 380, -182 )
-_dialogue_string = "intro5"
+_dialogue_string = "level00_4"
 
 [node name="DialogueDetection5" parent="Dialogues" instance=ExtResource( 15 )]
 position = Vector2( 359, -253 )
-_dialogue_string = "intro6"
+_dialogue_string = "level00_5"
 
 [node name="EndingLevelTrigger" parent="Dialogues" instance=ExtResource( 17 )]
 position = Vector2( 339, -241 )

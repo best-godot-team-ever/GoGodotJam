@@ -1,0 +1,43 @@
+{
+	"events": [
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "They made them work day and night"
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Draining every last drop of their energy"
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Only giving them respite, so they could charge again."
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "The years started passing..."
+		},
+		{
+			"call_node": {
+				"arguments": [
+					"4"
+				],
+				"method_name": "play_next_story",
+				"target_node_path": "../.."
+			},
+			"event_id": "dialogic_042"
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.4 - DEV",
+		"file": "timeline-1638099052.json",
+		"name": "story_3"
+	}
+}

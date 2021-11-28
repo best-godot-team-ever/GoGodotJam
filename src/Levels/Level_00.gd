@@ -4,7 +4,7 @@ extends Node2D
 onready var board_manager = $BoardManager
 onready var turn_manager = $TurnManager
 onready var dialogue_manager = $DialogueManager
-onready var intro_dialogue = Dialogic.start("intro")
+onready var intro_dialogue = Dialogic.start("level00_0")
 
 func _ready() -> void:
 	turn_manager.init(board_manager)
