@@ -172,7 +172,7 @@ func _fake_animation() -> void:
 func set_health(value) -> void:
 	health = value
 	health = clamp(health, 0, max_health)
-	health_bar.bar.value = value
+	health_bar.set_health_value(value)
 
 func take_damage(amount: int) -> void:
 	self.health -= amount
