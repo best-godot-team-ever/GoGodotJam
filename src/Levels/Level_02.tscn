@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://resources/GroundTileset.tres" type="TileSet" id=1]
 [ext_resource path="res://src/Managers/TurnManager.gd" type="Script" id=2]
@@ -20,6 +20,7 @@
 [ext_resource path="res://src/UI/UI.tscn" type="PackedScene" id=18]
 [ext_resource path="res://src/Dialogue/EndingLevelTrigger.tscn" type="PackedScene" id=19]
 [ext_resource path="res://src/Levels/Level_03.tscn" type="PackedScene" id=20]
+[ext_resource path="res://src/Dialogue/DialogueTrigger.tscn" type="PackedScene" id=21]
 
 [node name="LevelTemplate" type="Node2D"]
 script = ExtResource( 9 )
@@ -29,6 +30,23 @@ script = ExtResource( 9 )
 [node name="EndingLevelTrigger" parent="Dialogues" instance=ExtResource( 19 )]
 position = Vector2( 560, -570 )
 _next_level = ExtResource( 20 )
+
+[node name="EndingLevelTrigger2" parent="Dialogues" instance=ExtResource( 19 )]
+position = Vector2( 0, 12 )
+_next_level = ExtResource( 20 )
+_fake = true
+
+[node name="DialogueTrigger" parent="Dialogues" instance=ExtResource( 21 )]
+position = Vector2( 183, -81 )
+_dialogue_string = "level02_0"
+
+[node name="DialogueTrigger2" parent="Dialogues" instance=ExtResource( 21 )]
+position = Vector2( 641, -312 )
+_dialogue_string = "level02_1"
+
+[node name="DialogueTrigger3" parent="Dialogues" instance=ExtResource( 21 )]
+position = Vector2( 221, -520 )
+_dialogue_string = "level02_2"
 
 [node name="TurnManager" type="Node" parent="."]
 script = ExtResource( 2 )
@@ -93,9 +111,6 @@ script = ExtResource( 11 )
 color = Color( 0.188235, 0.164706, 0.164706, 1 )
 
 [node name="YSort" type="YSort" parent="."]
-
-[node name="Player" parent="YSort" instance=ExtResource( 10 )]
-position = Vector2( 0, 13 )
 
 [node name="Door" parent="YSort" instance=ExtResource( 4 )]
 position = Vector2( 160, -70 )
@@ -171,5 +186,8 @@ position = Vector2( 120, -155 )
 
 [node name="Grabber2" parent="YSort" instance=ExtResource( 15 )]
 position = Vector2( 419, -500 )
+
+[node name="Player" parent="YSort" instance=ExtResource( 10 )]
+position = Vector2( 20, 0 )
 
 [node name="UI" parent="." instance=ExtResource( 18 )]

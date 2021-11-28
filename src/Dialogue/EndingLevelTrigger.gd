@@ -2,6 +2,7 @@ extends Node2D
 
 
 export (PackedScene) var _next_level
+export var _fake := false
 
 var _board_manager: BoardManager
 var _turn_manager: TurnManager
@@ -16,12 +17,14 @@ func init(board_manager: BoardManager, turn_manager: TurnManager) -> void:
 func _initialize(board_manager: Node, turn_manager: Node) -> void:
 	_board_manager = board_manager
 	_turn_manager = turn_manager
-	# this is ugly beyond ugly, but it dosnt really matter for now. Its just to get a turn
-	_turn_manager.subscribe_dialogue(self)
 	_map_position = _board_manager.world_to_map(position)
 	position = _board_manager.map_to_world(_map_position)
+	if ! _fake:
+		# this is ugly beyond ugly, but it dosnt really matter for now. Its just to get a turn
+		_turn_manager.subscribe_dialogue(self)
 
 func start_turn() -> void:
-	if _board_manager.get_cell(_board_manager.world_to_map(position)).is_blocked:
-		get_tree().change_scene(_next_level.get_path())
+	if ! _fake:
+		if _board_manager.get_cell(_board_manager.world_to_map(position)).is_blocked:
+			get_tree().change_scene(_next_level.get_path())
 
