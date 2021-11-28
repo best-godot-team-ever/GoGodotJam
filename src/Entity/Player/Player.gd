@@ -59,7 +59,7 @@ func _pulse() -> bool:
 	for x in range(-radius, radius + 1):
 		for y in range(-radius, radius + 1):
 			var target = Vector2(coord.x + x, coord.y + y)
-			if coord.distance_to(target) > radius + .5:
+			if coord.distance_to(target) > radius - 0.5 and coord.distance_to(target) != radius:
 				continue
 			elif coord.distance_to(target) <= 1:
 				var cell_data = _board_manager.get_cell(target)
