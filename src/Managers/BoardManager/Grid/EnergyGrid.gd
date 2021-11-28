@@ -14,7 +14,7 @@ func add_energy(map_position: Vector2, amount: int) -> void:
 
 func set_energy_up_to_amount(map_position: Vector2, amount: int) -> void:
 	if get_cell(map_position) < amount:
-		set_energy(map_position, amount)
+		set_energy(map_position, _min(amount, 5))
 	edited_cells.append(map_position)		
 
 func reduce_energy(map_position: Vector2, amount: int) -> void:
@@ -46,3 +46,6 @@ func set_energy(map_position: Vector2, amount: int) -> void:
 
 
 	pass
+
+func _min(a: int, b: int) -> int:
+	return a if a < b else b
