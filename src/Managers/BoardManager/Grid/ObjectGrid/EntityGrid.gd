@@ -28,6 +28,8 @@ func get_entity_position_by_id(entity_id: int) -> Vector2:
 func get_entity_id_by_position(map_position: Vector2) -> int:
 	return get_id_by_position(map_position)
 
+func get_entity_node_by_id(entity_id: int) -> Node:
+	return get_node_by_id(entity_id)
 # =======================================================
 #    Updating Entity Movement
 # =======================================================
