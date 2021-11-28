@@ -12,6 +12,7 @@ func start_turn() -> void:
 			if _board_manager.get_cell(get_current_position()).energy_level > 0:
 				current_state = GrabberState.Chasing
 				# Play Power on Animation?
+				anim_state_machine.travel("idle")
 		GrabberState.Chasing:
 			var current_coord = get_current_position()
 			var player_coord = _board_manager.get_entity_position_by_id(_turn_manager.player_entity_id)
@@ -22,6 +23,7 @@ func start_turn() -> void:
 
 				_set_anim_direction(player_offset)
 				# Play atk animation
+				anim_state_machine.travel("attack")
 
 				# Reduce Player Health
 				_board_manager.get_entity_node_by_id(_turn_manager.player_entity_id).take_damage(50)
@@ -33,8 +35,7 @@ func start_turn() -> void:
 					player_coord = _get_nearby_energy_tile()
 
 				var move_direction = _decide_movement(player_coord)
-				_set_anim_direction(move_direction)
-				move_on_map(move_direction)
+				_move(move_direction)
 
 				if _board_manager.get_cell(get_current_position()).energy_level != 0:
 					energy_buffered = true
@@ -43,6 +44,7 @@ func start_turn() -> void:
 				else:
 					current_state = GrabberState.PoweredOff
 					# Play Powered off Animation
+					anim_state_machine.travel("powered_off")
 	
 	$Label.set_text(GrabberState.keys()[current_state])
 
@@ -60,12 +62,25 @@ func _get_nearby_energy_tile() -> Vector2:
 			dist_to_player = _dist
 
 	return target
-	
+
+func _move(direction: Vector2) -> void:
+	if direction == Vector2.ZERO:
+		return
+
+	_set_anim_direction(direction)
+	move_on_map(direction)
+	anim_state_machine.travel("move")
+
 func _set_anim_direction(direction: Vector2) -> void:
-	# if direction == Vector2.ZERO:
-	# 	return
-	# animation_tree["parameters/idle/blend_position"] = direction
-	# animation_tree["parameters/powered_off/blend_position"] = direction
-	# animation_tree["parameters/powering_off/blend_position"] = direction
-	# animation_tree["parameters/powering_up/blend_position"] = direction
-	pass
+	if direction == Vector2.ZERO:
+		return
+	animation_tree["parameters/idle/blend_position"] = direction
+	animation_tree["parameters/powered_off/blend_position"] = direction
+	animation_tree["parameters/powering_off/blend_position"] = direction
+	animation_tree["parameters/powering_on/blend_position"] = direction
+	animation_tree["parameters/move/blend_position"] = direction
+	animation_tree["parameters/attack/blend_position"] = direction
+
+func _animation_finished() -> void:
+	anim_state_machine.travel("idle")
+	
