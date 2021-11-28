@@ -1,0 +1,35 @@
+{
+	"events": [
+		{
+			"action": "join",
+			"character": "character-1637847529.json",
+			"event_id": "dialogic_002",
+			"mirror": false,
+			"portrait": "",
+			"position": {
+				"0": true,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			}
+		},
+		{
+			"character": "character-1637847529.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Seems security is tighter the further I go."
+		},
+		{
+			"character": "character-1637847529.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "It is a really good thing that these droids are out of power."
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.4 - DEV",
+		"file": "timeline-1638072011.json",
+		"name": "level04_1"
+	}
+}

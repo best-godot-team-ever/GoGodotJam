@@ -1,0 +1,35 @@
+{
+	"events": [
+		{
+			"action": "join",
+			"character": "character-1637847529.json",
+			"event_id": "dialogic_002",
+			"mirror": false,
+			"portrait": "",
+			"position": {
+				"0": true,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			}
+		},
+		{
+			"character": "character-1637847529.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "I should be able to access the next floor through this portal."
+		},
+		{
+			"character": "character-1637847529.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "I just want to get out of this place..."
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.4 - DEV",
+		"file": "timeline-1638057197.json",
+		"name": "level00_5"
+	}
+}

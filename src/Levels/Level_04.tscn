@@ -1,8 +1,8 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://resources/GroundTileset.tres" type="TileSet" id=1]
 [ext_resource path="res://src/Managers/TurnManager.gd" type="Script" id=2]
-[ext_resource path="res://Resources/LaserScorch.tres" type="TileSet" id=3]
+[ext_resource path="res://resources/LaserScorch.tres" type="TileSet" id=3]
 [ext_resource path="res://src/Machines_and_Triggers/Triggers/EnergyTrigger.tscn" type="PackedScene" id=4]
 [ext_resource path="res://resources/WireTileset.tres" type="TileSet" id=5]
 [ext_resource path="res://src/Managers/BoardManager/BoardManager.gd" type="Script" id=6]
@@ -19,11 +19,31 @@
 [ext_resource path="res://src/Entity/Enemy/Leecher.tscn" type="PackedScene" id=17]
 [ext_resource path="res://src/Machines_and_Triggers/Machines/DoorReverse.tscn" type="PackedScene" id=18]
 [ext_resource path="res://src/Machines_and_Triggers/Machines/LaserPowerUp.tscn" type="PackedScene" id=19]
-[ext_resource path="res://Resources/GroundNumberTileset.tres" type="TileSet" id=20]
-[ext_resource path="res://Resources/GroundNumbersBigTileset.tres" type="TileSet" id=21]
+[ext_resource path="res://resources/GroundNumberTileset.tres" type="TileSet" id=20]
+[ext_resource path="res://resources/GroundNumbersBigTileset.tres" type="TileSet" id=21]
+[ext_resource path="res://src/UI/UI.tscn" type="PackedScene" id=22]
+[ext_resource path="res://src/Dialogue/EndingLevelTrigger.tscn" type="PackedScene" id=23]
+[ext_resource path="res://src/Dialogue/DialogueTrigger.tscn" type="PackedScene" id=24]
 
 [node name="LevelTemplate" type="Node2D"]
 script = ExtResource( 9 )
+
+[node name="Dialogues" type="Node2D" parent="."]
+
+[node name="EndingLevelTrigger" parent="Dialogues" instance=ExtResource( 23 )]
+position = Vector2( -900, 461 )
+
+[node name="EndingLevelTrigger2" parent="Dialogues" instance=ExtResource( 23 )]
+position = Vector2( 0, 7 )
+_fake = true
+
+[node name="DialogueTrigger" parent="Dialogues" instance=ExtResource( 24 )]
+position = Vector2( -279, 148 )
+_dialogue_string = "level04_0"
+
+[node name="DialogueTrigger2" parent="Dialogues" instance=ExtResource( 24 )]
+position = Vector2( -758, 386 )
+_dialogue_string = "level04_1"
 
 [node name="TurnManager" type="Node" parent="."]
 script = ExtResource( 2 )
@@ -93,8 +113,6 @@ script = ExtResource( 11 )
 color = Color( 0.188235, 0.164706, 0.164706, 1 )
 
 [node name="YSort" type="YSort" parent="."]
-
-[node name="Player" parent="YSort" instance=ExtResource( 10 )]
 
 [node name="Door" parent="YSort" instance=ExtResource( 13 )]
 position = Vector2( -302, 200 )
@@ -421,3 +439,8 @@ _link_with_triggers = [ NodePath("../EnergyTrigger12") ]
 direction = "Up"
 _laser_distance = 1
 _energy_ammount = 1
+
+[node name="Player" parent="YSort" instance=ExtResource( 10 )]
+position = Vector2( -20, 21 )
+
+[node name="UI" parent="." instance=ExtResource( 22 )]

@@ -1,0 +1,41 @@
+{
+	"events": [
+		{
+			"action": "join",
+			"character": "character-1637847529.json",
+			"event_id": "dialogic_002",
+			"mirror": false,
+			"portrait": "",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			}
+		},
+		{
+			"character": "character-1637847529.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "I will need to fully charge that trigger in order to feed enough energy to these doors."
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "[color=#A5EFAC] You can charge up the floor cells by up to a value of 5.[/color]"
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "[color=#A5EFAC] Press the SPACE key or the middle mouse button whilst standing on a floor cell to pass the time and charge it.[/color]"
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.4 - DEV",
+		"file": "timeline-1638056889.json",
+		"name": "level00_4"
+	}
+}

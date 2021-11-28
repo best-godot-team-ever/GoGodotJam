@@ -1,6 +1,6 @@
 extends RayCast2D
 
-
+onready var parent = get_parent()
 onready var laser_beam := $Line2D
 onready var tween := $Tween
 onready var casting_particles := $CastingParticles
@@ -12,6 +12,7 @@ var is_casting := false setget set_is_casting
 func _ready() -> void:
 	set_physics_process(false)
 	laser_beam.points[1] = Vector2.ZERO
+	cast_to = Vector2(parent._laser_distance * 20,0)
 
 
 func _unhandled_input(event: InputEvent) -> void:

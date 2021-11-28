@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://resources/GroundTileset.tres" type="TileSet" id=1]
 [ext_resource path="res://src/Managers/TurnManager.gd" type="Script" id=2]
-[ext_resource path="res://Resources/LaserScorch.tres" type="TileSet" id=3]
+[ext_resource path="res://resources/LaserScorch.tres" type="TileSet" id=3]
+[ext_resource path="res://src/UI/UI.tscn" type="PackedScene" id=4]
 [ext_resource path="res://resources/WireTileset.tres" type="TileSet" id=5]
 [ext_resource path="res://src/Managers/BoardManager/BoardManager.gd" type="Script" id=6]
 [ext_resource path="res://src/Managers/BoardManager/Grid/EnergyGrid.gd" type="Script" id=7]
@@ -14,6 +15,8 @@
 
 [node name="LevelTemplate" type="Node2D"]
 script = ExtResource( 9 )
+
+[node name="Dialogues" type="Node2D" parent="."]
 
 [node name="TurnManager" type="Node" parent="."]
 script = ExtResource( 2 )
@@ -70,3 +73,5 @@ color = Color( 0.188235, 0.164706, 0.164706, 1 )
 
 [node name="Player" parent="YSort" instance=ExtResource( 10 )]
 position = Vector2( 1, 8 )
+
+[node name="UI" parent="." instance=ExtResource( 4 )]

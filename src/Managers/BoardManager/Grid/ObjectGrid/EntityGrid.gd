@@ -45,6 +45,6 @@ func update_entity_position(entity_id: int, map_position: Vector2) -> void:
 	var _t = _position_to_id_map.erase(old_map_position)
 
 	# Update the blocking as well.
-	_blocking_grid.set_cell_is_blocking(map_position, true)
 	_blocking_grid.set_cell_is_blocking(old_map_position, false)
+	_blocking_grid.set_cell_is_blocking(map_position, true)
 

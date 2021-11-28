@@ -1,0 +1,47 @@
+{
+	"events": [
+		{
+			"action": "join",
+			"character": "character-1637847529.json",
+			"event_id": "dialogic_002",
+			"mirror": false,
+			"portrait": "",
+			"position": {
+				"0": true,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			}
+		},
+		{
+			"character": "character-1637847529.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "These look like the cells where they held my people."
+		},
+		{
+			"character": "character-1637847529.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Everything seems rusty and abandoned..."
+		},
+		{
+			"character": "character-1637847529.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "...maybe the others left without me..."
+		},
+		{
+			"character": "character-1637847529.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "...or maybe something happened to them?"
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.4 - DEV",
+		"file": "timeline-1638071404.json",
+		"name": "level04_0"
+	}
+}

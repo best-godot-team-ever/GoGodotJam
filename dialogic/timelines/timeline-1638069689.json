@@ -1,0 +1,35 @@
+{
+	"events": [
+		{
+			"action": "join",
+			"character": "character-1637847529.json",
+			"event_id": "dialogic_002",
+			"mirror": false,
+			"portrait": "",
+			"position": {
+				"0": true,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			}
+		},
+		{
+			"character": "character-1637847529.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "How many years has it been...?"
+		},
+		{
+			"character": "character-1637847529.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "I can't even remember when they brought me in..."
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.4 - DEV",
+		"file": "timeline-1638069689.json",
+		"name": "level03_0"
+	}
+}

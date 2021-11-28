@@ -20,7 +20,8 @@ func start_turn() -> void:
 		elif _activated == true:
 			_activated = false
 			_board_manager.set_machine_blocking(machine_id, true)
-			_animated_sprite.play("deactivated")
+			if _player.get_current_position() != _board_manager.world_to_map(position):
+				_animated_sprite.play("deactivated")
 	if trigger_feeding_list.empty():
 			pass
 

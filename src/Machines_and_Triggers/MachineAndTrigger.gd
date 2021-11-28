@@ -14,6 +14,7 @@ var machine_type
 var _map_position : Vector2
 
 onready var _animated_sprite = $AnimatedSprite
+onready var _player = get_parent().get_node("Player")
 
 #onready var tween = $Tween
 #func _ready() -> void:
@@ -39,5 +40,4 @@ func start_turn() -> void:
 
 func _animation_finished() -> void:
 	pass
-
 

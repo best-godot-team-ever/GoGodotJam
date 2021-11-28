@@ -1,7 +1,8 @@
 [gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://src/Machines_and_Triggers/Triggers/EnergyTrigger.gd" type="Script" id=1]
-[ext_resource path="res://assets/machines/EnergyTrigger-Sheet.png" type="Texture" id=2]
+[ext_resource path="res://assets/sprites/machines/EnergyTrigger-Sheet.png" type="Texture" id=2]
+
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 2 )
@@ -35,7 +36,7 @@ animations = [ {
 "speed": 10.0
 }, {
 "frames": [ SubResource( 6 ) ],
-"loop": true,
+"loop": false,
 "name": "deactivated",
 "speed": 1.0
 } ]
