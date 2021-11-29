@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://resources/GroundTileset.tres" type="TileSet" id=1]
 [ext_resource path="res://src/Managers/TurnManager.gd" type="Script" id=2]
@@ -20,18 +20,12 @@
 [ext_resource path="res://src/Machines_and_Triggers/Machines/DoorChanging.tscn" type="PackedScene" id=18]
 [ext_resource path="res://src/Machines_and_Triggers/Machines/Door.tscn" type="PackedScene" id=19]
 [ext_resource path="res://src/Machines_and_Triggers/Machines/LaserPowerUp.tscn" type="PackedScene" id=20]
+[ext_resource path="res://src/Levels/Level_06.tscn" type="PackedScene" id=21]
 
 [node name="LevelTemplate" type="Node2D"]
 script = ExtResource( 9 )
 
 [node name="Dialogues" type="Node2D" parent="."]
-
-[node name="EndingLevelTrigger" parent="Dialogues" instance=ExtResource( 17 )]
-position = Vector2( -81, -49 )
-_fake = true
-
-[node name="EndingLevelTrigger2" parent="Dialogues" instance=ExtResource( 17 )]
-position = Vector2( 441, 389 )
 
 [node name="TurnManager" type="Node" parent="."]
 script = ExtResource( 2 )
@@ -88,8 +82,13 @@ color = Color( 0.188235, 0.164706, 0.164706, 1 )
 
 [node name="YSort" type="YSort" parent="."]
 
-[node name="Player" parent="YSort" instance=ExtResource( 10 )]
-position = Vector2( -43, -28 )
+[node name="EndingLevelTrigger2" parent="YSort" instance=ExtResource( 17 )]
+position = Vector2( 441, 389 )
+_next_level = ExtResource( 21 )
+
+[node name="EndingLevelTrigger" parent="YSort" instance=ExtResource( 17 )]
+position = Vector2( -81, -49 )
+_fake = true
 
 [node name="EnergyTrigger" parent="YSort" instance=ExtResource( 13 )]
 position = Vector2( 384, 240 )
@@ -187,5 +186,8 @@ _laser_distance = 3
 position = Vector2( -119, 287 )
 _link_with_triggers = [ NodePath("../PlateTrigger7") ]
 direction = "Up"
+
+[node name="Player" parent="YSort" instance=ExtResource( 10 )]
+position = Vector2( -81, -49 )
 
 [node name="UI" parent="." instance=ExtResource( 4 )]

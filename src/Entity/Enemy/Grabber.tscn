@@ -785,9 +785,11 @@ blend_mode = 1
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=43]
 switch_mode = 2
+auto_advance = true
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=44]
 switch_mode = 2
+auto_advance = true
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=45]
 
@@ -828,10 +830,9 @@ script = ExtResource( 3 )
 [node name="Sprite" parent="." index="0"]
 texture = ExtResource( 1 )
 offset = Vector2( 0, -15 )
-flip_h = true
 hframes = 9
 vframes = 8
-frame = 64
+frame = 65
 
 [node name="Label" type="Label" parent="." index="2"]
 margin_left = -41.0

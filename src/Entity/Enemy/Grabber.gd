@@ -82,5 +82,7 @@ func _set_anim_direction(direction: Vector2) -> void:
 	animation_tree["parameters/attack/blend_position"] = direction
 
 func _animation_finished() -> void:
+	if current_state == GrabberState.PoweredOff:
+		return 
 	anim_state_machine.travel("idle")
-	
+

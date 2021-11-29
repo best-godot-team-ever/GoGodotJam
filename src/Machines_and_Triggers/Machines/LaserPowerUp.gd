@@ -52,10 +52,11 @@ func start_turn() -> void:
 
 func _fire_laser () -> void:
 	for cell in _target_cells:
-		if type == "add_energy":
-			_board_manager.energy_grid.add_energy(cell, _energy_ammount)
-		elif type == "set_energy":
-			_board_manager.energy_grid.set_energy(cell, _energy_ammount)
+		if _board_manager.is_in_level(cell):
+			if type == "add_energy":
+				_board_manager.energy_grid.add_energy(cell, _energy_ammount)
+			elif type == "set_energy":
+				_board_manager.energy_grid.set_energy(cell, _energy_ammount)
 
 
 
