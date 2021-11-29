@@ -27,6 +27,11 @@
 			"text": "But it seems to me that in order to escape I will have to continue to emit pulses."
 		},
 		{
+			"action": "leaveall",
+			"character": "[All]",
+			"event_id": "dialogic_003"
+		},
+		{
 			"character": "",
 			"event_id": "dialogic_001",
 			"portrait": "",

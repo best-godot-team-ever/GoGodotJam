@@ -8,13 +8,13 @@
 	"name": "Photon",
 	"nickname": "",
 	"nickname_bool": false,
-	"offset_x": 600,
-	"offset_y": -200,
+	"offset_x": 240,
+	"offset_y": -210,
 	"portraits": [
 		{
 			"name": "Default",
-			"path": ""
+			"path": "res://assets/sprites/entities/dialogic/Dialogue_portrait.png"
 		}
 	],
-	"scale": 100
+	"scale": 80
 }

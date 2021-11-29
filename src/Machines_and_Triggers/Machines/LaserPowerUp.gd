@@ -6,7 +6,7 @@ export var _energy_ammount : int = 3
 onready var audio_stream = $AudioStreamPlayer2D
 
 var _powered := false
-var sound_lazer = preload("res://assets/sounds/sfx/Laser.mp3")
+var sound_lazer = preload("res://assets/sounds/sfx/Lazer_Power_Up.mp3")
 
 onready var _anim_player : AnimationPlayer = $AnimationPlayer
 

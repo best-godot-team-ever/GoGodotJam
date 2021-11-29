@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Lazer_Power_Down.mp3-42c839219ea34be209193f4be458c722.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/sfx/Lazer_Power_Down.mp3"
+dest_files=[ "res://.import/Lazer_Power_Down.mp3-42c839219ea34be209193f4be458c722.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

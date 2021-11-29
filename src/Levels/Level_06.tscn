@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://resources/GroundTileset.tres" type="TileSet" id=1]
 [ext_resource path="res://src/Managers/TurnManager.gd" type="Script" id=2]
@@ -23,7 +23,6 @@
 [ext_resource path="res://src/Levels/Level_07.tscn" type="PackedScene" id=21]
 [ext_resource path="res://resources/GroundNumbersBigTileset.tres" type="TileSet" id=22]
 [ext_resource path="res://resources/GroundNumberTileset.tres" type="TileSet" id=23]
-[ext_resource path="res://src/UI/Portrait.tscn" type="PackedScene" id=24]
 [ext_resource path="res://src/Dialogue/DialogueTrigger.tscn" type="PackedScene" id=25]
 
 [node name="LevelTemplate" type="Node2D"]
@@ -298,5 +297,3 @@ _fake = true
 position = Vector2( -41, -7 )
 
 [node name="UI" parent="." instance=ExtResource( 4 )]
-
-[node name="Portrait" parent="." instance=ExtResource( 24 )]

@@ -1,4 +1,6 @@
-[gd_scene load_steps=24 format=2]
+
+[gd_scene load_steps=23 format=2]
+
 
 [ext_resource path="res://resources/GroundTileset.tres" type="TileSet" id=1]
 [ext_resource path="res://src/Machines_and_Triggers/Machines/Door.tscn" type="PackedScene" id=2]
@@ -23,6 +25,7 @@
 [ext_resource path="res://src/Machines_and_Triggers/decorations/ToolBox.tscn" type="PackedScene" id=21]
 [ext_resource path="res://src/Machines_and_Triggers/decorations/Tonnel.tscn" type="PackedScene" id=22]
 [ext_resource path="res://src/Machines_and_Triggers/decorations/Walls.tscn" type="PackedScene" id=23]
+
 
 [node name="LevelTemplate" type="Node2D"]
 script = ExtResource( 9 )
@@ -168,5 +171,3 @@ position = Vector2( 118, -50 )
 position = Vector2( 440, -110 )
 
 [node name="UI" parent="." instance=ExtResource( 15 )]
-
-[node name="Portrait" parent="." instance=ExtResource( 19 )]

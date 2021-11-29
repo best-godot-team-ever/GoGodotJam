@@ -17,7 +17,7 @@ func start_turn() -> void:
 				# Play Power on Animation?
 				anim_state_machine.travel("idle")
 				audio_stream.stream = sound_activate
-				audio_stream.play(0)
+				audio_stream.play(0.25)
 			
 		GrabberState.Chasing:
 			var current_coord = get_current_position()

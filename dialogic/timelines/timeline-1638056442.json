@@ -21,6 +21,11 @@
 			"text": "It seems the floor below me is still powering up."
 		},
 		{
+			"action": "leaveall",
+			"character": "[All]",
+			"event_id": "dialogic_003"
+		},
+		{
 			"character": "",
 			"event_id": "dialogic_001",
 			"portrait": "",
