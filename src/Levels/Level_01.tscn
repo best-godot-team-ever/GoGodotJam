@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://resources/GroundTileset.tres" type="TileSet" id=1]
 [ext_resource path="res://src/Machines_and_Triggers/Machines/Door.tscn" type="PackedScene" id=2]
@@ -8,7 +8,7 @@
 [ext_resource path="res://src/Managers/BoardManager/BoardManager.gd" type="Script" id=6]
 [ext_resource path="res://src/Managers/BoardManager/Grid/EnergyGrid.gd" type="Script" id=7]
 [ext_resource path="res://src/Managers/BoardManager/Grid/ObjectGrid/EntityGrid.gd" type="Script" id=8]
-[ext_resource path="res://src/Levels/Level.gd" type="Script" id=9]
+[ext_resource path="res://src/Levels/Level_01.gd" type="Script" id=9]
 [ext_resource path="res://src/Entity/Player/Player.tscn" type="PackedScene" id=10]
 [ext_resource path="res://src/Managers/BoardManager/Grid/BlockingGrid.gd" type="Script" id=11]
 [ext_resource path="res://src/Managers/BoardManager/Grid/ObjectGrid/MachineGrid.gd" type="Script" id=12]
@@ -18,6 +18,7 @@
 [ext_resource path="res://src/Dialogue/EndingLevelTrigger.tscn" type="PackedScene" id=16]
 [ext_resource path="res://src/Levels/Level_02.tscn" type="PackedScene" id=17]
 [ext_resource path="res://src/Dialogue/DialogueTrigger.tscn" type="PackedScene" id=18]
+[ext_resource path="res://src/UI/Portrait.tscn" type="PackedScene" id=19]
 
 [node name="LevelTemplate" type="Node2D"]
 script = ExtResource( 9 )
@@ -138,3 +139,5 @@ position = Vector2( 420, -161 )
 position = Vector2( -259, 137 )
 
 [node name="UI" parent="." instance=ExtResource( 15 )]
+
+[node name="Portrait" parent="." instance=ExtResource( 19 )]

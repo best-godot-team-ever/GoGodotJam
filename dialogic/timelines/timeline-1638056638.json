@@ -31,6 +31,16 @@
 			"event_id": "dialogic_001",
 			"portrait": "",
 			"text": "At least I am able to power up its systems."
+		},
+		{
+			"call_node": {
+				"arguments": [
+
+				],
+				"method_name": "end_dialogue",
+				"target_node_path": "../.."
+			},
+			"event_id": "dialogic_042"
 		}
 	],
 	"metadata": {

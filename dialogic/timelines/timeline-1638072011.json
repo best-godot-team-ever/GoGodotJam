@@ -25,6 +25,16 @@
 			"event_id": "dialogic_001",
 			"portrait": "",
 			"text": "It is a really good thing that these droids are out of power."
+		},
+		{
+			"call_node": {
+				"arguments": [
+
+				],
+				"method_name": "end_dialogue",
+				"target_node_path": "../.."
+			},
+			"event_id": "dialogic_042"
 		}
 	],
 	"metadata": {

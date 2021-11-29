@@ -24,19 +24,29 @@
 			"character": "character-1637847529.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "But it seems to me that in order to escape I will have to continue emit pulses."
+			"text": "But it seems to me that in order to escape I will have to continue to emit pulses."
 		},
 		{
 			"character": "",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "[color=#A5EFAC] Emit a Pulse of energy with the Q key or the right mouse button.[/color]"
+			"text": "[color=#A5EFAC] Emit a Pulse of energy with the E key or the right mouse button.[/color]"
 		},
 		{
 			"character": "",
 			"event_id": "dialogic_001",
 			"portrait": "",
 			"text": "[color=#A5EFAC] Pulses drain your energy, so choose the right time to use it.[/color]"
+		},
+		{
+			"call_node": {
+				"arguments": [
+
+				],
+				"method_name": "end_dialogue",
+				"target_node_path": "../.."
+			},
+			"event_id": "dialogic_042"
 		}
 	],
 	"metadata": {

@@ -30,7 +30,17 @@
 			"character": "",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "[color=#A5EFAC] Press the SPACE key or the middle mouse button whilst standing on a floor cell to pass the time and charge it.[/color]"
+			"text": "[color=#A5EFAC] Press the Q key or the middle mouse button whilst standing on a floor cell to pass the time and charge it.[/color]"
+		},
+		{
+			"call_node": {
+				"arguments": [
+
+				],
+				"method_name": "end_dialogue",
+				"target_node_path": "../.."
+			},
+			"event_id": "dialogic_042"
 		}
 	],
 	"metadata": {

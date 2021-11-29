@@ -45,7 +45,7 @@ func play_next_story(next_story: Array) -> void:
 func start_game() -> void:
 	get_tree().change_scene("res://src/Levels/Level_00.tscn")
 
-func _unhandled_input(event):
+func _input(event):
 	if event.is_action_pressed("toggle_cell_numbers"):
 		get_tree().change_scene("res://src/Levels/Level_00.tscn")
 

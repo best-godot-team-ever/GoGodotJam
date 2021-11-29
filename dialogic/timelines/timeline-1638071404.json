@@ -37,6 +37,16 @@
 			"event_id": "dialogic_001",
 			"portrait": "",
 			"text": "...or maybe something happened to them?"
+		},
+		{
+			"call_node": {
+				"arguments": [
+
+				],
+				"method_name": "end_dialogue",
+				"target_node_path": "../.."
+			},
+			"event_id": "dialogic_042"
 		}
 	],
 	"metadata": {

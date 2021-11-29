@@ -7,7 +7,7 @@
 			"mirror": false,
 			"portrait": "",
 			"position": {
-				"0": true,
+				"0": false,
 				"1": false,
 				"2": false,
 				"3": false,
@@ -18,19 +18,13 @@
 			"character": "character-1637847529.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "All these years trapped..."
+			"text": "This place is huge"
 		},
 		{
 			"character": "character-1637847529.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "... just making energy for them..."
-		},
-		{
-			"character": "character-1637847529.json",
-			"event_id": "dialogic_001",
-			"portrait": "",
-			"text": "What happened? Where are they?"
+			"text": "I really miss seeing the sun..."
 		},
 		{
 			"call_node": {
@@ -45,7 +39,7 @@
 	],
 	"metadata": {
 		"dialogic-version": "1.4 - DEV",
-		"file": "timeline-1638056116.json",
-		"name": "level00_1"
+		"file": "timeline-1638196932.json",
+		"name": "level03_3"
 	}
 }

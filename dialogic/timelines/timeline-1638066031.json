@@ -25,6 +25,16 @@
 			"event_id": "dialogic_001",
 			"portrait": "",
 			"text": "[color=#A5EFAC] You regain your energy when you wait or move around.[/color]"
+		},
+		{
+			"call_node": {
+				"arguments": [
+
+				],
+				"method_name": "end_dialogue",
+				"target_node_path": "../.."
+			},
+			"event_id": "dialogic_042"
 		}
 	],
 	"metadata": {
