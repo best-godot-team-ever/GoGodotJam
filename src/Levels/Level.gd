@@ -3,7 +3,6 @@ extends Node2D
 
 onready var board_manager = $BoardManager
 onready var turn_manager = $TurnManager
-onready var dialogue_manager = $DialogueManager
 onready var ui_fade_in = $UI/FadeIn/AnimationPlayer
 
 func _ready() -> void:

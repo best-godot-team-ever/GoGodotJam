@@ -18,13 +18,13 @@
 			"character": "character-1637847529.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "So lasers huh..."
+			"text": "So... lasers huh..."
 		},
 		{
 			"character": "",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Should be able to use them to reach distant places."
+			"text": "I should be able to use them to reach distant places."
 		}
 	],
 	"metadata": {

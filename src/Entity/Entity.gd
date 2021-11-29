@@ -5,6 +5,7 @@ enum EntityType {Player, Grabber, Leecher}
 onready var tween = $Tween
 onready var animation_tree = $AnimationTree
 onready var anim_state_machine = $AnimationTree["parameters/playback"]
+onready var audio_stream = $AudioStreamPlayer2D
 
 var _board_manager: BoardManager
 var _turn_manager: TurnManager

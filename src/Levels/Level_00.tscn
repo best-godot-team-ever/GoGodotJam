@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://resources/GroundTileset.tres" type="TileSet" id=1]
 [ext_resource path="res://src/Managers/TurnManager.gd" type="Script" id=2]
@@ -18,6 +18,10 @@
 [ext_resource path="res://src/UI/UI.tscn" type="PackedScene" id=16]
 [ext_resource path="res://src/Dialogue/EndingLevelTrigger.tscn" type="PackedScene" id=17]
 [ext_resource path="res://src/Levels/Level_01.tscn" type="PackedScene" id=18]
+[ext_resource path="res://assets/sprites/ambient/wall.PNG" type="Texture" id=19]
+[ext_resource path="res://assets/sprites/ambient/support_1.PNG" type="Texture" id=20]
+[ext_resource path="res://assets/sprites/ambient/support_1 Merged.PNG" type="Texture" id=21]
+[ext_resource path="res://assets/sprites/ambient/computer_wall.PNG" type="Texture" id=22]
 
 [node name="LevelTemplate" type="Node2D"]
 script = ExtResource( 9 )
@@ -104,6 +108,175 @@ script = ExtResource( 11 )
 [node name="CanvasModulate" type="CanvasModulate" parent="BoardManager"]
 color = Color( 0.188235, 0.164706, 0.164706, 1 )
 
+[node name="background" type="Node2D" parent="."]
+z_index = -1
+
+[node name="Support1" type="Sprite" parent="background"]
+position = Vector2( -548, 345 )
+texture = ExtResource( 20 )
+
+[node name="Support2" type="Sprite" parent="background"]
+position = Vector2( -359, 245 )
+texture = ExtResource( 20 )
+
+[node name="Support4" type="Sprite" parent="background"]
+position = Vector2( -261, 193 )
+texture = ExtResource( 20 )
+
+[node name="Support5" type="Sprite" parent="background"]
+position = Vector2( -158, 144 )
+texture = ExtResource( 20 )
+
+[node name="Support6" type="Sprite" parent="background"]
+position = Vector2( 60, 36 )
+texture = ExtResource( 20 )
+
+[node name="Support7" type="Sprite" parent="background"]
+position = Vector2( 185, -26 )
+texture = ExtResource( 20 )
+
+[node name="Support8" type="Sprite" parent="background"]
+position = Vector2( 322, -95 )
+texture = ExtResource( 20 )
+
+[node name="Support9" type="Sprite" parent="background"]
+position = Vector2( 456, -162 )
+texture = ExtResource( 20 )
+
+[node name="Support10" type="Sprite" parent="background"]
+position = Vector2( 378, -205 )
+texture = ExtResource( 20 )
+
+[node name="Support1Merged" type="Sprite" parent="background"]
+position = Vector2( 535, -210 )
+texture = ExtResource( 21 )
+
+[node name="walls" type="Node2D" parent="background"]
+position = Vector2( -658, 217 )
+
+[node name="Wall" type="Sprite" parent="background/walls"]
+texture = ExtResource( 19 )
+
+[node name="Wall2" type="Sprite" parent="background/walls"]
+position = Vector2( 120, -60 )
+texture = ExtResource( 19 )
+
+[node name="Wall4" type="Sprite" parent="background/walls"]
+position = Vector2( 180, -90 )
+texture = ExtResource( 19 )
+
+[node name="Wall3" type="Sprite" parent="background/walls"]
+position = Vector2( 60, -30 )
+texture = ExtResource( 19 )
+
+[node name="Wall5" type="Sprite" parent="background/walls"]
+position = Vector2( 240, -120 )
+texture = ExtResource( 19 )
+
+[node name="Wall6" type="Sprite" parent="background/walls"]
+position = Vector2( 300, -150 )
+texture = ExtResource( 19 )
+
+[node name="Wall25" type="Sprite" parent="background/walls"]
+position = Vector2( -360, 180 )
+texture = ExtResource( 19 )
+
+[node name="Wall26" type="Sprite" parent="background/walls"]
+position = Vector2( -240, 120 )
+texture = ExtResource( 19 )
+
+[node name="Wall27" type="Sprite" parent="background/walls"]
+position = Vector2( -180, 90 )
+texture = ExtResource( 19 )
+
+[node name="Wall28" type="Sprite" parent="background/walls"]
+position = Vector2( -300, 150 )
+texture = ExtResource( 19 )
+
+[node name="Wall29" type="Sprite" parent="background/walls"]
+position = Vector2( -120, 60 )
+texture = ExtResource( 19 )
+
+[node name="Wall30" type="Sprite" parent="background/walls"]
+position = Vector2( -60, 30 )
+texture = ExtResource( 19 )
+
+[node name="Wall7" type="Sprite" parent="background/walls"]
+position = Vector2( 360, -180 )
+texture = ExtResource( 19 )
+
+[node name="Wall8" type="Sprite" parent="background/walls"]
+position = Vector2( 480, -240 )
+texture = ExtResource( 19 )
+
+[node name="Wall9" type="Sprite" parent="background/walls"]
+position = Vector2( 540, -270 )
+texture = ExtResource( 19 )
+
+[node name="Wall10" type="Sprite" parent="background/walls"]
+position = Vector2( 420, -210 )
+texture = ExtResource( 19 )
+
+[node name="Wall11" type="Sprite" parent="background/walls"]
+position = Vector2( 600, -300 )
+texture = ExtResource( 19 )
+
+[node name="Wall12" type="Sprite" parent="background/walls"]
+position = Vector2( 660, -330 )
+texture = ExtResource( 19 )
+
+[node name="Wall13" type="Sprite" parent="background/walls"]
+position = Vector2( 720, -360 )
+texture = ExtResource( 19 )
+
+[node name="Wall14" type="Sprite" parent="background/walls"]
+position = Vector2( 840, -420 )
+texture = ExtResource( 19 )
+
+[node name="Wall15" type="Sprite" parent="background/walls"]
+position = Vector2( 900, -450 )
+texture = ExtResource( 19 )
+
+[node name="Wall16" type="Sprite" parent="background/walls"]
+position = Vector2( 780, -390 )
+texture = ExtResource( 19 )
+
+[node name="Wall17" type="Sprite" parent="background/walls"]
+position = Vector2( 960, -480 )
+texture = ExtResource( 19 )
+
+[node name="Wall18" type="Sprite" parent="background/walls"]
+position = Vector2( 1020, -510 )
+texture = ExtResource( 19 )
+
+[node name="Wall19" type="Sprite" parent="background/walls"]
+position = Vector2( 1080, -540 )
+texture = ExtResource( 19 )
+
+[node name="Wall20" type="Sprite" parent="background/walls"]
+position = Vector2( 1200, -600 )
+texture = ExtResource( 19 )
+
+[node name="Wall21" type="Sprite" parent="background/walls"]
+position = Vector2( 1260, -630 )
+texture = ExtResource( 19 )
+
+[node name="Wall22" type="Sprite" parent="background/walls"]
+position = Vector2( 1140, -570 )
+texture = ExtResource( 19 )
+
+[node name="Wall23" type="Sprite" parent="background/walls"]
+position = Vector2( 1320, -660 )
+texture = ExtResource( 19 )
+
+[node name="Wall24" type="Sprite" parent="background/walls"]
+position = Vector2( 1380, -690 )
+texture = ExtResource( 19 )
+
+[node name="ComputerWall" type="Sprite" parent="."]
+position = Vector2( 357, -307 )
+texture = ExtResource( 22 )
+
 [node name="YSort" type="YSort" parent="."]
 
 [node name="EndingLevelTrigger" parent="YSort" instance=ExtResource( 17 )]
@@ -146,6 +319,6 @@ position = Vector2( 360, -131 )
 position = Vector2( 521, -170 )
 
 [node name="Player" parent="YSort" instance=ExtResource( 10 )]
-position = Vector2( -556, 350 )
+position = Vector2( -562, 289 )
 
 [node name="UI" parent="." instance=ExtResource( 16 )]

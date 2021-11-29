@@ -108,7 +108,13 @@ position = Vector2( 38, 49 )
 position = Vector2( -20, 40 )
 
 [node name="Grabber" parent="YSort" instance=ExtResource( 3 )]
-position = Vector2( -80, 28 )
+position = Vector2( -118, 71 )
+
+[node name="Grabber2" parent="YSort" instance=ExtResource( 3 )]
+position = Vector2( 126, 132 )
+
+[node name="Grabber3" parent="YSort" instance=ExtResource( 3 )]
+position = Vector2( 101, 120 )
 
 [node name="Leecher" parent="YSort" instance=ExtResource( 4 )]
 position = Vector2( 102, 58 )

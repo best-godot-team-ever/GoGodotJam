@@ -4,6 +4,8 @@ enum LeecherStates {PoweredOff, Idle, Following}
 
 var current_state: int = LeecherStates.PoweredOff
 
+var sound_move = preload("res://assets/sounds/sfx/Leecher_Move.mp3")
+
 # Start off powered off.
 # When it wakes up, it sucks all energy from the tile?
 #
@@ -18,6 +20,8 @@ func start_turn() -> void:
 				current_state = LeecherStates.Idle
 				# Play Power on Animation?
 				anim_state_machine.travel("idle")
+				audio_stream.stream = sound_move
+				audio_stream.play()			
 		LeecherStates.Idle:
 			if _board_manager.get_cell(get_current_position()).energy_level > 0:
 				current_state = LeecherStates.Following
@@ -31,6 +35,8 @@ func start_turn() -> void:
 			move_on_map(move_direction)
 
 			_suck_energy()
+			audio_stream.stream = sound_move
+			audio_stream.play()		
 
 			if _board_manager.get_cell(get_current_position()).energy_level == 0 and stored_energy == 0:
 				current_state = LeecherStates.PoweredOff

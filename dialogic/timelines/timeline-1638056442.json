@@ -18,7 +18,7 @@
 			"character": "character-1637847529.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "It seems the cells below me are still functioning."
+			"text": "It seems the floor below me is still powering up."
 		},
 		{
 			"character": "",
@@ -30,7 +30,7 @@
 			"character": "",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "[color=#A5EFAC] Charge the cells as you move.[/color]"
+			"text": "[color=#A5EFAC] You will charge the floor cells as you move.[/color]"
 		},
 		{
 			"character": "",

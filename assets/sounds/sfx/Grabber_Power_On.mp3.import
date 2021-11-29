@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Grabber_Power_On.mp3-5b9a57c5072f1ba9b7ad13c5d6a2112e.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/sfx/Grabber_Power_On.mp3"
+dest_files=[ "res://.import/Grabber_Power_On.mp3-5b9a57c5072f1ba9b7ad13c5d6a2112e.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

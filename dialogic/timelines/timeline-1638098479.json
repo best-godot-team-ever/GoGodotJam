@@ -4,13 +4,13 @@
 			"character": "",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "A century ago, beings of pure energy lived together in peace"
+			"text": "A century ago, beings of pure energy lived together in peace."
 		},
 		{
 			"character": "",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "But humanitys greed and hunger for power was about to get in the way..."
+			"text": "Until humanity's hunger for power crushed their peace."
 		},
 		{
 			"call_node": {

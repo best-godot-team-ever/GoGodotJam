@@ -4,37 +4,31 @@
 			"character": "",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "First 5 years, then 10, then 20..."
+			"text": "less and less humans were seen daily"
 		},
 		{
 			"character": "",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "as a century passed, the factory started going downhill"
+			"text": "Their factory braking down…"
 		},
 		{
 			"character": "",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "less and less humans were being seen by the day"
+			"text": "and the slaves spent more time alone in their cells."
 		},
 		{
 			"character": "",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "and the poor slaves were left more and more time alone in their cells."
+			"text": "The day came when the whole factory went silent."
 		},
 		{
 			"character": "",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "The whole factory went silent..."
-		},
-		{
-			"character": "",
-			"event_id": "dialogic_001",
-			"portrait": "",
-			"text": "In this silence, one spirit spent his days alone in a cell, until..."
+			"text": "In this silence, one slave called [color=#77f4e5]Photon[/color] bid his time…"
 		},
 		{
 			"call_node": {

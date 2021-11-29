@@ -4,25 +4,13 @@
 			"character": "",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "They ransacked the village, burning it down to ashes"
+			"text": "Their villages ransacked, burnt to ashes…"
 		},
 		{
 			"character": "",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "And they took them as prisoners... "
-		},
-		{
-			"character": "",
-			"event_id": "dialogic_001",
-			"portrait": "",
-			"text": "or more accurately... "
-		},
-		{
-			"character": "",
-			"event_id": "dialogic_001",
-			"portrait": "",
-			"text": "as slaves."
+			"text": "prisoners turned into slaves…"
 		},
 		{
 			"call_node": {

@@ -4,19 +4,7 @@
 			"character": "",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Suddenly the door of his cell opened!"
-		},
-		{
-			"character": "",
-			"event_id": "dialogic_001",
-			"portrait": "",
-			"text": "Surprised, he took a peek and saw no one"
-		},
-		{
-			"character": "",
-			"event_id": "dialogic_001",
-			"portrait": "",
-			"text": "It was time to return home..."
+			"text": "until..."
 		},
 		{
 			"call_node": {
