@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=2]
+[gd_scene load_steps=46 format=2]
 
 [ext_resource path="res://assets/sprites/entities/Player-Sheet.png" type="Texture" id=1]
 [ext_resource path="res://assets/sprites/UI/light.png" type="Texture" id=2]
@@ -504,6 +504,9 @@ tracks/0/keys = {
 "values": [ 147, 148, 149, 150, 151, 152 ]
 }
 
+[sub_resource type="AnimationNodeAnimation" id=41]
+animation = "die"
+
 [sub_resource type="AnimationNodeAnimation" id=10]
 animation = "idle_back_left"
 
@@ -585,15 +588,21 @@ switch_mode = 1
 switch_mode = 2
 auto_advance = true
 
+[sub_resource type="AnimationNodeStateMachineTransition" id=42]
+
 [sub_resource type="AnimationNodeStateMachine" id=15]
+states/die/node = SubResource( 41 )
+states/die/position = Vector2( 421, 10 )
 states/idle/node = SubResource( 14 )
 states/idle/position = Vector2( 273, 92 )
 states/move/node = SubResource( 21 )
 states/move/position = Vector2( 500, 92 )
 states/pulse/node = SubResource( 32 )
 states/pulse/position = Vector2( 332, 230 )
-transitions = [ "idle", "move", SubResource( 22 ), "move", "idle", SubResource( 23 ), "idle", "pulse", SubResource( 33 ), "pulse", "idle", SubResource( 34 ) ]
+transitions = [ "idle", "move", SubResource( 22 ), "move", "idle", SubResource( 23 ), "idle", "pulse", SubResource( 33 ), "pulse", "idle", SubResource( 34 ), "idle", "die", SubResource( 42 ) ]
 start_node = "idle"
+end_node = "die"
+graph_offset = Vector2( -199, -110 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=16]
 
@@ -615,7 +624,6 @@ texture = ExtResource( 1 )
 offset = Vector2( 0, -20 )
 hframes = 21
 vframes = 9
-frame = 22
 
 [node name="Camera2D" type="Camera2D" parent="." index="3"]
 current = true

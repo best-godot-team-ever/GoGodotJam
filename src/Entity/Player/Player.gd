@@ -176,7 +176,8 @@ func _update_facing_direction(direction: Vector2) -> void:
 func _animation_finished() -> void:
 	_turn_manager.ready_for_turn()
 	_update_facing_direction(move_direction)
-	anim_state_machine.travel("idle")
+	if not _is_dead:
+		anim_state_machine.travel("idle")
 
 
 # This is just to emulate a fake animation
@@ -199,3 +200,4 @@ func _die() -> void:
 	lose_menu._is_opened = true
 	lose_menu.visible = true
 	anim_player.play("camera_zoom")
+	anim_state_machine.travel("die")
