@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://resources/GroundTileset.tres" type="TileSet" id=1]
 [ext_resource path="res://src/Managers/TurnManager.gd" type="Script" id=2]
@@ -16,11 +16,37 @@
 [ext_resource path="res://src/Machines_and_Triggers/Triggers/PlateTrigger.tscn" type="PackedScene" id=14]
 [ext_resource path="res://src/Machines_and_Triggers/Machines/Door.tscn" type="PackedScene" id=15]
 [ext_resource path="res://src/UI/Portrait.tscn" type="PackedScene" id=16]
+[ext_resource path="res://src/Dialogue/DialogueTrigger.tscn" type="PackedScene" id=17]
+[ext_resource path="res://src/UI/Ending.tscn" type="PackedScene" id=18]
 
 [node name="LevelTemplate" type="Node2D"]
 script = ExtResource( 9 )
 
 [node name="Dialogues" type="Node2D" parent="."]
+
+[node name="DialogueTrigger" parent="Dialogues" instance=ExtResource( 17 )]
+position = Vector2( 1, 2 )
+_dialogue_string = "level07_0"
+
+[node name="DialogueTrigger2" parent="Dialogues" instance=ExtResource( 17 )]
+position = Vector2( 99, 61 )
+_dialogue_string = "level07_1"
+
+[node name="DialogueTrigger3" parent="Dialogues" instance=ExtResource( 17 )]
+position = Vector2( 266, 141 )
+_dialogue_string = "level07_2"
+
+[node name="DialogueTrigger4" parent="Dialogues" instance=ExtResource( 17 )]
+position = Vector2( 384, 203 )
+_dialogue_string = "level07_3"
+
+[node name="DialogueTrigger5" parent="Dialogues" instance=ExtResource( 17 )]
+position = Vector2( 456, 233 )
+_dialogue_string = "level07_4"
+
+[node name="DialogueTrigger6" parent="Dialogues" instance=ExtResource( 17 )]
+position = Vector2( 638, 327 )
+_dialogue_string = "level07_5"
 
 [node name="TurnManager" type="Node" parent="."]
 script = ExtResource( 2 )
@@ -74,10 +100,11 @@ script = ExtResource( 11 )
 [node name="CanvasModulate" type="CanvasModulate" parent="BoardManager"]
 color = Color( 0.188235, 0.164706, 0.164706, 1 )
 
-[node name="YSort" type="YSort" parent="."]
+[node name="NonSolidDecor" type="Node2D" parent="."]
 
-[node name="Player" parent="YSort" instance=ExtResource( 10 )]
-position = Vector2( 1, 8 )
+[node name="BackGround" type="Node2D" parent="."]
+
+[node name="YSort" type="YSort" parent="."]
 
 [node name="EndingLevelTrigger" parent="YSort" instance=ExtResource( 13 )]
 position = Vector2( 0, -70 )
@@ -85,12 +112,16 @@ _fake = true
 
 [node name="EndingLevelTrigger2" parent="YSort" instance=ExtResource( 13 )]
 position = Vector2( 721, 372 )
+_next_level = ExtResource( 18 )
 
 [node name="Door" parent="YSort" instance=ExtResource( 15 )]
 position = Vector2( -66, 41 )
 
 [node name="PlateTrigger" parent="YSort" instance=ExtResource( 14 )]
 position = Vector2( -120, -34 )
+
+[node name="Player" parent="YSort" instance=ExtResource( 10 )]
+position = Vector2( 1, -70 )
 
 [node name="UI" parent="." instance=ExtResource( 4 )]
 

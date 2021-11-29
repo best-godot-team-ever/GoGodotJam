@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://resources/GroundTileset.tres" type="TileSet" id=1]
 [ext_resource path="res://src/Machines_and_Triggers/Machines/Door.tscn" type="PackedScene" id=2]
@@ -19,6 +19,10 @@
 [ext_resource path="res://src/Levels/Level_02.tscn" type="PackedScene" id=17]
 [ext_resource path="res://src/Dialogue/DialogueTrigger.tscn" type="PackedScene" id=18]
 [ext_resource path="res://src/UI/Portrait.tscn" type="PackedScene" id=19]
+[ext_resource path="res://src/Machines_and_Triggers/decorations/Box.tscn" type="PackedScene" id=20]
+[ext_resource path="res://src/Machines_and_Triggers/decorations/ToolBox.tscn" type="PackedScene" id=21]
+[ext_resource path="res://src/Machines_and_Triggers/decorations/Tonnel.tscn" type="PackedScene" id=22]
+[ext_resource path="res://src/Machines_and_Triggers/decorations/Walls.tscn" type="PackedScene" id=23]
 
 [node name="LevelTemplate" type="Node2D"]
 script = ExtResource( 9 )
@@ -99,6 +103,16 @@ script = ExtResource( 11 )
 [node name="CanvasModulate" type="CanvasModulate" parent="BoardManager"]
 color = Color( 0.188235, 0.164706, 0.164706, 1 )
 
+[node name="NonSolidDecor" type="Node2D" parent="."]
+
+[node name="BackGround" type="Node2D" parent="."]
+
+[node name="Walls" parent="BackGround" instance=ExtResource( 23 )]
+position = Vector2( -318, 45 )
+
+[node name="Walls2" parent="BackGround" instance=ExtResource( 23 )]
+position = Vector2( -138, -44 )
+
 [node name="YSort" type="YSort" parent="."]
 
 [node name="EndingLevelTrigger" parent="YSort" instance=ExtResource( 16 )]
@@ -137,6 +151,21 @@ position = Vector2( 420, -161 )
 
 [node name="Player" parent="YSort" instance=ExtResource( 10 )]
 position = Vector2( -259, 137 )
+
+[node name="Box" parent="YSort" instance=ExtResource( 20 )]
+position = Vector2( -160, 75 )
+
+[node name="Box2" parent="YSort" instance=ExtResource( 20 )]
+position = Vector2( 462, -40 )
+
+[node name="Tonnel" parent="YSort" instance=ExtResource( 22 )]
+position = Vector2( 380, -40 )
+
+[node name="ToolBox" parent="YSort" instance=ExtResource( 21 )]
+position = Vector2( 118, -50 )
+
+[node name="ToolBox2" parent="YSort" instance=ExtResource( 21 )]
+position = Vector2( 440, -110 )
 
 [node name="UI" parent="." instance=ExtResource( 15 )]
 

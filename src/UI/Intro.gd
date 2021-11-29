@@ -10,3 +10,6 @@ func go_to_menu() -> void:
 func _input(event):
 	if event.is_action_pressed("toggle_cell_numbers"):
 		get_tree().change_scene("res://src/UI/StartMenu.tscn")
+
+func _on_Timer_timeout():
+	$VideoPlayer.play()

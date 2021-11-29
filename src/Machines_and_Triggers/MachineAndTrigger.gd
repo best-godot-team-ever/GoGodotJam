@@ -1,7 +1,7 @@
 extends Node2D
 class_name MachineAndTrigger
 
-enum MachineType {Door, DoorChanging, DoorReverse, LaserUp, LaserDown, EnergyTrigger, PlateTrigger}
+enum MachineType {Door, DoorChanging, DoorReverse, LaserUp, LaserDown, EnergyTrigger, PlateTrigger, SolidDecoration}
 var _triggers : Array = [MachineType.EnergyTrigger, MachineType.PlateTrigger]
 
 export var turn_speed: int = 0
@@ -34,6 +34,8 @@ func _initialize(board_manager: Node, turn_manager: Node) -> void:
 	if ! machine_type in _triggers:
 		_board_manager.set_machine_blocking(machine_id, true)
 		_turn_manager.subscribe_machine(self)
+	if machine_type == MachineType.SolidDecoration:
+		_board_manager.set_machine_blocking(machine_id, true)
 
 func start_turn() -> void:
 	pass

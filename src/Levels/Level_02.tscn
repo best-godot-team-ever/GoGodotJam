@@ -102,6 +102,10 @@ script = ExtResource( 11 )
 [node name="CanvasModulate" type="CanvasModulate" parent="BoardManager"]
 color = Color( 0.188235, 0.164706, 0.164706, 1 )
 
+[node name="NonSolidDecor" type="Node2D" parent="."]
+
+[node name="BackGround" type="Node2D" parent="."]
+
 [node name="YSort" type="YSort" parent="."]
 
 [node name="EndingLevelTrigger2" parent="YSort" instance=ExtResource( 19 )]
