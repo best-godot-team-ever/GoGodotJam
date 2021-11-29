@@ -11,6 +11,9 @@ onready var anim_player = $AnimationPlayer
 
 func _ready():
 	anim_player.play("0_fade_in")
+	BgmManager.stream = load("res://assets/sounds/bgm/History_Panel_Theme.mp3")
+	BgmManager.play()
+	
 
 func _play_dialogue(dialogue_number: int) -> void:
 	match dialogue_number:
@@ -44,8 +47,10 @@ func play_next_story(next_story: Array) -> void:
 
 func start_game() -> void:
 	get_tree().change_scene("res://src/Levels/Level_00.tscn")
+	BgmManager.stream = load("res://assets/sounds/bgm/Main_Level_Music_V2.mp3")
+	BgmManager.play()
 
 func _input(event):
 	if event.is_action_pressed("toggle_cell_numbers"):
-		get_tree().change_scene("res://src/Levels/Level_00.tscn")
+		start_game()
 

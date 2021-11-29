@@ -51,8 +51,6 @@ func start_turn() -> void:
 					current_state = GrabberState.PoweredOff
 					# Play Powered off Animation
 					anim_state_machine.travel("powered_off")
-	
-	$Label.set_text(GrabberState.keys()[current_state])
 
 func _get_nearby_energy_tile() -> Vector2:
 	var target = get_current_position()
