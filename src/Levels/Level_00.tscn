@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://resources/GroundTileset.tres" type="TileSet" id=1]
 [ext_resource path="res://src/Managers/TurnManager.gd" type="Script" id=2]
@@ -22,7 +22,6 @@
 [ext_resource path="res://assets/sprites/ambient/support_1.PNG" type="Texture" id=20]
 [ext_resource path="res://assets/sprites/ambient/support_1 Merged.PNG" type="Texture" id=21]
 [ext_resource path="res://assets/sprites/ambient/computer_wall.PNG" type="Texture" id=22]
-[ext_resource path="res://src/UI/Portrait.tscn" type="PackedScene" id=23]
 
 [node name="LevelTemplate" type="Node2D"]
 script = ExtResource( 9 )
@@ -324,5 +323,3 @@ position = Vector2( 521, -170 )
 position = Vector2( -562, 289 )
 
 [node name="UI" parent="." instance=ExtResource( 16 )]
-
-[node name="Portrait" parent="." instance=ExtResource( 23 )]

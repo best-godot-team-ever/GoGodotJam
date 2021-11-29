@@ -21,6 +21,11 @@
 			"text": "I will need to fully charge that trigger in order to feed enough energy to these doors."
 		},
 		{
+			"action": "leaveall",
+			"character": "[All]",
+			"event_id": "dialogic_003"
+		},
+		{
 			"character": "",
 			"event_id": "dialogic_001",
 			"portrait": "",
