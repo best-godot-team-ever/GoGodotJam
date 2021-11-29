@@ -90,6 +90,8 @@ func is_in_level(map_position: Vector2) -> bool:
 func is_blocked(map_position: Vector2) -> bool:
 	return entity_grid.get_position_is_blocked(map_position) or machine_grid.get_position_is_blocked(map_position)
 
+func is_blocked_by_entity(map_position: Vector2) -> bool:
+	return entity_grid.get_position_is_blocked(map_position)
 # =======================================================
 #    World space < --- > Map space transfer
 # =======================================================

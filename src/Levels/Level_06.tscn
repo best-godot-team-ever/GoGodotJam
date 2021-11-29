@@ -1,0 +1,184 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://resources/GroundTileset.tres" type="TileSet" id=1]
+[ext_resource path="res://src/Managers/TurnManager.gd" type="Script" id=2]
+[ext_resource path="res://resources/LaserScorch.tres" type="TileSet" id=3]
+[ext_resource path="res://src/UI/UI.tscn" type="PackedScene" id=4]
+[ext_resource path="res://resources/WireTileset.tres" type="TileSet" id=5]
+[ext_resource path="res://src/Managers/BoardManager/BoardManager.gd" type="Script" id=6]
+[ext_resource path="res://src/Managers/BoardManager/Grid/EnergyGrid.gd" type="Script" id=7]
+[ext_resource path="res://src/Managers/BoardManager/Grid/ObjectGrid/EntityGrid.gd" type="Script" id=8]
+[ext_resource path="res://src/Levels/Level.gd" type="Script" id=9]
+[ext_resource path="res://src/Entity/Player/Player.tscn" type="PackedScene" id=10]
+[ext_resource path="res://src/Managers/BoardManager/Grid/BlockingGrid.gd" type="Script" id=11]
+[ext_resource path="res://src/Managers/BoardManager/Grid/ObjectGrid/MachineGrid.gd" type="Script" id=12]
+[ext_resource path="res://src/Machines_and_Triggers/Triggers/EnergyTrigger.tscn" type="PackedScene" id=13]
+[ext_resource path="res://src/Entity/Enemy/Grabber.tscn" type="PackedScene" id=14]
+[ext_resource path="res://src/Machines_and_Triggers/Machines/Door.tscn" type="PackedScene" id=15]
+[ext_resource path="res://src/Machines_and_Triggers/Triggers/PlateTrigger.tscn" type="PackedScene" id=16]
+[ext_resource path="res://src/Machines_and_Triggers/Machines/LaserPowerUp.tscn" type="PackedScene" id=17]
+[ext_resource path="res://src/Machines_and_Triggers/Machines/DoorReverse.tscn" type="PackedScene" id=18]
+[ext_resource path="res://src/Entity/Enemy/Leecher.tscn" type="PackedScene" id=19]
+
+[node name="LevelTemplate" type="Node2D"]
+script = ExtResource( 9 )
+
+[node name="Dialogues" type="Node2D" parent="."]
+
+[node name="TurnManager" type="Node" parent="."]
+script = ExtResource( 2 )
+
+[node name="BoardManager" type="Node2D" parent="."]
+script = ExtResource( 6 )
+
+[node name="LevelGrid" type="TileMap" parent="BoardManager"]
+mode = 1
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 40, 20 )
+cell_y_sort = true
+centered_textures = true
+format = 1
+tile_data = PoolIntArray( -589828, 0, 0, -589827, 0, 0, -589826, 0, 0, -589825, 0, 0, -655360, 0, 0, -655359, 0, 0, -655358, 0, 0, -655357, 0, 0, -655356, 0, 0, -655355, 0, 0, -655354, 0, 0, -524296, 0, 0, -524295, 0, 0, -524294, 0, 0, -524293, 0, 0, -524292, 0, 0, -589823, 0, 0, -589822, 0, 0, -589821, 0, 0, -589820, 0, 0, -589819, 0, 0, -589818, 0, 0, -458756, 0, 0, -524287, 0, 0, -524286, 0, 0, -524283, 0, 0, -524282, 0, 0, -393220, 0, 0, -458752, 0, 0, -458751, 0, 0, -458750, 0, 0, -458747, 0, 0, -458746, 0, 0, -327684, 0, 0, -327683, 0, 0, -327682, 0, 0, -327681, 0, 0, -393216, 0, 0, -393215, 0, 0, -393214, 0, 0, -393213, 0, 0, -393211, 0, 0, -393210, 0, 0, -262148, 0, 0, -262147, 0, 0, -262146, 0, 0, -262145, 0, 0, -327680, 0, 0, -327679, 0, 0, -327678, 0, 0, -327677, 0, 0, -327676, 0, 0, -327675, 0, 0, -327674, 0, 0, -196616, 0, 0, -196615, 0, 0, -196614, 0, 0, -196613, 0, 0, -262144, 0, 0, -262141, 0, 0, -262140, 0, 0, -262139, 0, 0, -262138, 0, 0, -131080, 0, 0, -131077, 0, 0, -196608, 0, 0, -196604, 0, 0, -196603, 0, 0, -196602, 0, 0, -65544, 0, 0, -65541, 0, 0, -65538, 0, 0, -65537, 0, 0, -131072, 0, 0, -131071, 0, 0, -131070, 0, 0, -131067, 0, 0, -8, 0, 0, -5, 0, 0, -2, 0, 0, -1, 0, 0, -65536, 0, 0, -65535, 0, 0, -65534, 0, 0, -65531, 0, 0, 65528, 0, 0, 65531, 0, 0, 65532, 0, 0, 65533, 0, 0, 65534, 0, 0, 65535, 0, 0, 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 131064, 0, 0, 131067, 0, 0, 131070, 0, 0, 131071, 0, 0, 65536, 0, 0, 65537, 0, 0, 65538, 0, 0, 65541, 0, 0, 196599, 0, 0, 196600, 0, 0, 196603, 0, 0, 196606, 0, 0, 196607, 0, 0, 131072, 0, 0, 131073, 0, 0, 131074, 0, 0, 131077, 0, 0, 131078, 0, 0, 262135, 0, 0, 262139, 0, 0, 262140, 0, 0, 262141, 0, 0, 196608, 0, 0, 196614, 0, 0, 327671, 0, 0, 327675, 0, 0, 327677, 0, 0, 262144, 0, 0, 262150, 0, 0, 393207, 0, 0, 393208, 0, 0, 393209, 0, 0, 393210, 0, 0, 393211, 0, 0, 393212, 0, 0, 393215, 0, 0, 327680, 0, 0, 327681, 0, 0, 327682, 0, 0, 327686, 0, 0, 458745, 0, 0, 458748, 0, 0, 393216, 0, 0, 393218, 0, 0, 393219, 0, 0, 393220, 0, 0, 393221, 0, 0, 393222, 0, 0, 393223, 0, 0, 524281, 0, 0, 524284, 0, 0, 524285, 0, 0, 524286, 0, 0, 458752, 0, 0, 458758, 0, 0, 458759, 0, 0, 458760, 0, 0, 589817, 0, 0, 589818, 0, 0, 589819, 0, 0, 589820, 0, 0, 589821, 0, 0, 589822, 0, 0, 524288, 0, 0, 524295, 0, 0, 524296, 0, 0, 524297, 0, 0, 655355, 0, 0, 655358, 0, 0, 589824, 0, 0, 589832, 0, 0, 589833, 0, 0, 589834, 0, 0, 720891, 0, 0, 720892, 0, 0, 720893, 0, 0, 720894, 0, 0, 720895, 0, 0, 655360, 0, 0, 655369, 0, 0, 655370, 0, 0, 655371, 0, 0, 786428, 0, 0, 786430, 0, 0, 786431, 0, 0, 720896, 0, 0, 720906, 0, 0, 720907, 0, 0, 720908, 0, 0, 851964, 0, 0, 786443, 0, 0, 786444, 0, 0, 786445, 0, 0, 851980, 0, 0, 851981, 0, 0, 851982, 0, 0, 917517, 0, 0, 917518, 0, 0 )
+
+[node name="NumberGrid" type="TileMap" parent="BoardManager"]
+format = 1
+
+[node name="NumberGridBig" type="TileMap" parent="BoardManager"]
+format = 1
+
+[node name="WireTileset" type="TileMap" parent="BoardManager"]
+mode = 1
+tile_set = ExtResource( 5 )
+cell_size = Vector2( 40, 20 )
+format = 1
+
+[node name="LaserScorch" type="TileMap" parent="BoardManager"]
+mode = 1
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 40, 20 )
+format = 1
+tile_data = PoolIntArray( 786428, 0, 0, 786430, 0, 0, 786431, 0, 2 )
+
+[node name="EnergyGrid" type="Node" parent="BoardManager"]
+script = ExtResource( 7 )
+
+[node name="EntityGrid" type="Node" parent="BoardManager"]
+script = ExtResource( 8 )
+
+[node name="BlockingGrid" type="Node" parent="BoardManager/EntityGrid"]
+script = ExtResource( 11 )
+
+[node name="MachineGrid" type="Node" parent="BoardManager"]
+script = ExtResource( 12 )
+
+[node name="BlockingGrid" type="Node" parent="BoardManager/MachineGrid"]
+script = ExtResource( 11 )
+
+[node name="CanvasModulate" type="CanvasModulate" parent="BoardManager"]
+color = Color( 0.188235, 0.164706, 0.164706, 1 )
+
+[node name="YSort" type="YSort" parent="."]
+
+[node name="Player" parent="YSort" instance=ExtResource( 10 )]
+position = Vector2( 1, 8 )
+
+[node name="EnergyTrigger" parent="YSort" instance=ExtResource( 13 )]
+position = Vector2( -140, 0 )
+
+[node name="EnergyTrigger2" parent="YSort" instance=ExtResource( 13 )]
+position = Vector2( -139, 20 )
+
+[node name="EnergyTrigger3" parent="YSort" instance=ExtResource( 13 )]
+position = Vector2( 140, 0 )
+
+[node name="EnergyTrigger4" parent="YSort" instance=ExtResource( 13 )]
+position = Vector2( 140, 19 )
+
+[node name="EnergyTrigger5" parent="YSort" instance=ExtResource( 13 )]
+position = Vector2( -82, 50 )
+
+[node name="EnergyTrigger6" parent="YSort" instance=ExtResource( 13 )]
+position = Vector2( -200, -49 )
+
+[node name="Door" parent="YSort" instance=ExtResource( 15 )]
+position = Vector2( -62, 40 )
+_link_with_triggers = [ NodePath("../EnergyTrigger2") ]
+
+[node name="Door2" parent="YSort" instance=ExtResource( 15 )]
+position = Vector2( -62, -21 )
+_link_with_triggers = [ NodePath("../EnergyTrigger") ]
+
+[node name="Door3" parent="YSort" instance=ExtResource( 15 )]
+position = Vector2( -82, -109 )
+_link_with_triggers = [ NodePath("../EnergyTrigger6") ]
+
+[node name="Door4" parent="YSort" instance=ExtResource( 15 )]
+position = Vector2( -178, 97 )
+_link_with_triggers = [ NodePath("../EnergyTrigger5") ]
+
+[node name="Door5" parent="YSort" instance=ExtResource( 15 )]
+position = Vector2( -218, 77 )
+_link_with_triggers = [ NodePath("../PlateTrigger2") ]
+
+[node name="Door6" parent="YSort" instance=ExtResource( 15 )]
+position = Vector2( 58, -21 )
+_link_with_triggers = [ NodePath("../PlateTrigger3") ]
+
+[node name="Door7" parent="YSort" instance=ExtResource( 15 )]
+position = Vector2( 63, 40 )
+_link_with_triggers = [ NodePath("../EnergyTrigger4") ]
+
+[node name="Grabber" parent="YSort" instance=ExtResource( 14 )]
+position = Vector2( -62, 0 )
+
+[node name="Grabber2" parent="YSort" instance=ExtResource( 14 )]
+position = Vector2( -18, 0 )
+
+[node name="Grabber3" parent="YSort" instance=ExtResource( 14 )]
+position = Vector2( 0, 50 )
+
+[node name="Grabber4" parent="YSort" instance=ExtResource( 14 )]
+position = Vector2( -263, 97 )
+
+[node name="Grabber5" parent="YSort" instance=ExtResource( 14 )]
+position = Vector2( -296, 75 )
+
+[node name="Grabber6" parent="YSort" instance=ExtResource( 14 )]
+position = Vector2( -238, 48 )
+
+[node name="Grabber7" parent="YSort" instance=ExtResource( 14 )]
+position = Vector2( 38, 8 )
+
+[node name="Grabber8" parent="YSort" instance=ExtResource( 14 )]
+position = Vector2( 20, 40 )
+
+[node name="PlateTrigger" parent="YSort" instance=ExtResource( 16 )]
+position = Vector2( -198, 107 )
+
+[node name="PlateTrigger2" parent="YSort" instance=ExtResource( 16 )]
+position = Vector2( -279, 67 )
+
+[node name="PlateTrigger3" parent="YSort" instance=ExtResource( 16 )]
+position = Vector2( 78, 10 )
+
+[node name="PlateTrigger4" parent="YSort" instance=ExtResource( 16 )]
+position = Vector2( -200, 29 )
+
+[node name="LaserPowerUp" parent="YSort" instance=ExtResource( 17 )]
+position = Vector2( -218, 117 )
+_link_with_triggers = [ NodePath("../PlateTrigger") ]
+direction = "Left"
+
+[node name="LaserPowerUp2" parent="YSort" instance=ExtResource( 17 )]
+position = Vector2( -321, 87 )
+_link_with_triggers = [ NodePath("../PlateTrigger2") ]
+direction = "Up"
+
+[node name="DoorReverse" parent="YSort" instance=ExtResource( 18 )]
+position = Vector2( -180, 19 )
+_link_with_triggers = [ NodePath("../PlateTrigger4") ]
+
+[node name="Leecher" parent="YSort" instance=ExtResource( 19 )]
+position = Vector2( 0, -31 )
+
+[node name="UI" parent="." instance=ExtResource( 4 )]

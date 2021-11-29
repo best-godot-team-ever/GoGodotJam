@@ -48,10 +48,6 @@ _dialogue_string = "level00_4"
 position = Vector2( 359, -253 )
 _dialogue_string = "level00_5"
 
-[node name="EndingLevelTrigger" parent="Dialogues" instance=ExtResource( 17 )]
-position = Vector2( 339, -241 )
-_next_level = ExtResource( 18 )
-
 [node name="TurnManager" type="Node" parent="."]
 script = ExtResource( 2 )
 
@@ -282,6 +278,10 @@ position = Vector2( 357, -307 )
 texture = ExtResource( 22 )
 
 [node name="YSort" type="YSort" parent="."]
+
+[node name="EndingLevelTrigger" parent="YSort" instance=ExtResource( 17 )]
+position = Vector2( 339, -241 )
+_next_level = ExtResource( 18 )
 
 [node name="Door4" parent="YSort" instance=ExtResource( 4 )]
 position = Vector2( 122, -48 )

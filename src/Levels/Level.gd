@@ -4,6 +4,7 @@ extends Node2D
 onready var board_manager = $BoardManager
 onready var turn_manager = $TurnManager
 onready var dialogue_manager = $DialogueManager
+onready var ui_fade_in = $UI/FadeIn/AnimationPlayer
 
 func _ready() -> void:
 	turn_manager.init(board_manager)
@@ -11,5 +12,6 @@ func _ready() -> void:
 		child.init(board_manager, turn_manager)
 	for child in $Dialogues.get_children():
 		child.init(board_manager, turn_manager)
+	ui_fade_in.play("fade_in")
 	
 

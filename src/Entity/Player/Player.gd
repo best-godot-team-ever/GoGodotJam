@@ -6,6 +6,9 @@ const NO_ACTION = -1
 
 onready var viewport_midpoint: Vector2 = get_viewport_rect().size / 2
 onready var health_bar = get_parent().get_parent().find_node("HealthBar")
+onready var lose_menu = get_parent().get_parent().find_node("LoseMenu")
+onready var camera = $Camera2D
+onready var anim_player = $AnimationPlayer
 
 
 var move_direction = Vector2()
@@ -16,6 +19,10 @@ var max_health := 100
 
 var has_wait = true
 var has_pulse = true
+
+var _is_dead := false
+var is_talking:= false
+var is_dead_or_talking = _is_dead or is_talking
 
 
 func _initialize(board_manager: Node, turn_manager: Node) -> void:
@@ -94,37 +101,38 @@ func _commit_action(action: int) -> void:
 	_turn_manager.end_turn()
 
 func _unhandled_input(event: InputEvent) -> void:
-	if event.is_pressed() and not event.is_echo():
-		if event.is_action("aim_up"):
-			_update_facing_direction(Vector2.UP)
-			_commit_action(Move)
-		elif event.is_action("aim_down"):
-			_update_facing_direction(Vector2.DOWN)
-			_commit_action(Move)
-		elif event.is_action("aim_left"):
-			_update_facing_direction(Vector2.LEFT)
-			_commit_action(Move)
-		elif event.is_action("aim_right"):
-			_update_facing_direction(Vector2.RIGHT)
-			_commit_action(Move)
-		elif event.is_action("aim_cancel") and has_wait:
-			_update_facing_direction(Vector2.ZERO)
-			_commit_action(Move)
-		elif event.is_action("commit_move"):
-			_commit_action(Move)
-		elif event.is_action("commit_pulse") and has_pulse:
-			_commit_action(Pulse)
+	if !_is_dead and !is_talking:
+		if event.is_pressed() and not event.is_echo():
+			if event.is_action("aim_up"):
+				_update_facing_direction(Vector2.UP)
+				_commit_action(Move)
+			elif event.is_action("aim_down"):
+				_update_facing_direction(Vector2.DOWN)
+				_commit_action(Move)
+			elif event.is_action("aim_left"):
+				_update_facing_direction(Vector2.LEFT)
+				_commit_action(Move)
+			elif event.is_action("aim_right"):
+				_update_facing_direction(Vector2.RIGHT)
+				_commit_action(Move)
+			elif event.is_action("aim_cancel") and has_wait:
+				_update_facing_direction(Vector2.ZERO)
+				_commit_action(Move)
+			elif event.is_action("commit_move"):
+				_commit_action(Move)
+			elif event.is_action("commit_pulse") and has_pulse:
+				_commit_action(Pulse)
 
-		# Mouse Input
-		elif event.is_action("commit_mouse_move"):
-			_update_facing_direction(_get_mouse_facing_direction(event.get_position()))
-			_commit_action(Move)
-		elif event.is_action("commit_mouse_skip") and has_wait:
-			_update_facing_direction(Vector2.ZERO)
-			_commit_action(Move)
-		
-		if event.is_action("toggle_cell_numbers"):
-			_board_manager.visibility += 1
+			# Mouse Input
+			elif event.is_action("commit_mouse_move"):
+				_update_facing_direction(_get_mouse_facing_direction(event.get_position()))
+				_commit_action(Move)
+			elif event.is_action("commit_mouse_skip") and has_wait:
+				_update_facing_direction(Vector2.ZERO)
+				_commit_action(Move)
+			
+			if event.is_action("toggle_cell_numbers"):
+				_board_manager.visibility += 1
 
 
 func _get_mouse_facing_direction(screen_space_coord: Vector2) -> Vector2:
@@ -173,6 +181,16 @@ func set_health(value) -> void:
 	health = value
 	health = clamp(health, 0, max_health)
 	health_bar.set_health_value(value)
+	if health == 0:
+		_die()
 
 func take_damage(amount: int) -> void:
 	self.health -= amount
+
+func _die() -> void:
+	_is_dead = true
+	lose_menu._is_opened = true
+	lose_menu.visible = true
+	anim_player.play("camera_zoom")
+ 
+
