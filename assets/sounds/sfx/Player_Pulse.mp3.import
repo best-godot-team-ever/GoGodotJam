@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Player_Pulse.mp3-2bb5c8cdd99fb4901a4e3eca55af8ef5.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/sfx/Player_Pulse.mp3"
+dest_files=[ "res://.import/Player_Pulse.mp3-2bb5c8cdd99fb4901a4e3eca55af8ef5.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

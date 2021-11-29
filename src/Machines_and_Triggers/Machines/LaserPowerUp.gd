@@ -3,10 +3,12 @@ extends laser
 export (String, "set_energy", "add_energy") var type = "add_energy"
 export var _energy_ammount : int = 3
 
+onready var audio_stream = $AudioStreamPlayer2D
+
 var _powered := false
+var sound_lazer = preload("res://assets/sounds/sfx/Laser.mp3")
 
 onready var _anim_player : AnimationPlayer = $AnimationPlayer
-onready var _laser_bream : RayCast2D = $LaserBeam
 
 func _initialize(board_manager: Node, turn_manager: Node) -> void:
 	machine_type = MachineType.LaserUp
@@ -57,6 +59,9 @@ func _fire_laser () -> void:
 				_board_manager.energy_grid.add_energy(cell, _energy_ammount)
 			elif type == "set_energy":
 				_board_manager.energy_grid.set_energy(cell, _energy_ammount)
+	audio_stream.stream = sound_lazer
+	audio_stream.play()			
+
 
 
 

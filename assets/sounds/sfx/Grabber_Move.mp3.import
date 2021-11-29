@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Grabber_Move.mp3-e70da484083fa7c3b8b65079c5b53c86.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/sfx/Grabber_Move.mp3"
+dest_files=[ "res://.import/Grabber_Move.mp3-e70da484083fa7c3b8b65079c5b53c86.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

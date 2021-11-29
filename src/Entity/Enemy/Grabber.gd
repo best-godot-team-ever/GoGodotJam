@@ -2,6 +2,9 @@ extends "res://src/Entity/Enemy/Enemy.gd"
 
 enum GrabberState {PoweredOff, Idle, Chasing}
 
+var sound_move = preload("res://assets/sounds/sfx/Grabber_Move.mp3")
+var sound_activate = preload("res://assets/sounds/sfx/Grabber_Power_On.mp3")
+
 var current_state: int = GrabberState.PoweredOff
 
 var energy_buffered: bool = false
@@ -13,6 +16,9 @@ func start_turn() -> void:
 				current_state = GrabberState.Chasing
 				# Play Power on Animation?
 				anim_state_machine.travel("idle")
+				audio_stream.stream = sound_activate
+				audio_stream.play(0)
+			
 		GrabberState.Chasing:
 			var current_coord = get_current_position()
 			var player_coord = _board_manager.get_entity_position_by_id(_turn_manager.player_entity_id)
@@ -70,6 +76,8 @@ func _move(direction: Vector2) -> void:
 	_set_anim_direction(direction)
 	move_on_map(direction)
 	anim_state_machine.travel("move")
+	audio_stream.stream = sound_move
+	audio_stream.play()
 
 func _set_anim_direction(direction: Vector2) -> void:
 	if direction == Vector2.ZERO:

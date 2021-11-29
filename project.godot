@@ -116,6 +116,13 @@ window/stretch/aspect="keep"
 
 enabled=PoolStringArray( "res://addons/dialogic/plugin.cfg" )
 
+[importer_defaults]
+
+mp3={
+"loop": false,
+"loop_offset": 0
+}
+
 [input]
 
 ui_cancel={

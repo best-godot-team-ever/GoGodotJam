@@ -3,7 +3,6 @@ extends Node2D
 
 onready var board_manager = $BoardManager
 onready var turn_manager = $TurnManager
-onready var dialogue_manager = $DialogueManager
 onready var intro_dialogue = Dialogic.start("level00_0") 
 onready var ui_fade_in = $UI/FadeIn/AnimationPlayer
 

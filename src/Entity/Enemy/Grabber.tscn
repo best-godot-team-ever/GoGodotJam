@@ -881,3 +881,7 @@ parameters/move/blend_position = Vector2( 0, 0 )
 parameters/powered_off/blend_position = Vector2( 0, 0 )
 parameters/powering_off/blend_position = Vector2( 0.370474, 0.0625 )
 parameters/powering_on/blend_position = Vector2( 0, 0 )
+
+[node name="AudioStreamPlayer2D" parent="." index="5"]
+volume_db = -10.0
+bus = "SFX"

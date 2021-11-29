@@ -4,7 +4,6 @@
 [ext_resource path="res://assets/sprites/entities/leech-Sheet.png" type="Texture" id=2]
 [ext_resource path="res://src/Entity/Enemy/Leecher.gd" type="Script" id=3]
 
-
 [sub_resource type="Animation" id=1]
 length = 0.001
 tracks/0/type = "value"
@@ -638,3 +637,7 @@ parameters/idle/blend_position = Vector2( 0, 0 )
 parameters/powered_off/blend_position = Vector2( 0, 0 )
 parameters/powering_off/blend_position = Vector2( 0, 0 )
 parameters/powering_up/blend_position = Vector2( 0, 0 )
+
+[node name="AudioStreamPlayer2D" parent="." index="5"]
+volume_db = -10.0
+bus = "SFX"

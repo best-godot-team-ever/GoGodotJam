@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Player_Move.mp3-748bf2370d79c6ccce4488c7f0fe5078.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/sfx/Player_Move.mp3"
+dest_files=[ "res://.import/Player_Move.mp3-748bf2370d79c6ccce4488c7f0fe5078.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

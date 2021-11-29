@@ -2,6 +2,9 @@ extends "res://src/Entity/Entity.gd"
 
 enum {Move, Pulse}
 
+var sound_pulse = preload("res://assets/sounds/sfx/Player_Pulse.mp3")
+var sound_move = preload("res://assets/sounds/sfx/Player_Move.mp3")
+
 const NO_ACTION = -1
 
 onready var viewport_midpoint: Vector2 = get_viewport_rect().size / 2
@@ -80,6 +83,8 @@ func _pulse() -> bool:
 
 	# This is here for now... but it rly should have an animation attached to it
 	anim_state_machine.travel("pulse")
+	audio_stream.stream = sound_pulse
+	audio_stream.play()
 	_fake_animation()
 	return true
 
@@ -154,6 +159,8 @@ func move_on_map(direction: Vector2):
 	.move_on_map(direction)
 	if not direction == Vector2.ZERO:
 		anim_state_machine.travel("move")
+		audio_stream.stream = sound_move
+		audio_stream.play()	
 	_board_manager.set_energy(get_current_position(), 3 if direction.length() != 0 else _board_manager.get_cell(get_current_position()).get("energy_level") + 1)
 	
 func _update_facing_direction(direction: Vector2) -> void:
@@ -192,5 +199,3 @@ func _die() -> void:
 	lose_menu._is_opened = true
 	lose_menu.visible = true
 	anim_player.play("camera_zoom")
- 
-

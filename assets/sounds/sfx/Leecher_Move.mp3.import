@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Leecher_Move.mp3-5416e55cf808fac1e138f41db3d06c31.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/sfx/Leecher_Move.mp3"
+dest_files=[ "res://.import/Leecher_Move.mp3-5416e55cf808fac1e138f41db3d06c31.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

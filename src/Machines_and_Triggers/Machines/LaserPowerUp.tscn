@@ -5,7 +5,6 @@
 [ext_resource path="res://resources/Laser.shader" type="Shader" id=3]
 [ext_resource path="res://assets/sprites/machines/laser-Sheet.png" type="Texture" id=4]
 
-
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 3 )
 shader_param/glow_color = Color( 1, 1, 1, 1 )
@@ -290,3 +289,7 @@ anims/powering_up_down = SubResource( 6 )
 anims/powering_up_left = SubResource( 9 )
 anims/powering_up_right = SubResource( 4 )
 anims/powering_up_up = SubResource( 10 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+volume_db = -10.0
+bus = "SFX"
