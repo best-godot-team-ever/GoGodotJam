@@ -41,8 +41,6 @@ func start_turn() -> void:
 			if _board_manager.get_cell(get_current_position()).energy_level == 0 and stored_energy == 0:
 				current_state = LeecherStates.PoweredOff
 				anim_state_machine.travel("powered_off")
-			# 	# Play Powered off Animation
-	$Label.set_text("%s" % stored_energy)#LeecherStates.keys()[current_state])
 
 func _suck_energy() -> void:
 	# the tile that it's on...

@@ -834,18 +834,7 @@ hframes = 9
 vframes = 8
 frame = 65
 
-[node name="Label" type="Label" parent="." index="2"]
-margin_left = -41.0
-margin_top = -49.0
-margin_right = 38.0
-margin_bottom = -35.0
-align = 1
-uppercase = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="AnimationPlayer" parent="." index="3"]
+[node name="AnimationPlayer" parent="." index="2"]
 anims/RESET = SubResource( 3 )
 anims/attack_back_left = SubResource( 46 )
 anims/attack_back_right = SubResource( 47 )
@@ -870,7 +859,7 @@ anims/powering_up_back_right = SubResource( 11 )
 anims/powering_up_front_left = SubResource( 12 )
 anims/powering_up_front_right = SubResource( 13 )
 
-[node name="AnimationTree" parent="." index="4"]
+[node name="AnimationTree" parent="." index="3"]
 tree_root = SubResource( 1 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
@@ -882,6 +871,6 @@ parameters/powered_off/blend_position = Vector2( 0, 0 )
 parameters/powering_off/blend_position = Vector2( 0.370474, 0.0625 )
 parameters/powering_on/blend_position = Vector2( 0, 0 )
 
-[node name="AudioStreamPlayer2D" parent="." index="5"]
+[node name="AudioStreamPlayer2D" parent="." index="4"]
 volume_db = -10.0
 bus = "SFX"

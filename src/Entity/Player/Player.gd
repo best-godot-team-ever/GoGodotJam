@@ -59,11 +59,9 @@ func _pulse() -> bool:
 	next_action_queue = NO_ACTION
 
 	if health <= 60:
-		$Label.set_text("No pulse, Energy low %s" % health)
 		return false
 	
 	self.health -= 60
-	$Label.set_text("pulse! %s" % health)
 	var radius = 3
 	var coord = get_current_position()
 	for x in range(-radius, radius + 1):
@@ -92,8 +90,6 @@ func _commit_action(action: int) -> void:
 	if not _turn_manager.is_player_turn:
 		next_action_queue = action if next_action_queue == NO_ACTION or next_action_queue != action else NO_ACTION
 		return
-
-	$Label.set_text("")
 
 	match action:
 		Move:

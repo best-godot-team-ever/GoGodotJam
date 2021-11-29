@@ -624,6 +624,8 @@ texture = ExtResource( 1 )
 offset = Vector2( 0, -20 )
 hframes = 21
 vframes = 9
+frame = 26
+
 
 [node name="Camera2D" type="Camera2D" parent="." index="3"]
 current = true
@@ -659,18 +661,6 @@ parameters/idle/blend_position = Vector2( 0.000375509, 0.896552 )
 parameters/move/blend_position = Vector2( 0, 0 )
 parameters/pulse/blend_position = Vector2( 0, 0 )
 
-[node name="Label" type="Label" parent="." index="7"]
-margin_left = -67.0
-margin_top = -56.0
-margin_right = 68.0
-margin_bottom = -42.0
-align = 1
-valign = 1
-uppercase = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="AudioStreamPlayer2D" parent="." index="8"]
+[node name="AudioStreamPlayer2D" parent="." index="7"]
 volume_db = -10.0
 bus = "SFX"
