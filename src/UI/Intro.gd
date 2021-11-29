@@ -2,7 +2,7 @@ extends CanvasLayer
 
 
 func _on_VideoPlayer_finished():
-	go_to_menu()
+	$AnimationPlayer.play("theme")
 
 func go_to_menu() -> void:
 	get_tree().change_scene("res://src/UI/StartMenu.tscn")
