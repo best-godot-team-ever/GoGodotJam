@@ -6,7 +6,6 @@
 layer = 3
 
 [node name="Sprite" type="Sprite" parent="."]
-visible = false
 position = Vector2( 469, 55 )
 scale = Vector2( 0.75, 0.75 )
 texture = ExtResource( 1 )

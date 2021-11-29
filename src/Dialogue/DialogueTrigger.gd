@@ -14,7 +14,6 @@ var _used = false
 
 
 onready var _player = get_parent().get_parent().find_node("Player")
-onready var _portrait = get_parent().get_parent().get_node("Portrait").get_node("Sprite")
 
 
 func init(board_manager: BoardManager, turn_manager: TurnManager) -> void:
@@ -34,7 +33,6 @@ func start_turn() -> void:
 		add_child(_dialogue)
 		_used = true
 		_player.is_talking = true
-		_portrait.visible = true
 		if give_pulse:
 			_player.has_pulse = true
 		if give_wait:
@@ -44,7 +42,6 @@ func start_turn() -> void:
 
 func end_dialogue() -> void:
 	_player.is_talking = false
-	_portrait.visible = false
 
 
 
