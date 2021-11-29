@@ -99,7 +99,7 @@ _global_script_class_icons={
 [application]
 
 config/name="GoGodotJam"
-run/main_scene="res://src/UI/StartMenu.tscn"
+run/main_scene="res://src/UI/Intro.tscn"
 config/icon="res://icon.png"
 
 [display]

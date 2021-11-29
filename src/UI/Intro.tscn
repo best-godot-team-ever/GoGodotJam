@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/GoGodot.webm" type="VideoStream" id=1]
+[ext_resource path="res://src/UI/Intro.gd" type="Script" id=2]
+[ext_resource path="res://assets/sprites/UI/godot.jpg" type="Texture" id=3]
+
+[node name="Intro" type="CanvasLayer"]
+script = ExtResource( 2 )
+
+[node name="VideoPlayer" type="VideoPlayer" parent="."]
+margin_right = 512.0
+margin_bottom = 300.0
+stream = ExtResource( 1 )
+autoplay = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = 458.0
+margin_top = 248.0
+margin_right = 642.0
+margin_bottom = 432.0
+rect_scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="finished" from="VideoPlayer" to="." method="_on_VideoPlayer_finished"]
