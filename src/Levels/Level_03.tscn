@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://resources/GroundTileset.tres" type="TileSet" id=1]
 [ext_resource path="res://src/Managers/TurnManager.gd" type="Script" id=2]
@@ -23,6 +23,8 @@
 [ext_resource path="res://src/Dialogue/EndingLevelTrigger.tscn" type="PackedScene" id=21]
 [ext_resource path="res://src/Levels/Level_04.tscn" type="PackedScene" id=22]
 [ext_resource path="res://src/Dialogue/DialogueTrigger.tscn" type="PackedScene" id=23]
+[ext_resource path="res://assets/sprites/ambient/support_1 Merged.PNG" type="Texture" id=24]
+[ext_resource path="res://assets/sprites/ambient/support_1.PNG" type="Texture" id=25]
 
 [node name="LevelTemplate" type="Node2D"]
 script = ExtResource( 9 )
@@ -47,6 +49,116 @@ _dialogue_string = "level03_3"
 
 [node name="TurnManager" type="Node" parent="."]
 script = ExtResource( 2 )
+
+[node name="background" type="Node2D" parent="."]
+
+[node name="Support9" type="Sprite" parent="background"]
+position = Vector2( -360, 167 )
+texture = ExtResource( 25 )
+
+[node name="Support10" type="Sprite" parent="background"]
+position = Vector2( -80, 105 )
+texture = ExtResource( 25 )
+
+[node name="Support11" type="Sprite" parent="background"]
+position = Vector2( -300, 54 )
+texture = ExtResource( 25 )
+
+[node name="Support12" type="Sprite" parent="background"]
+position = Vector2( -202, 5 )
+texture = ExtResource( 25 )
+
+[node name="Support13" type="Sprite" parent="background"]
+position = Vector2( 2, 65 )
+texture = ExtResource( 25 )
+
+[node name="Support14" type="Sprite" parent="background"]
+position = Vector2( 103, 16 )
+texture = ExtResource( 25 )
+
+[node name="Support15" type="Sprite" parent="background"]
+position = Vector2( 300, -45 )
+texture = ExtResource( 25 )
+
+[node name="Support16" type="Sprite" parent="background"]
+position = Vector2( 399, 5 )
+texture = ExtResource( 25 )
+
+[node name="Support17" type="Sprite" parent="background"]
+position = Vector2( 501, 55 )
+texture = ExtResource( 25 )
+
+[node name="Support18" type="Sprite" parent="background"]
+position = Vector2( 379, 116 )
+texture = ExtResource( 25 )
+
+[node name="Support19" type="Sprite" parent="background"]
+position = Vector2( 541, 194 )
+texture = ExtResource( 25 )
+
+[node name="Support20" type="Sprite" parent="background"]
+position = Vector2( 463, 304 )
+texture = ExtResource( 25 )
+
+[node name="Support21" type="Sprite" parent="background"]
+position = Vector2( 311, 243 )
+texture = ExtResource( 25 )
+
+[node name="Support25" type="Sprite" parent="background"]
+position = Vector2( 101, 387 )
+texture = ExtResource( 25 )
+
+[node name="Support22" type="Sprite" parent="background"]
+position = Vector2( 161, 418 )
+texture = ExtResource( 25 )
+
+[node name="Support23" type="Sprite" parent="background"]
+position = Vector2( 46, 417 )
+texture = ExtResource( 25 )
+
+[node name="Support24" type="Sprite" parent="background"]
+position = Vector2( 100, 448 )
+texture = ExtResource( 25 )
+
+[node name="Support29" type="Sprite" parent="background"]
+position = Vector2( -59, 464 )
+texture = ExtResource( 25 )
+
+[node name="Support26" type="Sprite" parent="background"]
+position = Vector2( -59, 525 )
+texture = ExtResource( 25 )
+
+[node name="Support28" type="Sprite" parent="background"]
+position = Vector2( -120, 494 )
+texture = ExtResource( 25 )
+
+[node name="Support27" type="Sprite" parent="background"]
+position = Vector2( 2, 494 )
+texture = ExtResource( 25 )
+
+[node name="Support30" type="Sprite" parent="background"]
+position = Vector2( -198, 564 )
+texture = ExtResource( 25 )
+
+[node name="Support1Merged" type="Sprite" parent="background"]
+position = Vector2( -188, 129 )
+texture = ExtResource( 24 )
+
+[node name="Support1Merged2" type="Sprite" parent="background"]
+position = Vector2( -19, -63 )
+texture = ExtResource( 24 )
+
+[node name="Support1Merged3" type="Sprite" parent="background"]
+position = Vector2( 250, 102 )
+texture = ExtResource( 24 )
+
+[node name="Support1Merged4" type="Sprite" parent="background"]
+position = Vector2( 312, 396 )
+texture = ExtResource( 24 )
+
+[node name="Support1Merged5" type="Sprite" parent="background"]
+position = Vector2( 662, 163 )
+texture = ExtResource( 24 )
 
 [node name="BoardManager" type="Node2D" parent="."]
 script = ExtResource( 6 )
@@ -211,6 +323,6 @@ position = Vector2( 359, 47 )
 position = Vector2( 60, 382 )
 
 [node name="Player" parent="YSort" instance=ExtResource( 10 )]
-position = Vector2( -361, 115 )
+position = Vector2( -364, 111 )
 
 [node name="UI" parent="." instance=ExtResource( 20 )]
