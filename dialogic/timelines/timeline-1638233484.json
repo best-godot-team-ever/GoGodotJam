@@ -18,7 +18,7 @@
 			"character": "character-1637847529.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Its so beatifull"
+			"text": "Its all so beatifull"
 		},
 		{
 			"character": "character-1637847529.json",
@@ -30,19 +30,7 @@
 			"character": "character-1637847529.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "the sun"
-		},
-		{
-			"character": "character-1637847529.json",
-			"event_id": "dialogic_001",
-			"portrait": "",
-			"text": "the breeze"
-		},
-		{
-			"character": "character-1637847529.json",
-			"event_id": "dialogic_001",
-			"portrait": "",
-			"text": "the sounds"
+			"text": "Its really been such a long time..."
 		},
 		{
 			"character": "character-1637847529.json",
@@ -54,7 +42,13 @@
 			"character": "character-1637847529.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "A new begining..."
+			"text": "Okay.. my new life begins here"
+		},
+		{
+			"character": "character-1637847529.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "hope to never see this place again"
 		},
 		{
 			"call_node": {

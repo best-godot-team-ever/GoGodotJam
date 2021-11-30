@@ -7,8 +7,6 @@ onready var anim_player = $AnimationPlayer
 
 func _ready():
 	anim_player.play("0_fade_in")
-	BgmManager.stream = load("res://assets/sounds/bgm/History_Panel_Theme.mp3")
-	BgmManager.play()
 	
 
 func _play_dialogue(dialogue_number: int) -> void:

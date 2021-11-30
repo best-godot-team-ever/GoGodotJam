@@ -4,6 +4,7 @@ onready var anim_player = $AnimationPlayer
 
 func _ready():
 	play_next(6)
+	$Label/AnimationPlayer.play("fade")
 
 
 func play_next(i: int) -> void:

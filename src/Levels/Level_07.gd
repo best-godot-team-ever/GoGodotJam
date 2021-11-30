@@ -14,4 +14,6 @@ func _ready() -> void:
 		child.init(board_manager, turn_manager)
 	ui_fade_in.play("fade_in")
 	BgmManager.stop()
+	BgmManager.stream = load("res://assets/sounds/bgm/ambience.mp3")
+	BgmManager.play()
 
