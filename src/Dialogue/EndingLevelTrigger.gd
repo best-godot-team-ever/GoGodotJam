@@ -32,3 +32,10 @@ func start_turn() -> void:
 			yield(get_tree().create_timer(3.0), "timeout")
 			get_tree().change_scene(_next_level.get_path())
 
+func _input(event):
+	if Input.is_action_pressed("coward_button"):
+		_player.anim_player.play("camera_zoom_2")
+		fade_in.play("fade_out")
+		yield(get_tree().create_timer(3.0), "timeout")
+		get_tree().change_scene(_next_level.get_path())
+
