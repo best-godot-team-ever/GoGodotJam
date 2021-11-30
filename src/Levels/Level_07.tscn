@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://resources/GroundTileset.tres" type="TileSet" id=1]
 [ext_resource path="res://src/Managers/TurnManager.gd" type="Script" id=2]
@@ -15,9 +15,11 @@
 [ext_resource path="res://src/Dialogue/EndingLevelTrigger.tscn" type="PackedScene" id=13]
 [ext_resource path="res://src/Machines_and_Triggers/Triggers/PlateTrigger.tscn" type="PackedScene" id=14]
 [ext_resource path="res://src/Machines_and_Triggers/Machines/Door.tscn" type="PackedScene" id=15]
+[ext_resource path="res://assets/sprites/ambient/support_1 Merged.PNG" type="Texture" id=16]
 [ext_resource path="res://src/Dialogue/DialogueTrigger.tscn" type="PackedScene" id=17]
 [ext_resource path="res://src/UI/Ending.tscn" type="PackedScene" id=18]
 [ext_resource path="res://assets/sprites/UI/light.png" type="Texture" id=19]
+[ext_resource path="res://assets/sprites/ambient/support_1.PNG" type="Texture" id=20]
 
 [node name="LevelTemplate" type="Node2D"]
 script = ExtResource( 9 )
@@ -50,6 +52,52 @@ _dialogue_string = "level07_5"
 
 [node name="TurnManager" type="Node" parent="."]
 script = ExtResource( 2 )
+
+[node name="background" type="Node2D" parent="."]
+
+[node name="Support19" type="Sprite" parent="background"]
+position = Vector2( -200, 24 )
+texture = ExtResource( 20 )
+
+[node name="Support20" type="Sprite" parent="background"]
+position = Vector2( 2, 56 )
+texture = ExtResource( 20 )
+
+[node name="Support21" type="Sprite" parent="background"]
+position = Vector2( 121, 124 )
+texture = ExtResource( 20 )
+
+[node name="Support22" type="Sprite" parent="background"]
+position = Vector2( 240, 184 )
+texture = ExtResource( 20 )
+
+[node name="Support23" type="Sprite" parent="background"]
+position = Vector2( 361, 244 )
+texture = ExtResource( 20 )
+
+[node name="Support1Merged" type="Sprite" parent="background"]
+position = Vector2( -235, 160 )
+texture = ExtResource( 16 )
+
+[node name="Support1Merged2" type="Sprite" parent="background"]
+position = Vector2( -204, -156 )
+texture = ExtResource( 16 )
+
+[node name="Support1Merged3" type="Sprite" parent="background"]
+position = Vector2( 360, -20 )
+texture = ExtResource( 16 )
+
+[node name="Support1Merged4" type="Sprite" parent="background"]
+position = Vector2( 646, 103 )
+texture = ExtResource( 16 )
+
+[node name="Support1Merged5" type="Sprite" parent="background"]
+position = Vector2( 236, 399 )
+texture = ExtResource( 16 )
+
+[node name="Support1Merged6" type="Sprite" parent="background"]
+position = Vector2( -14, 248 )
+texture = ExtResource( 16 )
 
 [node name="BoardManager" type="Node2D" parent="."]
 script = ExtResource( 6 )
