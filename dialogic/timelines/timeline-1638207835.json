@@ -18,13 +18,7 @@
 			"character": "character-1637847529.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Its strange..."
-		},
-		{
-			"character": "character-1637847529.json",
-			"event_id": "dialogic_001",
-			"portrait": "",
-			"text": "how quiet this place is now..."
+			"text": "It's strange how quiet this place is now..."
 		},
 		{
 			"call_node": {

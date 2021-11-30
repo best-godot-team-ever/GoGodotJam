@@ -24,13 +24,13 @@
 			"character": "character-1637847529.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Dont remember the sun being this bright!"
+			"text": "I don't remember the sun being this bright!"
 		},
 		{
 			"character": "character-1637847529.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "And thats coming from someone made of light!"
+			"text": "And that's coming from someone made of light..."
 		},
 		{
 			"character": "character-1637847529.json",
@@ -42,13 +42,7 @@
 			"character": "character-1637847529.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "ha..."
-		},
-		{
-			"character": "character-1637847529.json",
-			"event_id": "dialogic_001",
-			"portrait": "",
-			"text": "It seems my sense of houmor is coming back"
+			"text": "It seems my sense of humor is coming back."
 		},
 		{
 			"call_node": {

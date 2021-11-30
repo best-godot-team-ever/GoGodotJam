@@ -18,7 +18,7 @@
 			"character": "character-1637847529.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Its all so beatifull"
+			"text": "It's all so beatifull."
 		},
 		{
 			"character": "character-1637847529.json",
@@ -30,7 +30,7 @@
 			"character": "character-1637847529.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Its really been such a long time..."
+			"text": "It's been such a long time..."
 		},
 		{
 			"character": "character-1637847529.json",
@@ -42,13 +42,13 @@
 			"character": "character-1637847529.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Okay.. my new life begins here"
+			"text": "my new life begins now..."
 		},
 		{
 			"character": "character-1637847529.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "hope to never see this place again"
+			"text": "... and I hope to never see this place again."
 		},
 		{
 			"call_node": {

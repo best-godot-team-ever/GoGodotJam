@@ -24,7 +24,7 @@
 			"character": "",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "One last chalenge..."
+			"text": "One last challenge..."
 		},
 		{
 			"character": "",
@@ -36,7 +36,7 @@
 			"character": "",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "lets go!"
+			"text": "let's go!"
 		},
 		{
 			"call_node": {
