@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Resources/Fonts_theme.tres" type="Theme" id=1]
 [ext_resource path="res://src/UI/StartMenu.gd" type="Script" id=2]
 [ext_resource path="res://resources/AnimatedButton.tres" type="Texture" id=3]
 [ext_resource path="res://src/UI/Volume.gd" type="Script" id=4]
+[ext_resource path="res://assets/sprites/UI/banner_photons_journey.png" type="Texture" id=5]
 [ext_resource path="res://assets/sprites/UI/buttons/ButtonHover1.png" type="Texture" id=6]
 [ext_resource path="res://assets/sprites/UI/buttons/Button0.png" type="Texture" id=7]
 
@@ -37,6 +38,35 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
+[sub_resource type="Animation" id=3]
+resource_name = "out"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "start_game"
+} ]
+}
+
 [node name="StartMenu" type="Node2D"]
 modulate = Color( 1, 1, 1, 0 )
 script = ExtResource( 2 )
@@ -45,6 +75,15 @@ script = ExtResource( 2 )
 margin_right = 512.0
 margin_bottom = 300.0
 color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Titile" type="TextureRect" parent="."]
+margin_right = 1024.0
+margin_bottom = 300.0
+rect_scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -155,6 +194,7 @@ __meta__ = {
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 1 )
 anims/intro = SubResource( 2 )
+anims/out = SubResource( 3 )
 
 [connection signal="pressed" from="NewGame" to="." method="_on_NewGame_pressed"]
 [connection signal="pressed" from="QuitGame" to="." method="_on_QuitGame_pressed"]
