@@ -139,7 +139,8 @@ __meta__ = {
 position = Vector2( 62, 10 )
 scale = Vector2( 0.8, 0.8 )
 frames = SubResource( 20 )
-animation = "idle"
+animation = "pulse"
+frame = 7
 playing = true
 
 [node name="Tween" type="Tween" parent="."]

@@ -1,6 +1,4 @@
-
 [gd_scene load_steps=19 format=2]
-
 
 [ext_resource path="res://resources/GroundTileset.tres" type="TileSet" id=1]
 [ext_resource path="res://src/Managers/TurnManager.gd" type="Script" id=2]
@@ -10,18 +8,16 @@
 [ext_resource path="res://src/Managers/BoardManager/BoardManager.gd" type="Script" id=6]
 [ext_resource path="res://src/Managers/BoardManager/Grid/EnergyGrid.gd" type="Script" id=7]
 [ext_resource path="res://src/Managers/BoardManager/Grid/ObjectGrid/EntityGrid.gd" type="Script" id=8]
-[ext_resource path="res://src/Levels/Level.gd" type="Script" id=9]
+[ext_resource path="res://src/Levels/Level_07.gd" type="Script" id=9]
 [ext_resource path="res://src/Entity/Player/Player.tscn" type="PackedScene" id=10]
 [ext_resource path="res://src/Managers/BoardManager/Grid/BlockingGrid.gd" type="Script" id=11]
 [ext_resource path="res://src/Managers/BoardManager/Grid/ObjectGrid/MachineGrid.gd" type="Script" id=12]
 [ext_resource path="res://src/Dialogue/EndingLevelTrigger.tscn" type="PackedScene" id=13]
 [ext_resource path="res://src/Machines_and_Triggers/Triggers/PlateTrigger.tscn" type="PackedScene" id=14]
 [ext_resource path="res://src/Machines_and_Triggers/Machines/Door.tscn" type="PackedScene" id=15]
-[ext_resource path="res://src/UI/Portrait.tscn" type="PackedScene" id=16]
 [ext_resource path="res://src/Dialogue/DialogueTrigger.tscn" type="PackedScene" id=17]
 [ext_resource path="res://src/UI/Ending.tscn" type="PackedScene" id=18]
 [ext_resource path="res://assets/sprites/UI/light.png" type="Texture" id=19]
-
 
 [node name="LevelTemplate" type="Node2D"]
 script = ExtResource( 9 )
@@ -115,6 +111,7 @@ position = Vector2( 0, -70 )
 _fake = true
 
 [node name="EndingLevelTrigger2" parent="YSort" instance=ExtResource( 13 )]
+visible = false
 position = Vector2( 721, 372 )
 _next_level = ExtResource( 18 )
 
@@ -129,12 +126,9 @@ position = Vector2( 1, -70 )
 
 [node name="UI" parent="." instance=ExtResource( 4 )]
 
-[node name="Portrait" parent="." instance=ExtResource( 16 )]
-
 [node name="Light2D" type="Light2D" parent="."]
 position = Vector2( 721, 372 )
 scale = Vector2( 1, 0.5 )
 texture = ExtResource( 19 )
 texture_scale = 1.4
 energy = 2.33
-

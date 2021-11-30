@@ -1,0 +1,635 @@
+[gd_scene load_steps=25 format=2]
+
+[ext_resource path="res://assets/sprites/credits/6.png" type="Texture" id=1]
+[ext_resource path="res://assets/sprites/credits/8.png" type="Texture" id=2]
+[ext_resource path="res://assets/sprites/credits/9.png" type="Texture" id=3]
+[ext_resource path="res://assets/sprites/credits/10.png" type="Texture" id=4]
+[ext_resource path="res://assets/sprites/credits/11.png" type="Texture" id=5]
+[ext_resource path="res://assets/sprites/credits/1.png" type="Texture" id=6]
+[ext_resource path="res://src/UI/Credits.gd" type="Script" id=7]
+[ext_resource path="res://assets/sprites/credits/3.png" type="Texture" id=8]
+[ext_resource path="res://assets/sprites/credits/5.png" type="Texture" id=9]
+[ext_resource path="res://assets/sprites/credits/7.png" type="Texture" id=10]
+[ext_resource path="res://assets/sprites/credits/2.png" type="Texture" id=11]
+[ext_resource path="res://assets/sprites/credits/4.png" type="Texture" id=12]
+
+[sub_resource type="Animation" id=9]
+resource_name = "10_fade"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("10:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2.8, 6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 6 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ 11 ],
+"method": "play_next"
+} ]
+}
+
+[sub_resource type="Animation" id=10]
+resource_name = "11_fade"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("11:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2.7, 6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 6 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ 1 ],
+"method": "play_next"
+} ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "1_fade"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("1:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.1, 3, 6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 6 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ 2 ],
+"method": "play_next"
+} ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "2_fade"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.1, 3.1, 6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 6 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ 3 ],
+"method": "play_next"
+} ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "3_fade"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("3:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.1, 3, 6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 6 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ 4 ],
+"method": "play_next"
+} ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "4_fade"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("4:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.1, 3.2, 5.9 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 5.9 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ 5 ],
+"method": "play_next"
+} ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "5_fade"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("5:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.1, 3.3, 5.9 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 5.9 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ 6 ],
+"method": "play_next"
+} ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "6_fade"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("6:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.1, 3, 5.9 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 5.9 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ 7 ],
+"method": "play_next"
+} ]
+}
+
+[sub_resource type="Animation" id=11]
+resource_name = "7_fade"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("7:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( -0.1, 2.6, 5.9 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 5.9 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ 8 ],
+"method": "play_next"
+} ]
+}
+
+[sub_resource type="Animation" id=12]
+resource_name = "8_fade"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("8:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2.9, 5.9 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 5.9 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ 9 ],
+"method": "play_next"
+} ]
+}
+
+[sub_resource type="Animation" id=13]
+resource_name = "9_fade"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("9:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2.6, 6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 6 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ 10 ],
+"method": "play_next"
+} ]
+}
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("1:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("2:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("3:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("4:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("5:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("6:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("11:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("10:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("9:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("8:modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("7:modulate")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+
+[node name="Credits" type="CanvasLayer"]
+script = ExtResource( 7 )
+
+[node name="1" type="TextureRect" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 18.0
+margin_top = 49.0
+margin_right = 530.0
+margin_bottom = 349.0
+rect_scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 6 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="2" type="TextureRect" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = -26.0
+margin_top = 135.0
+margin_right = 486.0
+margin_bottom = 435.0
+rect_scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 11 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="3" type="TextureRect" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 76.0
+margin_top = 182.0
+margin_right = 588.0
+margin_bottom = 482.0
+rect_scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 8 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="4" type="TextureRect" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 47.0
+margin_top = 19.0
+margin_right = 559.0
+margin_bottom = 319.0
+rect_scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 12 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="5" type="TextureRect" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+margin_top = 110.0
+margin_right = 512.0
+margin_bottom = 410.0
+rect_scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 9 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="6" type="TextureRect" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+margin_right = 512.0
+margin_bottom = 300.0
+rect_scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="7" type="TextureRect" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = -26.0
+margin_top = 150.0
+margin_right = 486.0
+margin_bottom = 450.0
+rect_scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 10 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="8" type="TextureRect" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 76.0
+margin_top = 49.0
+margin_right = 588.0
+margin_bottom = 349.0
+rect_scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="9" type="TextureRect" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = -26.0
+margin_top = 49.0
+margin_right = 486.0
+margin_bottom = 349.0
+rect_scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="10" type="TextureRect" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 47.0
+margin_top = 150.0
+margin_right = 559.0
+margin_bottom = 450.0
+rect_scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 4 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="11" type="TextureRect" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 18.0
+margin_right = 530.0
+margin_bottom = 300.0
+rect_scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 5 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/10_fade = SubResource( 9 )
+anims/11_fade = SubResource( 10 )
+anims/1_fade = SubResource( 3 )
+anims/2_fade = SubResource( 4 )
+anims/3_fade = SubResource( 5 )
+anims/4_fade = SubResource( 6 )
+anims/5_fade = SubResource( 7 )
+anims/6_fade = SubResource( 8 )
+anims/7_fade = SubResource( 11 )
+anims/8_fade = SubResource( 12 )
+anims/9_fade = SubResource( 13 )
+anims/RESET = SubResource( 2 )
